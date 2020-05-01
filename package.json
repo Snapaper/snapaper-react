@@ -21,12 +21,13 @@
   "homepage": "https://github.com/Snapaper/snapaper-react#readme",
   "dependencies": {
     "antd": "^4.2.0",
-    "axios": "^0.19.2",
     "ismobilejs": "^1.1.1",
     "js-cookie": "^2.2.1",
     "next": "^9.3.6",
     "nprogress": "^0.2.0",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
+    "react-axios": "^2.0.3",
     "react-dom": "^16.13.1",
     "sass": "^1.26.5"
   }
