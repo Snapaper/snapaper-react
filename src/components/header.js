@@ -64,17 +64,21 @@ export default class Header extends React.Component {
         <Menu mode="horizontal">
           <Menu.Item className="header-ant-logo">
             <Link href="/">
-              <h3 className="nav-title">
-                <img
-                  src="https://static.ouorz.com/snapaper@next.png"
-                  className="nav-title-img"
-                />
-                napaper
-              </h3>
+              <a>
+                <h3 className="nav-title">
+                  <img
+                    src="https://static.ouorz.com/snapaper@next.png"
+                    className="nav-title-img"
+                  />
+                  napaper
+                </h3>
+              </a>
             </Link>
           </Menu.Item>
           <Menu.Item>
-            <Link href="/">Home</Link>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
           </Menu.Item>
           <SubMenu icon={<CaretDownOutlined />} title="Platform">
             <Menu.Item>
