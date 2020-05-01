@@ -781,9 +781,11 @@ tr {
 }
 
 .page-container {
-    margin-top: 5%;
-    width: 50%;
-    padding-bottom: 6%
+    margin: 0px auto 10vh auto;
+    width: 65%;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 2.5em 3em;
 }
 
 .page-title {
@@ -1399,8 +1401,30 @@ tr {
 .footer-div {
     background: #f8f8fc;
     width: 100%;
+    height: 70px;
     position: absolute;
     bottom: 0px;
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 23px 0px;
+        color: #73849a;
+        font-weight: 300;
+
+        div {
+            display: inline-block;
+
+            &:nth-child(2) {
+                float: right;
+            }
+        }
+    }
+}
+
+.footer-div-bottom {
+    background: #f8f8fc;
+    width: 100%;
     height: 70px;
 
     .footer-container {
