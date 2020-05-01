@@ -1,0 +1,33 @@
+{
+  "name": "snapaper-react",
+  "version": "0.0.1",
+  "description": "Snapaper @next Version",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next export"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Snapaper/snapaper-react.git"
+  },
+  "author": "HelipengTony",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/Snapaper/snapaper-react/issues"
+  },
+  "homepage": "https://github.com/Snapaper/snapaper-react#readme",
+  "dependencies": {
+    "antd": "^4.2.0",
+    "axios": "^0.19.2",
+    "ismobilejs": "^1.1.1",
+    "js-cookie": "^2.2.1",
+    "next": "^9.3.6",
+    "nprogress": "^0.2.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "sass": "^1.26.5"
+  }
+}
