@@ -152,6 +152,11 @@ export default class Alevel extends React.Component {
                   subjectCount: response.data.count,
                 })
               }
+              onLoading={() =>
+                this.setState({
+                  display: false
+                })
+              }
             >
               {(error, response, isLoading, onReload) => {
                 if (error) {

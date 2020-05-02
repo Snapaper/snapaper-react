@@ -65,7 +65,7 @@ function downloadList() {
   let length = keys.length;
   let number = 0;
   let ListDownload = function () {
-    if (number == length) {
+    if (number >= length) {
       window.clearInterval(interval);
       number = 0;
       downloadProgress.done = 0;
@@ -78,16 +78,19 @@ function downloadList() {
         stillNeedDownloadlist.length
       ) {
         let list = stillNeedDownloadlist;
+        console.log(stillNeedDownloadlist);
         let i = 0;
         let download = function () {
-          if (i == list.length) {
-            window.clearInterval(interval);
+          if (i >= list.length) {
+            i = 0;
+            stillNeedDownloadlist = [];
+            window.clearInterval(intervalStill);
           } else {
             downloadFile(list[i]);
             i++;
           }
         };
-        window.interval = setInterval(download, 3000);
+        window.intervalStill = setInterval(download, 3000);
       }
     } else {
       downloadFile(paperData[keys[number] - 1].url);
@@ -421,65 +424,144 @@ class AlevelSubject extends React.Component {
             </div>
           </section>
           {this.props.router.query.subject ? (
-            <Get
-              url={
-                "https://www.snapaper.com/vue/papers?cate=A%20Levels&sub=" +
-                this.props.router.query.subject +
-                "&node=" +
-                (Cookies.get("snapaper_server")
-                  ? Cookies.get("snapaper_server")
-                  : "1")
-              }
-              onSuccess={(response) =>
-                this.setState({
-                  display: true,
-                  subjectCount: response.data.count,
-                })
-              }
-            >
-              {(error, response, isLoading, onReload) => {
-                if (error) {
-                  openNotificationWithIcon(
-                    "error",
-                    "Request error, please report to TonyHe"
-                  );
-                  return (
-                    <div className="next-cate-error">
-                      <Empty description={false} />
-                      <p>{error.message}</p>
-                    </div>
-                  );
-                } else if (isLoading) {
+            this.state.isMobile ? (
+              <Get
+                url={
+                  "https://www.snapaper.com/vue/papers?cate=A%20Levels&sub=" +
+                  this.props.router.query.subject +
+                  "&node=" +
+                  (Cookies.get("snapaper_server")
+                    ? Cookies.get("snapaper_server")
+                    : "1")
+                }
+                onSuccess={(response) =>
+                  this.setState({
+                    display: true,
+                    subjectCount: response.data.count,
+                  })
+                }
+                onLoading={() =>
+                  this.setState({
+                    display: false,
+                  })
+                }
+              >
+                {(error, response, isLoading, onReload) => {
+                  if (error) {
+                    openNotificationWithIcon(
+                      "error",
+                      "Request error, please report to TonyHe"
+                    );
+                    return (
+                      <div className="next-cate-error">
+                        <Empty description={false} />
+                        <p>{error.message}</p>
+                      </div>
+                    );
+                  } else if (isLoading) {
+                    return (
+                      <div>
+                        <Skeleton active />
+                        <Skeleton active />
+                      </div>
+                    );
+                  } else if (response !== null) {
+                    paperData = response.data.papers;
+                    // 请求成功展示列表
+                    return (
+                      <div className="next-cate-subject">
+                        {response.data.papers.map((item, index) => {
+                          if (!!item.name && item.name !== "error_log") {
+                            return (
+                              <div key={index}>
+                                <a href={item.url} target="_blank">
+                                  <h2>{item.name.replace("amp;", "")}</h2>
+                                </a>
+                                <p>
+                                  <a href={item.url} target="_blank">
+                                    Click to download <CaretRightOutlined />
+                                  </a>
+                                </p>
+                              </div>
+                            );
+                          }
+                        })}
+                      </div>
+                    );
+                  }
                   return (
                     <div>
                       <Skeleton active />
                       <Skeleton active />
                     </div>
                   );
-                } else if (response !== null) {
-                  paperData = response.data.papers;
-                  // 请求成功展示列表
+                }}
+              </Get>
+            ) : (
+              <Get
+                url={
+                  "https://www.snapaper.com/vue/papers?cate=A%20Levels&sub=" +
+                  this.props.router.query.subject +
+                  "&node=" +
+                  (Cookies.get("snapaper_server")
+                    ? Cookies.get("snapaper_server")
+                    : "1")
+                }
+                onSuccess={(response) =>
+                  this.setState({
+                    display: true,
+                    subjectCount: response.data.count,
+                  })
+                }
+                onLoading={() =>
+                  this.setState({
+                    display: false,
+                  })
+                }
+              >
+                {(error, response, isLoading, onReload) => {
+                  if (error) {
+                    openNotificationWithIcon(
+                      "error",
+                      "Request error, please report to TonyHe"
+                    );
+                    return (
+                      <div className="next-cate-error">
+                        <Empty description={false} />
+                        <p>{error.message}</p>
+                      </div>
+                    );
+                  } else if (isLoading) {
+                    return (
+                      <div>
+                        <Skeleton active />
+                        <Skeleton active />
+                      </div>
+                    );
+                  } else if (response !== null) {
+                    paperData = response.data.papers;
+                    // 请求成功展示列表
+                    return (
+                      <div className="next-paper-papers">
+                        <Papertable></Papertable>
+                      </div>
+                    );
+                  }
                   return (
-                    <div className="next-paper-papers">
-                      <Papertable></Papertable>
+                    <div>
+                      <Skeleton active />
+                      <Skeleton active />
                     </div>
                   );
-                }
-                return (
-                  <div>
-                    <Skeleton active />
-                    <Skeleton active />
-                  </div>
-                );
-              }}
-            </Get>
+                }}
+              </Get>
+            )
           ) : (
             <div>
               <Skeleton active />
               <Skeleton active />
             </div>
           )}
-          <section></section>
         </main>
         <Footer loading={!this.state.display}></Footer>
       </div>

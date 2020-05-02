@@ -436,6 +436,11 @@ class igcseSubject extends React.Component {
                   subjectCount: response.data.count,
                 })
               }
+              onLoading={() =>
+                this.setState({
+                  display: false
+                })
+              }
             >
               {(error, response, isLoading, onReload) => {
                 if (error) {
@@ -479,7 +484,6 @@ class igcseSubject extends React.Component {
               <Skeleton active />
             </div>
           )}
-          <section></section>
         </main>
         <Footer loading={!this.state.display}></Footer>
       </div>

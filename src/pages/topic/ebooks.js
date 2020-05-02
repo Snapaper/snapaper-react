@@ -1,28 +1,141 @@
-import Link from 'next/link'
-import React from 'react'
-import isMobile from 'ismobilejs'
-import Header from '../../components/header'
-import Footer from '../../components/footer'
+import React from "react";
+import isMobile from "ismobilejs";
+import Header from "../../components/header";
+import Footer from "../../components/footer";
+import { notification, Skeleton, Button, Empty } from "antd";
+import { ArrowLeftOutlined, CaretRightOutlined } from "@ant-design/icons";
+import { Get } from "react-axios";
+import $ from "jquery";
 
-export default class Alevel extends React.Component{
-    constructor(props){
-        super(props)
-        this.state = {}
-    }
-    componentDidMount(){
-        this.setState({
-            isMobile: isMobile(window.navigator).any
-        })
-    }
-    render(){
+const openNotificationWithIcon = (type, content) => {
+  notification[type]({
+    message: "Notification",
+    description: content,
+  });
+};
+
+function downloadFile(srcUrl) {
+  var $a = $("<a/>")
+    .attr("href", "https://www.snapaper.com/download?filename=" + srcUrl)
+    .attr("download", "");
+  $a[0].click();
+}
+
+export default class Ebooks extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      display: false,
+      MBSvisible: false,
+      subjectCount: 0,
+    };
+  }
+  componentDidMount() {
+    this.setState({
+      isMobile: isMobile(window.navigator).any,
+    });
+  }
+  render() {
     return (
-        <div>
-            <Header></Header>
-            <main className="ant-container">
-                <h1>Hello World</h1>
-            </main>
-            <Footer></Footer>
-        </div>
-    )
-    }
+      <div>
+        <Header></Header>
+        <main className="ant-container">
+          <section className="next-cate-header next-topic-header">
+            <div className="left">
+              <div>
+                <h1>PDF eBooks</h1>
+                <p>
+                  Cambridge International General Certificate of Education
+                  Advanced Level
+                </p>
+              </div>
+            </div>
+            <div className="next-cate-header-info topic-header">
+              <div>
+                <Button>
+                  {this.state.display
+                    ? this.state.subjectCount + " Items"
+                    : "Loading..."}
+                </Button>
+                <Button type="primary" onClick={() => history.go(-1)}>
+                  <ArrowLeftOutlined /> Back
+                </Button>
+              </div>
+            </div>
+          </section>
+          <section>
+            <Get
+              url={
+                "https://www.snapaper.com/case/cases?cate=ebooks&sub=A%20Levels"
+              }
+              onSuccess={(response) =>
+                this.setState({
+                  display: true,
+                  subjectCount: response.data.length,
+                })
+              }
+              onLoading={() =>
+                this.setState({
+                  display: false,
+                })
+              }
+            >
+              {(error, response, isLoading, onReload) => {
+                if (error) {
+                  openNotificationWithIcon(
+                    "error",
+                    "Request error, please report to TonyHe"
+                  );
+                  return (
+                    <div className="next-cate-error">
+                      <Empty description={false} />
+                      <p>{error.message}</p>
+                    </div>
+                  );
+                } else if (isLoading) {
+                  return (
+                    <div>
+                      <Skeleton active />
+                      <Skeleton active />
+                    </div>
+                  );
+                } else if (response !== null) {
+                  // 请求成功展示列表
+                  return (
+                    <div className="next-cate-subject topic-list">
+                      {response.data.map((item, index) => {
+                        if (!!item.name && item.name !== "error_log") {
+                          return (
+                            <div
+                              key={index}
+                              onClick={() => {
+                                downloadFile(item.url);
+                              }}
+                            >
+                              <h2>{item.name.replace("amp;", "")}</h2>
+                              <p>
+                                <em>{item.type}</em>Click to Download{" "}
+                                <CaretRightOutlined />
+                              </p>
+                            </div>
+                          );
+                        }
+                      })}
+                    </div>
+                  );
+                }
+                return (
+                  <div>
+                    <Skeleton active />
+                    <Skeleton active />
+                  </div>
+                );
+              }}
+            </Get>
+          </section>
+        </main>
+        <Footer loading={!this.state.display}></Footer>
+      </div>
+    );
+  }
 }

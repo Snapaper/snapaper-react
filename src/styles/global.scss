@@ -1207,7 +1207,7 @@ tr {
 
   a {
     text-decoration: none;
-    color: #999 !important;
+    color: #666 !important;
     letter-spacing: 0.5px;
   }
 }
@@ -1710,4 +1710,130 @@ tr {
   color: #888;
   font-weight: 300;
   letter-spacing: 0.3px;
+  h2 {
+    margin-bottom: 0px;
+  }
+}
+
+.next-index-os-div {
+  margin-top: 15px !important;
+}
+
+.next-index-os-btn {
+  width: 100% !important;
+  margin-top: 20px !important;
+}
+
+.topic-list {
+  grid-template-columns: repeat(2, 1fr) !important;
+  margin-bottom: 22vh;
+  em {
+    background: #f2f3f4;
+    padding: 0.2em 0.7em 0.2em 0.8em;
+    border-radius: 5px;
+    font-style: normal;
+    border: 1px solid #eee;
+    margin-right: 10px;
+  }
+}
+
+.topic-header {
+  white-space: nowrap;
+  padding-top: 30px;
+}
+
+.next-topic-header {
+  padding-bottom: 30px !important;
+}
+
+.savemyexams {
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 40px !important;
+  padding-bottom: 30px !important;
+  border-bottom: 1px solid #eee;
+}
+
+@media screen and (max-width: 600px) {
+  .header-div {
+    text-align: center;
+    p {
+      font-size: 23px;
+      color: #73849a;
+      font-weight: 600;
+      margin: 0px;
+      img {
+        max-width: 45px;
+        margin-top: -2px;
+      }
+    }
+  }
+
+  .ant-container {
+    max-width: 90% !important;
+    padding-top: 13vh !important;
+    padding-bottom: 13vh !important;
+  }
+
+  .next-index-section-one {
+    display: unset;
+  }
+
+  .next-index-card-large {
+    margin-right: 0px;
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+
+  .next-index-section-cards {
+    margin-top: 3vh;
+  }
+
+  .next-index-section-two {
+    display: none;
+  }
+
+  .footer-div {
+    display: none;
+  }
+
+  .next-index-section-cards .card {
+    padding: 1.2em;
+  }
+
+  .next-index-card-large div {
+    padding: 2em 2em 2.3em 2em;
+  }
+  .next-index-section-cards .card h2 {
+    line-height: 1.2;
+    margin-bottom: 10px;
+  }
+  .next-cate-header-info {
+    display: none;
+  }
+  .next-cate-subject {
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+  .next-cate-header {
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+  }
+  .next-cate-header h1 {
+    font-size: 33px;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .next-cate-header p {
+    line-height: 1.4;
+    font-size: 14px;
+  }
+  .footer-div-bottom {
+    display: none;
+  }
+  .next-paper-header-info {
+    display: none;
+  }
 }

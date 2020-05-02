@@ -123,6 +123,12 @@ export default class Alevel extends React.Component {
                   </p>
                 </div>
                 </Link>
+                <div className="next-cate-subjects-list">
+                  <a href="https://www.examsolutions.net/a-level-maths/ocr/" target="_blank"><h2>Further Mathematics OCR</h2></a>
+                  <p>
+                    Click title to visit website <CaretRightOutlined />
+                  </p>
+                </div>
               </Modal>
             </div>
           </section>
@@ -138,6 +144,11 @@ export default class Alevel extends React.Component {
                 this.setState({
                   display: true,
                   subjectCount: response.data.count
+                })
+              }
+              onLoading={() =>
+                this.setState({
+                  display: false
                 })
               }
             >
