@@ -17,6 +17,7 @@ class Footer extends React.Component {
     }
   }
   render() {
+    // 根据 loading 参数调整样式
     return (
       <footer
         className={

@@ -1,8 +1,12 @@
-import Link from "next/link";
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import isMobile from "ismobilejs";
-import Header from "../../../components/header";
-import Footer from "../../../components/footer";
+
+// 动态引入组件
+const Header = dynamic(() => import("../../../components/header"));
+const Footer = dynamic(() => import("../../../components/footer"));
+
+// 引入 AntD 组件
 import {
   notification,
   Skeleton,
@@ -10,22 +14,25 @@ import {
   Modal,
   Empty,
   Table,
-  Radio,
   Tag,
   Progress,
   Popover,
 } from "antd";
-import {
-  ArrowLeftOutlined,
-  FireOutlined,
-  CaretRightOutlined,
-  CheckCircleOutlined,
-} from "@ant-design/icons";
+import { ArrowLeftOutlined, CheckCircleOutlined } from "@ant-design/icons";
+
+// 引入 axios 库
 import { Get } from "react-axios";
+
+// 引入 Cookies 获取功能
 import Cookies from "js-cookie";
+
+// 引入 Router 参数获取功能
 import { withRouter } from "next/router";
+
+// 引入 jQuery 以支持下载
 import $ from "jquery";
 
+// 配置提示触发函数
 const openNotificationWithIcon = (type, content) => {
   notification[type]({
     message: "Notification",
@@ -33,13 +40,22 @@ const openNotificationWithIcon = (type, content) => {
   });
 };
 
+// 全部试卷数据
 var paperData = {};
+
+// 已选择试卷 key 数组
 var selectedPapers = [];
+
+// 下载进度
 var downloadProgress = {
   done: 0,
   all: 100,
 };
+
+// 下载状态(以判断是否能关闭下载 Modal)
 var noDownloadNow = true;
+
+// 仍需下载数组(下载模式二在列表下载完成后继续从此列表下载)
 var stillNeedDownloadlist = [];
 
 /* 下载、预览交互函数 */
@@ -65,7 +81,7 @@ function downloadList() {
   let length = keys.length;
   let number = 0;
   let ListDownload = function () {
-    if (number >= length) {
+    if (number == length) {
       window.clearInterval(interval);
       number = 0;
       downloadProgress.done = 0;
@@ -78,19 +94,16 @@ function downloadList() {
         stillNeedDownloadlist.length
       ) {
         let list = stillNeedDownloadlist;
-        console.log(stillNeedDownloadlist);
         let i = 0;
         let download = function () {
-          if (i >= list.length) {
-            i = 0;
-            stillNeedDownloadlist = [];
-            window.clearInterval(intervalStill);
+          if (i == list.length) {
+            window.clearInterval(interval);
           } else {
             downloadFile(list[i]);
             i++;
           }
         };
-        window.intervalStill = setInterval(download, 3000);
+        window.interval = setInterval(download, 3000);
       }
     } else {
       downloadFile(paperData[keys[number] - 1].url);
@@ -138,6 +151,7 @@ function downloadAll() {
 }
 /* 下载、预览交互函数 */
 
+//  AntD 表格配置
 const columns = [
   {
     title: "Name",
@@ -242,12 +256,14 @@ const columns = [
   },
 ];
 
+// 表格选择回调函数
 const rowSelection = {
   onChange: (selectedRowKeys) => {
     selectedPapers = selectedRowKeys;
   },
 };
 
+// AntD 表格组件
 const Papertable = () => {
   const [selectionType, setSelectionType] = useState("checkbox");
   return (
@@ -264,7 +280,7 @@ const Papertable = () => {
   );
 };
 
-class AlevelSubject extends React.Component {
+class igcseSubject extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -283,6 +299,7 @@ class AlevelSubject extends React.Component {
     // 暴露内部 this 给外部
     window.outter = this;
   }
+  // 外部函数下载列表触发
   doDownloadList() {
     if (selectedPapers.length) {
       this.setState({ downloadVisible: true });
@@ -291,6 +308,7 @@ class AlevelSubject extends React.Component {
       openNotificationWithIcon("error", "None of the papers are selected");
     }
   }
+  // 外部函数下载全部触发
   doDownloadAll() {
     if (paperData.length) {
       this.setState({ downloadVisible: true });
@@ -310,11 +328,11 @@ class AlevelSubject extends React.Component {
                 <h1>
                   {this.props.router.query.subject
                     ? this.props.router.query.subject
-                    : "A Levels"}
+                    : "IGCSE"}
                 </h1>
                 <p>
-                  Cambridge International General Certificate of Education
-                  Advanced Level
+                  Cambridge International General Certificate of Secondary
+                  Education
                 </p>
               </div>
               <div className="next-cate-header-badge">
@@ -322,7 +340,7 @@ class AlevelSubject extends React.Component {
                   <p className="title">Exam</p>
                   <p className="source">
                     <img src="https://static.ouorz.com/QQ20200114-203749@2x.png" />{" "}
-                    A Levels
+                    IGCSE
                   </p>
                 </div>
                 <div>
@@ -346,6 +364,7 @@ class AlevelSubject extends React.Component {
                 </Button>
               </div>
               <div className="downloading">
+                {/* 下载模式 Modal */}
                 <Popover
                   placement="bottom"
                   content={
@@ -395,11 +414,13 @@ class AlevelSubject extends React.Component {
                 >
                   <div className="left">Downloading Mode</div>
                 </Popover>
+                {/* 下载模式 Modal */}
                 <div className="right">
                   <div onClick={() => this.doDownloadList()}>Download List</div>
                   <div onClick={() => this.doDownloadAll()}>Download All</div>
                 </div>
               </div>
+              {/* 下载进度 Modal */}
               <Modal
                 title="Downloading Papers"
                 visible={this.state.downloadVisible}
@@ -421,147 +442,151 @@ class AlevelSubject extends React.Component {
                   status={this.state.progress == 100 ? "success" : "active"}
                 />
               </Modal>
+              {/* 下载进度 Modal */}
             </div>
           </section>
-          {this.props.router.query.subject ? (
-            this.state.isMobile ? (
-              <Get
-                url={
-                  "https://www.snapaper.com/vue/papers?cate=A%20Levels&sub=" +
-                  this.props.router.query.subject +
-                  "&node=" +
-                  (Cookies.get("snapaper_server")
-                    ? Cookies.get("snapaper_server")
-                    : "1")
-                }
-                onSuccess={(response) =>
-                  this.setState({
-                    display: true,
-                    subjectCount: response.data.count,
-                  })
-                }
-                onLoading={() =>
-                  this.setState({
-                    display: false,
-                  })
-                }
-              >
-                {(error, response, isLoading, onReload) => {
-                  if (error) {
-                    openNotificationWithIcon(
-                      "error",
-                      "Request error, please report to TonyHe"
-                    );
-                    return (
-                      <div className="next-cate-error">
-                        <Empty description={false} />
-                        <p>{error.message}</p>
-                      </div>
-                    );
-                  } else if (isLoading) {
-                    return (
-                      <div>
-                        <Skeleton active />
-                        <Skeleton active />
-                      </div>
-                    );
-                  } else if (response !== null) {
-                    paperData = response.data.papers;
-                    // 请求成功展示列表
-                    return (
-                      <div className="next-cate-subject">
-                        {response.data.papers.map((item, index) => {
-                          if (!!item.name && item.name !== "error_log") {
-                            return (
-                              <div key={index}>
-                                <a href={item.url} target="_blank">
-                                  <h2>{item.name.replace("amp;", "")}</h2>
-                                </a>
-                                <p>
+          {
+            // 手机端使用不同样式表格
+            this.props.router.query.subject ? (
+              this.state.isMobile ? (
+                <Get
+                  url={
+                    "https://www.snapaper.com/vue/papers?cate=IGCSE&sub=" +
+                    this.props.router.query.subject +
+                    "&node=" +
+                    (Cookies.get("snapaper_server")
+                      ? Cookies.get("snapaper_server")
+                      : "1")
+                  }
+                  onSuccess={(response) =>
+                    this.setState({
+                      display: true,
+                      subjectCount: response.data.count,
+                    })
+                  }
+                  onLoading={() =>
+                    this.setState({
+                      display: false,
+                    })
+                  }
+                >
+                  {(error, response, isLoading, onReload) => {
+                    if (error) {
+                      openNotificationWithIcon(
+                        "error",
+                        "Request error, please report to TonyHe"
+                      );
+                      return (
+                        <div className="next-cate-error">
+                          <Empty description={false} />
+                          <p>{error.message}</p>
+                        </div>
+                      );
+                    } else if (isLoading) {
+                      return (
+                        <div>
+                          <Skeleton active />
+                          <Skeleton active />
+                        </div>
+                      );
+                    } else if (response !== null) {
+                      paperData = response.data.papers;
+                      // 请求成功展示列表
+                      return (
+                        <div className="next-cate-subject">
+                          {response.data.papers.map((item, index) => {
+                            if (!!item.name && item.name !== "error_log") {
+                              return (
+                                <div key={index}>
                                   <a href={item.url} target="_blank">
-                                    Click to download <CaretRightOutlined />
+                                    <h2>{item.name.replace("amp;", "")}</h2>
                                   </a>
-                                </p>
-                              </div>
-                            );
-                          }
-                        })}
-                      </div>
-                    );
-                  }
-                  return (
-                    <div>
-                      <Skeleton active />
-                      <Skeleton active />
-                    </div>
-                  );
-                }}
-              </Get>
-            ) : (
-              <Get
-                url={
-                  "https://www.snapaper.com/vue/papers?cate=A%20Levels&sub=" +
-                  this.props.router.query.subject +
-                  "&node=" +
-                  (Cookies.get("snapaper_server")
-                    ? Cookies.get("snapaper_server")
-                    : "1")
-                }
-                onSuccess={(response) =>
-                  this.setState({
-                    display: true,
-                    subjectCount: response.data.count,
-                  })
-                }
-                onLoading={() =>
-                  this.setState({
-                    display: false,
-                  })
-                }
-              >
-                {(error, response, isLoading, onReload) => {
-                  if (error) {
-                    openNotificationWithIcon(
-                      "error",
-                      "Request error, please report to TonyHe"
-                    );
-                    return (
-                      <div className="next-cate-error">
-                        <Empty description={false} />
-                        <p>{error.message}</p>
-                      </div>
-                    );
-                  } else if (isLoading) {
+                                  <p>
+                                    <a href={item.url} target="_blank">
+                                      Click to download <CaretRightOutlined />
+                                    </a>
+                                  </p>
+                                </div>
+                              );
+                            }
+                          })}
+                        </div>
+                      );
+                    }
                     return (
                       <div>
                         <Skeleton active />
                         <Skeleton active />
                       </div>
                     );
-                  } else if (response !== null) {
-                    paperData = response.data.papers;
-                    // 请求成功展示列表
+                  }}
+                </Get>
+              ) : (
+                <Get
+                  url={
+                    "https://www.snapaper.com/vue/papers?cate=IGCSE&sub=" +
+                    this.props.router.query.subject +
+                    "&node=" +
+                    (Cookies.get("snapaper_server")
+                      ? Cookies.get("snapaper_server")
+                      : "1")
+                  }
+                  onSuccess={(response) =>
+                    this.setState({
+                      display: true,
+                      subjectCount: response.data.count,
+                    })
+                  }
+                  onLoading={() =>
+                    this.setState({
+                      display: false,
+                    })
+                  }
+                >
+                  {(error, response, isLoading, onReload) => {
+                    if (error) {
+                      openNotificationWithIcon(
+                        "error",
+                        "Request error, please report to TonyHe"
+                      );
+                      return (
+                        <div className="next-cate-error">
+                          <Empty description={false} />
+                          <p>{error.message}</p>
+                        </div>
+                      );
+                    } else if (isLoading) {
+                      return (
+                        <div>
+                          <Skeleton active />
+                          <Skeleton active />
+                        </div>
+                      );
+                    } else if (response !== null) {
+                      paperData = response.data.papers;
+                      // 请求成功展示列表
+                      return (
+                        <div className="next-paper-papers">
+                          <Papertable></Papertable>
+                        </div>
+                      );
+                    }
                     return (
-                      <div className="next-paper-papers">
-                        <Papertable></Papertable>
+                      <div>
+                        <Skeleton active />
+                        <Skeleton active />
                       </div>
                     );
-                  }
-                  return (
-                    <div>
-                      <Skeleton active />
-                      <Skeleton active />
-                    </div>
-                  );
-                }}
-              </Get>
+                  }}
+                </Get>
+              )
+            ) : (
+              <div>
+                <Skeleton active />
+                <Skeleton active />
+              </div>
             )
-          ) : (
-            <div>
-              <Skeleton active />
-              <Skeleton active />
-            </div>
-          )}
+          }
         </main>
         <Footer loading={!this.state.display}></Footer>
       </div>
@@ -569,4 +594,4 @@ class AlevelSubject extends React.Component {
   }
 }
 
-export default withRouter(AlevelSubject);
+export default withRouter(igcseSubject);

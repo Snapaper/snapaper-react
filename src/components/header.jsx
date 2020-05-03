@@ -190,7 +190,12 @@ export default class Header extends React.Component {
               </Popover>
 
               <li className="nav-2-icon1 next-nav-icon-2">
-                <a href="https://shimo.im/forms/KcY8hKypp9wkrtG6/fill" target="_blank">@next</a>
+                <a
+                  href="https://shimo.im/forms/KcY8hKypp9wkrtG6/fill"
+                  target="_blank"
+                >
+                  @next
+                </a>
               </li>
             </ul>
           </Menu>

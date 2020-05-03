@@ -1,12 +1,21 @@
 import React from "react";
-import isMobile from "ismobilejs";
-import Header from "../../components/header";
-import Footer from "../../components/footer";
+import dynamic from "next/dynamic";
+
+//动态引入组件
+const Header = dynamic(() => import("../../components/header"));
+const Footer = dynamic(() => import("../../components/footer"));
+
+// 引入 AntD 资源
 import { notification, Skeleton, Button, Empty } from "antd";
 import { ArrowLeftOutlined, CaretRightOutlined } from "@ant-design/icons";
+
+// 引入 axios 进行 HTTP 请求
 import { Get } from "react-axios";
+
+// 引入 jQuery 进行下载创建
 import $ from "jquery";
 
+// 配置提示触发函数
 const openNotificationWithIcon = (type, content) => {
   notification[type]({
     message: "Notification",
@@ -14,6 +23,7 @@ const openNotificationWithIcon = (type, content) => {
   });
 };
 
+// 文件下载创建函数
 function downloadFile(srcUrl) {
   var $a = $("<a/>")
     .attr("href", "https://www.snapaper.com/download?filename=" + srcUrl)
@@ -29,11 +39,6 @@ export default class Ebooks extends React.Component {
       MBSvisible: false,
       subjectCount: 0,
     };
-  }
-  componentDidMount() {
-    this.setState({
-      isMobile: isMobile(window.navigator).any,
-    });
   }
   render() {
     return (

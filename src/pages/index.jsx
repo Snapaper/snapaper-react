@@ -1,7 +1,12 @@
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import React from "react";
-import Header from "../components/header";
-import Footer from "../components/footer";
+
+//动态引入组件
+const Header = dynamic(() => import("../components/header"));
+const Footer = dynamic(() => import("../components/footer"));
+
+// 引入 AntD 图标
 import {
   InfoCircleFilled,
   FieldNumberOutlined,
@@ -9,10 +14,14 @@ import {
   CalendarOutlined,
   NumberOutlined,
 } from "@ant-design/icons";
+
+// 按需引入 AntD 组件
 import { Input, Tooltip, Modal, Select, Button, notification } from "antd";
 
+// 使用 Select 的衍生组件 Option
 const { Option } = Select;
 
+// 配置提示触发函数
 const openNotificationWithIcon = (type, content) => {
   notification[type]({
     message: "Notification",
@@ -53,6 +62,7 @@ export default class Index extends React.Component {
   handleSubjectChange = (e) => {
     this.setState({ subject: e.target.value });
   };
+  // 一步功能
   oneStep = () => {
     if (
       !!this.state.month &&
@@ -87,8 +97,10 @@ export default class Index extends React.Component {
         "_" +
         this.state.paper +
         ".pdf";
+      //导航至网址
       window.location.href = url;
     } else {
+      //信息不全触发提示
       openNotificationWithIcon("error", "Incomplete information");
     }
   };
@@ -110,6 +122,7 @@ export default class Index extends React.Component {
                 <p>A nice and easy way to find a paper</p>
               </div>
             </section>
+            {/* 一步弹窗 */}
             <Modal
               title="One Step"
               visible={this.state.OSvisible}
@@ -174,6 +187,7 @@ export default class Index extends React.Component {
                 Find
               </Button>
             </Modal>
+            {/* 一步弹窗 */}
             <section className="next-index-section-cards">
               <Link href="/cate/igcse">
                 <div className="card">

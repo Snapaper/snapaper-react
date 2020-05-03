@@ -1,17 +1,27 @@
 import Link from "next/link";
 import React from "react";
+import dynamic from "next/dynamic";
 import isMobile from "ismobilejs";
-import Header from "../../components/header";
-import Footer from "../../components/footer";
+
+// 动态引入组件
+const Header = dynamic(() => import("../../components/header"));
+const Footer = dynamic(() => import("../../components/footer"));
+
+// 引入 AntD 组件
 import { notification, Skeleton, Button, Modal, Empty } from "antd";
 import {
   ArrowLeftOutlined,
   FireOutlined,
   CaretRightOutlined,
 } from "@ant-design/icons";
+
+// 引入 axios 模块
 import { Get } from "react-axios";
+
+// 引入 Cookies 获取模块
 import Cookies from "js-cookie";
 
+// 提示触发函数
 const openNotificationWithIcon = (type, content) => {
   notification[type]({
     message: "Notification",
@@ -19,7 +29,7 @@ const openNotificationWithIcon = (type, content) => {
   });
 };
 
-export default class Alevel extends React.Component {
+export default class igcse extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -88,52 +98,52 @@ export default class Alevel extends React.Component {
                 onCancel={() => this.setState({ MBSvisible: false })}
               >
                 <Link href="/paper/igcse/Chemistry%20(0620)">
-                <div className="next-cate-subjects-list">
-                  <h2>Chemistry</h2>
-                  <p>
-                    Click to browse all papers <CaretRightOutlined />
-                  </p>
-                </div>
+                  <div className="next-cate-subjects-list">
+                    <h2>Chemistry</h2>
+                    <p>
+                      Click to browse all papers <CaretRightOutlined />
+                    </p>
+                  </div>
                 </Link>
                 <Link href="/paper/igcse/Physics%20(0625)">
-                <div className="next-cate-subjects-list">
-                  <h2>Physics</h2>
-                  <p>
-                    Click to browse all papers <CaretRightOutlined />
-                  </p>
-                </div>
+                  <div className="next-cate-subjects-list">
+                    <h2>Physics</h2>
+                    <p>
+                      Click to browse all papers <CaretRightOutlined />
+                    </p>
+                  </div>
                 </Link>
                 <Link href="/paper/igcse/Economics%20(0455)">
-                <div className="next-cate-subjects-list">
-                  <h2>Economics</h2>
-                  <p>
-                    Click to browse all papers <CaretRightOutlined />
-                  </p>
-                </div>
+                  <div className="next-cate-subjects-list">
+                    <h2>Economics</h2>
+                    <p>
+                      Click to browse all papers <CaretRightOutlined />
+                    </p>
+                  </div>
                 </Link>
                 <Link href="/paper/igcse/Mathematics%20(0580)">
-                <div className="next-cate-subjects-list">
-                  <h2>Mathematics</h2>
-                  <p>
-                    Click to browse all papers <CaretRightOutlined />
-                  </p>
-                </div>
+                  <div className="next-cate-subjects-list">
+                    <h2>Mathematics</h2>
+                    <p>
+                      Click to browse all papers <CaretRightOutlined />
+                    </p>
+                  </div>
                 </Link>
                 <Link href="/paper/igcse/Mathematics%20-%20Additional%20(0606)">
-                <div className="next-cate-subjects-list">
-                  <h2>Additional Mathematics</h2>
-                  <p>
-                    Click to browse all papers <CaretRightOutlined />
-                  </p>
-                </div>
+                  <div className="next-cate-subjects-list">
+                    <h2>Additional Mathematics</h2>
+                    <p>
+                      Click to browse all papers <CaretRightOutlined />
+                    </p>
+                  </div>
                 </Link>
                 <Link href="/paper/igcse/Global%20Perspectives%20(0457)">
-                <div className="next-cate-subjects-list">
-                  <h2>Global Perspectives</h2>
-                  <p>
-                    Click to browse all papers <CaretRightOutlined />
-                  </p>
-                </div>
+                  <div className="next-cate-subjects-list">
+                    <h2>Global Perspectives</h2>
+                    <p>
+                      Click to browse all papers <CaretRightOutlined />
+                    </p>
+                  </div>
                 </Link>
               </Modal>
             </div>
@@ -154,7 +164,7 @@ export default class Alevel extends React.Component {
               }
               onLoading={() =>
                 this.setState({
-                  display: false
+                  display: false,
                 })
               }
             >
@@ -184,14 +194,14 @@ export default class Alevel extends React.Component {
                       {response.data.cates.map((item, index) => {
                         if (!!item.name && item.name !== "error_log") {
                           return (
-                            <Link href={'/paper/igcse/'+item.name}>
-                            <div key={index}>
-                              <h2>{item.name.replace("amp;", "")}</h2>
-                              <p>
-                                Click to browse all papers{" "}
-                                <CaretRightOutlined />
-                              </p>
-                            </div>
+                            <Link href={"/paper/igcse/" + item.name}>
+                              <div key={index}>
+                                <h2>{item.name.replace("amp;", "")}</h2>
+                                <p>
+                                  Click to browse all papers{" "}
+                                  <CaretRightOutlined />
+                                </p>
+                              </div>
                             </Link>
                           );
                         }
