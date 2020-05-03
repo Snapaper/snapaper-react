@@ -132,7 +132,6 @@ export default class Index extends React.Component {
               <Input
                 onChange={this.handleSubjectChange}
                 placeholder="Enter subject Code"
-                className="next-index-os-div"
                 size="large"
                 prefix={<FieldNumberOutlined className="site-form-item-icon" />}
                 suffix={
@@ -143,7 +142,7 @@ export default class Index extends React.Component {
               />
               <Input
                 onChange={this.handlePaperChange}
-                placeholder="Enter paper number"
+                placeholder="Enter paper number eg.42"
                 className="next-index-os-div"
                 prefix={<NumberOutlined className="site-form-item-icon" />}
                 size="large"
@@ -162,7 +161,7 @@ export default class Index extends React.Component {
               </Select>
               <Input
                 onChange={this.handleYearChange}
-                placeholder="Enter year number"
+                placeholder="Enter year number eg.17"
                 className="next-index-os-div"
                 prefix={<CalendarOutlined className="site-form-item-icon" />}
                 size="large"
