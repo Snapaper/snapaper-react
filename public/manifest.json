@@ -1,0 +1,24 @@
+{
+  "name": "Snapaper",
+  "short_name": "Snapaper",
+  "icons": [{
+      "src": "snapaper_logo.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "snapaper_logo_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "snapaper_logo_512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#f1f2f3",
+  "background_color": "#f6f7f8"
+}
