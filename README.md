@@ -33,21 +33,26 @@
 ### Development
 ```bash
 git clone git@github.com:Snapaper/snapaper-react.git
+yarn install
 ```
+
 ```bash
-// Development Mode
+// Development Server
 yarn run dev
 ```
+
 ```bash
-// Production Mode
+// Production Build
 yarn run build
 ```
+
 ```bash
 // Static Website
 yarn run export
 ```
+
 ```bash
-// Node.js Service
+// Server-Side Rendering
 yarn run start
 ```
 
