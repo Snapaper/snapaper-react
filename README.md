@@ -20,15 +20,19 @@
 ### ScreenShot
 <br/>
 
-![Thumbnail_index](https://i.loli.net/2020/05/03/2CWP7jcBIK5m8rD.png)
+![Thumbnail_index](https://i.loli.net/2020/05/04/i3dPmcohslFXgI9.png)
+
 
 <br/>
+
 
 ### Tech Stack
-- React.js
-- Next.js
+- React.js 16.13.1
+- Next.js 9.3
+
 
 <br/>
+
 
 ### Development
 ```bash
@@ -56,21 +60,27 @@ yarn run export
 yarn run start
 ```
 
+
 <br/>
+
 
 ### Features
 + Ant Design 4
 + React-Axios
 + Ismobilejs
 + Js-Cookie
++ Next-pwa
+
 
 <br/>
+
 
 ### Change Logs
 [https://www.snapaper.com](https://www.snapaper.com/about)
 
 
 <br/>
+
 
 ### Donate to me
 Your name will be on the list [Donation](https://www.ouorz.com/donation)
