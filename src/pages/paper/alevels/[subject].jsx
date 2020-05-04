@@ -165,6 +165,7 @@ const columns = [
     key: "name",
     width: 250,
     ellipsis: true,
+    sorter: (a, b) => parseInt(a.name.split('_')[1].substr(1)) - parseInt(b.name.split('_')[1].substr(1)),
   },
   {
     title: "Link",
@@ -217,6 +218,17 @@ const columns = [
         })}
       </span>
     ),
+    filters: [
+      {
+        text: 'Mark Scheme',
+        value: 'Mark Scheme',
+      },
+      {
+        text: 'Question Paper',
+        value: 'Question Paper',
+      }
+    ],
+    onFilter: (value, record) => record.info.indexOf(value) === 0
   },
   {
     title: "Action",
@@ -329,7 +341,7 @@ class AlevelSubject extends React.Component {
               <div>
                 <h1>
                   {this.props.router.query.subject
-                    ? this.props.router.query.subject
+                    ? this.props.router.query.subject.replace("amp;", "")
                     : "A Levels"}
                 </h1>
                 <p>
@@ -489,7 +501,7 @@ class AlevelSubject extends React.Component {
                     paperData = response.data.papers;
                     // 请求成功展示列表
                     return (
-                      <div className="next-cate-subject">
+                      <div className="next-cate-subject mobile-list">
                         {response.data.papers.map((item, index) => {
                           if (!!item.name && item.name !== "error_log") {
                             return (
@@ -498,6 +510,7 @@ class AlevelSubject extends React.Component {
                                   <h2>{item.name.replace("amp;", "")}</h2>
                                 </a>
                                 <p>
+                                  <em>{item.type}</em>
                                   <a href={item.url} target="_blank">
                                     Click to download <CaretRightOutlined />
                                   </a>
