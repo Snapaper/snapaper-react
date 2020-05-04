@@ -197,7 +197,7 @@ export default class Alevel extends React.Component {
                       {response.data.cates.map((item, index) => {
                         if (!!item.name && item.name !== "error_log") {
                           return (
-                            <Link href={"/paper/alevels/" + item.name}>
+                            <Link href={"/paper/alevels/" + item.name.replace("amp;", "")}>
                               <div key={index}>
                                 <h2>{item.name.replace("amp;", "")}</h2>
                                 <p>
