@@ -1,3 +1,4 @@
+import { BackTop } from "antd";
 import { HeartFilled, GithubFilled, UserOutlined } from "@ant-design/icons";
 import React from "react";
 import { withRouter } from "next/router";
@@ -26,11 +27,12 @@ class Footer extends React.Component {
             : "footer-div-bottom"
         }
       >
+        <BackTop />
         <div className="footer-container">
           <div>
             <p>
               &copy; Copyright 2018-2020 Snapaper · Made with <HeartFilled />{" "}
-              for the People of the Internet · 蜀ICP备16017417号-10
+              for the People of the Internet · <a href="http://www.beian.miit.gov.cn" target="_blank" className="icp">蜀ICP备16017417号-10</a>
             </p>
           </div>
           <div>
