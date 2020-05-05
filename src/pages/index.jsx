@@ -116,7 +116,7 @@ export default class Index extends React.Component {
                 this.setState({ OSvisible: true });
               }}
             >
-              <img src="https://static.ouorz.com/feature-component-actionsheet-icon.png" />
+              <img src="https://www.snapaper.com/vue/image?place=index_1" />
               <div>
                 <h1>One Step</h1>
                 <p>A nice and easy way to find a paper</p>
@@ -191,7 +191,7 @@ export default class Index extends React.Component {
               <Link href="/cate/igcse">
                 <div className="card">
                   <div>
-                    <img src="https://static.ouorz.com/ribbon.png" />
+                    <img src="https://www.snapaper.com/vue/image?place=index_2" />
                   </div>
                   <div>
                     <h2>IGCSE</h2>
@@ -205,7 +205,7 @@ export default class Index extends React.Component {
               <Link href="/cate/alevels">
                 <div className="card">
                   <div>
-                    <img src="https://static.ouorz.com/school.png" />
+                    <img src="https://www.snapaper.com/vue/image?place=index_3" />
                   </div>
                   <div>
                     <h2>A Levels</h2>
@@ -219,7 +219,7 @@ export default class Index extends React.Component {
               <Link href="/topic/ebooks">
                 <div className="card">
                   <div>
-                    <img src="https://static.ouorz.com/library-icon.png" />
+                    <img src="https://www.snapaper.com/vue/image?place=index_4" />
                   </div>
                   <div>
                     <h2>PDF eBooks</h2>
@@ -233,7 +233,7 @@ export default class Index extends React.Component {
               <Link href="/topic/savemyexams">
                 <div className="card">
                   <div>
-                    <img src="https://static.ouorz.com/shapes.png" />
+                    <img src="https://www.snapaper.com/vue/image?place=index_5" />
                   </div>
                   <div>
                     <h2>Save My Exams</h2>
@@ -262,13 +262,13 @@ export default class Index extends React.Component {
             </div>
             <div className="next-index-card-right">
               <div>
-                <a href="https://www.ouorz.com/donation">
+                <a href="https://www.ouorz.com/donation" target="_blank" rel="noreferrer">
                   <h1>Donation</h1>
                 </a>
                 <p>Snapaper is alway going to be powered by Love</p>
               </div>
               <div>
-                <img src="https://static.ouorz.com/donation.jpg" />
+                <img src="https://www.snapaper.com/vue/image?place=index_6" />
               </div>
             </div>
           </section>
