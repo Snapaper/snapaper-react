@@ -28,7 +28,6 @@ export default class extends Document {
             name="viewport"
             content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
           />
-
           <link
             rel="apple-touch-icon"
             sizes="192x192"
@@ -36,14 +35,11 @@ export default class extends Document {
           />
           <link rel="manifest" href="/manifest.json" />
           <link rel="shortcut icon" href="/snapaper_logo.ico" />
-          <style>{`
-            html, body, #__next {
-              height: 100%;
-            }
-            #__next {
-              margin: 0 auto;
-            }
-            `}</style>
+          <link
+            rel="preload"
+            href="https://static.ouorz.com/snapaper@next.png"
+            as="image"
+          />
         </Head>
         <body>
           <Main />
