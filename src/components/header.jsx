@@ -112,10 +112,10 @@ export default class Header extends React.Component {
               </Link>
             </Menu.Item>
             <Menu.Item>
-              <a href="https://www.eugrade.com">Eugrade</a>
+              <a href="https://www.eugrade.com" target="_blank" rel="noreferrer">Eugrade</a>
             </Menu.Item>
             <Menu.Item>
-              <a href="https://platform.snapaper.com">Study Platform</a>
+              <a href="https://platform.snapaper.com" target="_blank" rel="noreferrer">Study Platform</a>
             </Menu.Item>
           </SubMenu>
           <SubMenu icon={<CaretDownOutlined />} title="Resources">
@@ -137,12 +137,12 @@ export default class Header extends React.Component {
               </Link>
             </Menu.Item>
             <Menu.Item>
-              <a href="https://www.ouorz.com/donation" target="_blank">
+              <a href="https://www.ouorz.com/donation" target="_blank" rel="noreferrer">
                 Donation
               </a>
             </Menu.Item>
             <Menu.Item>
-              <a href="https://www.ouorz.com/" target="_blank">
+              <a href="https://www.ouorz.com/">
                 Blog
               </a>
             </Menu.Item>

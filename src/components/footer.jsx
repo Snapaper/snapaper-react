@@ -32,11 +32,23 @@ class Footer extends React.Component {
           <div>
             <p>
               &copy; Copyright 2018-2020 Snapaper · Made with <HeartFilled />{" "}
-              for the People of the Internet · <a href="http://www.beian.miit.gov.cn" target="_blank" className="icp">蜀ICP备16017417号-10</a>
+              for the People of the Internet ·{" "}
+              <a
+                href="http://www.beian.miit.gov.cn"
+                target="_blank"
+                className="icp"
+                rel="noreferrer"
+              >
+                蜀ICP备16017417号-10
+              </a>
             </p>
           </div>
           <div>
-            <a href="https://github.com/Snapaper" target="_blank">
+            <a
+              href="https://github.com/Snapaper"
+              target="_blank"
+              rel="noreferrer"
+            >
               <GithubFilled /> Open-source
             </a>{" "}
             &nbsp;{" "}
