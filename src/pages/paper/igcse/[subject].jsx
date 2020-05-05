@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import isMobile from "ismobilejs";
+import config from "../../../config";
 
 // 动态引入组件
 const Header = dynamic(() => import("../../../components/header"));
@@ -469,9 +470,9 @@ class igcseSubject extends React.Component {
               this.state.isMobile ? (
                 <Get
                   url={
-                    "https://www.snapaper.com/vue/papers?cate=IGCSE&sub=" +
+                    config.apiUrl.papers.igcse +
                     this.props.router.query.subject +
-                    "&node=" +
+                    "/" +
                     (Cookies.get("snapaper_server")
                       ? Cookies.get("snapaper_server")
                       : "1")
@@ -543,9 +544,9 @@ class igcseSubject extends React.Component {
               ) : (
                 <Get
                   url={
-                    "https://www.snapaper.com/vue/papers?cate=IGCSE&sub=" +
+                    config.apiUrl.papers.igcse +
                     this.props.router.query.subject +
-                    "&node=" +
+                    "/" +
                     (Cookies.get("snapaper_server")
                       ? Cookies.get("snapaper_server")
                       : "1")

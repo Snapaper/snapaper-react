@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import dynamic from "next/dynamic";
 import isMobile from "ismobilejs";
+import config from "../../config";
 
 // 动态引入组件
 const Header = dynamic(() => import("../../components/header"));
@@ -97,7 +98,7 @@ export default class Alevel extends React.Component {
                 footer={null}
                 onCancel={() => this.setState({ MBSvisible: false })}
               >
-                <Link href="/paper/alevels/Chemistry%20(9701)">
+                <Link href="/paper/alevels/Chemistry%20(9701)" prefetch={false}>
                   <div className="next-cate-subjects-list">
                     <h2>Chemistry</h2>
                     <p>
@@ -105,7 +106,7 @@ export default class Alevel extends React.Component {
                     </p>
                   </div>
                 </Link>
-                <Link href="/paper/alevels/Physics%20(9702)">
+                <Link href="/paper/alevels/Physics%20(9702)" prefetch={false}>
                   <div className="next-cate-subjects-list">
                     <h2>Physics</h2>
                     <p>
@@ -113,7 +114,7 @@ export default class Alevel extends React.Component {
                     </p>
                   </div>
                 </Link>
-                <Link href="/paper/alevels/Economics%20(9708)">
+                <Link href="/paper/alevels/Economics%20(9708)" prefetch={false}>
                   <div className="next-cate-subjects-list">
                     <h2>Economics</h2>
                     <p>
@@ -121,7 +122,10 @@ export default class Alevel extends React.Component {
                     </p>
                   </div>
                 </Link>
-                <Link href="/paper/alevels/Mathematics%20(9709)">
+                <Link
+                  href="/paper/alevels/Mathematics%20(9709)"
+                  prefetch={false}
+                >
                   <div className="next-cate-subjects-list">
                     <h2>Mathematics</h2>
                     <p>
@@ -129,7 +133,10 @@ export default class Alevel extends React.Component {
                     </p>
                   </div>
                 </Link>
-                <Link href="/paper/alevels/Mathematics%20-%20Further%20(9231)">
+                <Link
+                  href="/paper/alevels/Mathematics%20-%20Further%20(9231)"
+                  prefetch={false}
+                >
                   <div className="next-cate-subjects-list">
                     <h2>Further Mathematics</h2>
                     <p>
@@ -154,7 +161,7 @@ export default class Alevel extends React.Component {
           <section>
             <Get
               url={
-                "https://www.snapaper.com/vue/cates?cate=A%20Levels&node=" +
+                config.apiUrl.cates.alevel +
                 (Cookies.get("snapaper_server")
                   ? Cookies.get("snapaper_server")
                   : "1")
@@ -197,8 +204,15 @@ export default class Alevel extends React.Component {
                       {response.data.cates.map((item, index) => {
                         if (!!item.name && item.name !== "error_log") {
                           return (
-                            <Link href={"/paper/alevels/" + item.name.replace("amp;", "")}>
-                              <div key={index}>
+                            <Link
+                              href={
+                                "/paper/alevels/" +
+                                item.name.replace("amp;", "")
+                              }
+                              prefetch={false}
+                              key={index}
+                            >
+                              <div>
                                 <h2>{item.name.replace("amp;", "")}</h2>
                                 <p>
                                   Click to browse all papers{" "}

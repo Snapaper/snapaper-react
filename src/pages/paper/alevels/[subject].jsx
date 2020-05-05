@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import isMobile from "ismobilejs";
+import config from "../../../config";
 
 // 动态引入组件
 const Header = dynamic(() => import("../../../components/header"));
@@ -165,7 +166,9 @@ const columns = [
     key: "name",
     width: 250,
     ellipsis: true,
-    sorter: (a, b) => parseInt(a.name.split('_')[1].substr(1)) - parseInt(b.name.split('_')[1].substr(1)),
+    sorter: (a, b) =>
+      parseInt(a.name.split("_")[1].substr(1)) -
+      parseInt(b.name.split("_")[1].substr(1)),
   },
   {
     title: "Link",
@@ -220,15 +223,15 @@ const columns = [
     ),
     filters: [
       {
-        text: 'Mark Scheme',
-        value: 'Mark Scheme',
+        text: "Mark Scheme",
+        value: "Mark Scheme",
       },
       {
-        text: 'Question Paper',
-        value: 'Question Paper',
-      }
+        text: "Question Paper",
+        value: "Question Paper",
+      },
     ],
-    onFilter: (value, record) => record.info.indexOf(value) === 0
+    onFilter: (value, record) => record.info.indexOf(value) === 0,
   },
   {
     title: "Action",
@@ -459,9 +462,9 @@ class AlevelSubject extends React.Component {
             this.state.isMobile ? (
               <Get
                 url={
-                  "https://www.snapaper.com/vue/papers?cate=A%20Levels&sub=" +
+                  config.apiUrl.papers.alevel +
                   this.props.router.query.subject +
-                  "&node=" +
+                  "/" +
                   (Cookies.get("snapaper_server")
                     ? Cookies.get("snapaper_server")
                     : "1")
@@ -533,9 +536,9 @@ class AlevelSubject extends React.Component {
             ) : (
               <Get
                 url={
-                  "https://www.snapaper.com/vue/papers?cate=A%20Levels&sub=" +
+                  config.apiUrl.papers.alevel +
                   this.props.router.query.subject +
-                  "&node=" +
+                  "/" +
                   (Cookies.get("snapaper_server")
                     ? Cookies.get("snapaper_server")
                     : "1")

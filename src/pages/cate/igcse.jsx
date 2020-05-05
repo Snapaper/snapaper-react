@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import dynamic from "next/dynamic";
 import isMobile from "ismobilejs";
+import config from "../../config";
 
 // 动态引入组件
 const Header = dynamic(() => import("../../components/header"));
@@ -97,7 +98,7 @@ export default class igcse extends React.Component {
                 footer={null}
                 onCancel={() => this.setState({ MBSvisible: false })}
               >
-                <Link href="/paper/igcse/Chemistry%20(0620)">
+                <Link href="/paper/igcse/Chemistry%20(0620)" prefetch={false}>
                   <div className="next-cate-subjects-list">
                     <h2>Chemistry</h2>
                     <p>
@@ -105,7 +106,7 @@ export default class igcse extends React.Component {
                     </p>
                   </div>
                 </Link>
-                <Link href="/paper/igcse/Physics%20(0625)">
+                <Link href="/paper/igcse/Physics%20(0625)" prefetch={false}>
                   <div className="next-cate-subjects-list">
                     <h2>Physics</h2>
                     <p>
@@ -113,7 +114,7 @@ export default class igcse extends React.Component {
                     </p>
                   </div>
                 </Link>
-                <Link href="/paper/igcse/Economics%20(0455)">
+                <Link href="/paper/igcse/Economics%20(0455)" prefetch={false}>
                   <div className="next-cate-subjects-list">
                     <h2>Economics</h2>
                     <p>
@@ -121,7 +122,7 @@ export default class igcse extends React.Component {
                     </p>
                   </div>
                 </Link>
-                <Link href="/paper/igcse/Mathematics%20(0580)">
+                <Link href="/paper/igcse/Mathematics%20(0580)" prefetch={false}>
                   <div className="next-cate-subjects-list">
                     <h2>Mathematics</h2>
                     <p>
@@ -129,7 +130,7 @@ export default class igcse extends React.Component {
                     </p>
                   </div>
                 </Link>
-                <Link href="/paper/igcse/Mathematics%20-%20Additional%20(0606)">
+                <Link href="/paper/igcse/Mathematics%20-%20Additional%20(0606)" prefetch={false}>
                   <div className="next-cate-subjects-list">
                     <h2>Additional Mathematics</h2>
                     <p>
@@ -137,7 +138,7 @@ export default class igcse extends React.Component {
                     </p>
                   </div>
                 </Link>
-                <Link href="/paper/igcse/Global%20Perspectives%20(0457)">
+                <Link href="/paper/igcse/Global%20Perspectives%20(0457)" prefetch={false}>
                   <div className="next-cate-subjects-list">
                     <h2>Global Perspectives</h2>
                     <p>
@@ -151,7 +152,7 @@ export default class igcse extends React.Component {
           <section>
             <Get
               url={
-                "https://www.snapaper.com/vue/cates?cate=IGCSE&node=" +
+                config.apiUrl.cates.igcse +
                 (Cookies.get("snapaper_server")
                   ? Cookies.get("snapaper_server")
                   : "1")
@@ -194,7 +195,7 @@ export default class igcse extends React.Component {
                       {response.data.cates.map((item, index) => {
                         if (!!item.name && item.name !== "error_log") {
                           return (
-                            <Link href={"/paper/igcse/" + item.name.replace("amp;", "")}>
+                            <Link href={"/paper/igcse/" + item.name.replace("amp;", "")} prefetch={false} key={index}>
                               <div key={index}>
                                 <h2>{item.name.replace("amp;", "")}</h2>
                                 <p>
