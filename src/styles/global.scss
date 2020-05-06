@@ -1407,12 +1407,15 @@ tr {
   }
 }
 
+.footer-div-bottom{
+  margin-top: 37vh !important;
+}
+
 .footer-div {
   background: #f8f8fc;
   width: 100%;
   height: auto;
-  position: absolute;
-  bottom: 0px;
+  margin-top: 16vh;
 
   .footer-container {
     max-width: 1200px;
@@ -1435,31 +1438,6 @@ tr {
   }
 }
 
-.footer-div-bottom {
-  background: #f8f8fc;
-  width: 100%;
-  height: auto;
-
-  .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 27px 0px 14px 0px;
-    color: #73849a;
-    font-weight: 300;
-
-    .icp {
-      color: #73849a !important;
-    }
-
-    div {
-      display: inline-block;
-
-      &:nth-child(2) {
-        float: right;
-      }
-    }
-  }
-}
 
 #nprogress .bar {
   background: #7babff !important;

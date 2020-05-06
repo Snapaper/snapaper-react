@@ -4,6 +4,9 @@ module.exports = withPWA({
     pwa: {
         dest: 'public'
     },
+    devIndicators: {
+        autoPrerender: false,
+    },
     pageExtensions: ['jsx', 'js'],
     poweredByHeader: false,
     generateEtags: false,

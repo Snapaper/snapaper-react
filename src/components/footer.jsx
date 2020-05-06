@@ -9,22 +9,14 @@ class Footer extends React.Component {
     super(props);
     this.state = {
       page: props.router.route,
-      loading: props.loading,
     };
-  }
-  componentDidUpdate(prevProps) {
-    if (prevProps.loading !== this.state.loading) {
-      this.state.loading = prevProps.loading;
-    }
   }
   render() {
     // 根据 loading 参数调整样式
     return (
       <footer
         className={
-          this.state.page == "/" || this.props.loading
-            ? "footer-div"
-            : "footer-div-bottom"
+          this.state.page == "/topic/savemyexams" ? "footer-div footer-div-bottom" : "footer-div"
         }
       >
         <BackTop />

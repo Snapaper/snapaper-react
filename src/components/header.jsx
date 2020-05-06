@@ -16,9 +16,11 @@ export default class Header extends React.Component {
   }
   componentDidMount() {
     this.setState({
-      serverID: Cookies.get("snapaper_server")
-        ? Cookies.get("snapaper_server")
-        : "1"
+      serverID:
+        Cookies.get("snapaper_server") &&
+        parseInt(Cookies.get("snapaper_server")) !== 0
+          ? Cookies.get("snapaper_server")
+          : "1",
     });
   }
   hide = () => {
@@ -43,6 +45,10 @@ export default class Header extends React.Component {
           this.setState({ serverID: "2" });
           break;
         case "2":
+          Cookies.set("snapaper_server", "1");
+          this.setState({ serverID: "1" });
+          break;
+        default:
           Cookies.set("snapaper_server", "1");
           this.setState({ serverID: "1" });
           break;
@@ -112,10 +118,22 @@ export default class Header extends React.Component {
               </Link>
             </Menu.Item>
             <Menu.Item>
-              <a href="https://www.eugrade.com" target="_blank" rel="noreferrer">Eugrade</a>
+              <a
+                href="https://www.eugrade.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Eugrade
+              </a>
             </Menu.Item>
             <Menu.Item>
-              <a href="https://platform.snapaper.com" target="_blank" rel="noreferrer">Study Platform</a>
+              <a
+                href="https://platform.snapaper.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Study Platform
+              </a>
             </Menu.Item>
           </SubMenu>
           <SubMenu icon={<CaretDownOutlined />} title="Resources">
@@ -137,14 +155,16 @@ export default class Header extends React.Component {
               </Link>
             </Menu.Item>
             <Menu.Item>
-              <a href="https://www.ouorz.com/donation" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.ouorz.com/donation"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Donation
               </a>
             </Menu.Item>
             <Menu.Item>
-              <a href="https://www.ouorz.com/">
-                Blog
-              </a>
+              <a href="https://www.ouorz.com/">Blog</a>
             </Menu.Item>
           </SubMenu>
           <ul className="nav-2">

@@ -130,7 +130,10 @@ export default class igcse extends React.Component {
                     </p>
                   </div>
                 </Link>
-                <Link href="/paper/igcse/Mathematics%20-%20Additional%20(0606)" prefetch={false}>
+                <Link
+                  href="/paper/igcse/Mathematics%20-%20Additional%20(0606)"
+                  prefetch={false}
+                >
                   <div className="next-cate-subjects-list">
                     <h2>Additional Mathematics</h2>
                     <p>
@@ -138,7 +141,10 @@ export default class igcse extends React.Component {
                     </p>
                   </div>
                 </Link>
-                <Link href="/paper/igcse/Global%20Perspectives%20(0457)" prefetch={false}>
+                <Link
+                  href="/paper/igcse/Global%20Perspectives%20(0457)"
+                  prefetch={false}
+                >
                   <div className="next-cate-subjects-list">
                     <h2>Global Perspectives</h2>
                     <p>
@@ -153,7 +159,8 @@ export default class igcse extends React.Component {
             <Get
               url={
                 config.apiUrl.cates.igcse +
-                (Cookies.get("snapaper_server")
+                (Cookies.get("snapaper_server") &&
+                parseInt(Cookies.get("snapaper_server")) !== 0
                   ? Cookies.get("snapaper_server")
                   : "1")
               }
@@ -195,7 +202,13 @@ export default class igcse extends React.Component {
                       {response.data.cates.map((item, index) => {
                         if (!!item.name && item.name !== "error_log") {
                           return (
-                            <Link href={"/paper/igcse/" + item.name.replace("amp;", "")} prefetch={false} key={index}>
+                            <Link
+                              href={
+                                "/paper/igcse/" + item.name.replace("amp;", "")
+                              }
+                              prefetch={false}
+                              key={index}
+                            >
                               <div key={index}>
                                 <h2>{item.name.replace("amp;", "")}</h2>
                                 <p>
@@ -220,7 +233,7 @@ export default class igcse extends React.Component {
             </Get>
           </section>
         </main>
-        <Footer loading={!this.state.display}></Footer>
+        <Footer></Footer>
       </div>
     );
   }

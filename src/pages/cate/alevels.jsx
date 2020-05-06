@@ -162,7 +162,8 @@ export default class Alevel extends React.Component {
             <Get
               url={
                 config.apiUrl.cates.alevel +
-                (Cookies.get("snapaper_server")
+                (Cookies.get("snapaper_server") &&
+                parseInt(Cookies.get("snapaper_server")) !== 0
                   ? Cookies.get("snapaper_server")
                   : "1")
               }
@@ -236,7 +237,7 @@ export default class Alevel extends React.Component {
             </Get>
           </section>
         </main>
-        <Footer loading={!this.state.display}></Footer>
+        <Footer></Footer>
       </div>
     );
   }

@@ -293,7 +293,8 @@ const Papertable = () => {
       }}
       columns={columns}
       dataSource={paperData}
-      pagination={{ position: ["topLeft", "bottomRight"] }}
+      size="middle"
+      pagination={false}
       bordered
     />
   );
@@ -465,7 +466,8 @@ class AlevelSubject extends React.Component {
                   config.apiUrl.papers.alevel +
                   this.props.router.query.subject +
                   "/" +
-                  (Cookies.get("snapaper_server")
+                  (Cookies.get("snapaper_server") &&
+                  parseInt(Cookies.get("snapaper_server")) !== 0
                     ? Cookies.get("snapaper_server")
                     : "1")
                 }
@@ -539,7 +541,8 @@ class AlevelSubject extends React.Component {
                   config.apiUrl.papers.alevel +
                   this.props.router.query.subject +
                   "/" +
-                  (Cookies.get("snapaper_server")
+                  (Cookies.get("snapaper_server") &&
+                  parseInt(Cookies.get("snapaper_server")) !== 0
                     ? Cookies.get("snapaper_server")
                     : "1")
                 }
@@ -599,7 +602,7 @@ class AlevelSubject extends React.Component {
             </div>
           )}
         </main>
-        <Footer loading={!this.state.display}></Footer>
+        <Footer></Footer>
       </div>
     );
   }
