@@ -164,9 +164,7 @@ const columns = [
     key: "name",
     width: 250,
     ellipsis: true,
-    sorter: (a, b) =>
-      parseInt(a.name.split("_")[1].substr(1)) -
-      parseInt(b.name.split("_")[1].substr(1)),
+    sorter: (a, b) => parseInt(a.year) - parseInt(b.year),
   },
   {
     title: "Link",

@@ -194,7 +194,7 @@ export default class Header extends React.Component {
                 onVisibleChange={this.handleClickChange}
               >
                 <li className="nav-2-icon1 next-nav-icon-1">
-                  Node<b>{this.state.serverID}</b>
+                  Node<b>{this.state.serverID ? this.state.serverID : '1'}</b>
                 </li>
               </Popover>
             </Popover>

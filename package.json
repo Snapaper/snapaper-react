@@ -34,6 +34,7 @@
     "react-addons-update": "^15.6.2",
     "react-axios": "^2.0.3",
     "react-dom": "^16.13.1",
+    "react-highlight-words": "^0.16.0",
     "sass": "^1.26.5"
   }
 }
