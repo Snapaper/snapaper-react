@@ -1407,7 +1407,7 @@ tr {
   }
 }
 
-.footer-div-bottom{
+.footer-div-bottom {
   margin-top: 37vh !important;
 }
 
@@ -1438,7 +1438,6 @@ tr {
   }
 }
 
-
 #nprogress .bar {
   background: #7babff !important;
 }
@@ -1455,6 +1454,10 @@ tr {
   h1 {
     font-size: 40px;
     margin-bottom: 0px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 80%;
+    white-space: nowrap;
   }
   p {
     font-size: 16px;
@@ -1790,7 +1793,7 @@ tr {
   }
 
   .next-index-card-large div {
-    padding: 2em 2em 2.3em 2em;
+    padding: 1.9em 2em 2.3em 2em;
   }
   .next-index-section-cards .card h2 {
     line-height: 1.2;
@@ -1831,7 +1834,7 @@ tr {
   .mobile-list {
     em {
       background: #f2f3f4;
-      padding: .1em .5em .15em .6em;
+      padding: 0.1em 0.5em 0.15em 0.6em;
       font-size: 15px;
       border-radius: 5px;
       font-style: normal;
@@ -1843,4 +1846,16 @@ tr {
 
 .ant-result {
   padding: 20vh 0px 19vh 0px !important;
+}
+
+.switch-wrapper {
+  position: relative;
+}
+
+.switch-wrapper > div {
+  position: absolute;
+}
+
+.ant-cascader-picker {
+  width: 100%;
 }

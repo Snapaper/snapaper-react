@@ -4,7 +4,6 @@ import isMobile from "ismobilejs";
 import config from "../../../config";
 
 // 动态引入组件
-const Header = dynamic(() => import("../../../components/header"));
 const Footer = dynamic(() => import("../../../components/footer"));
 
 // 引入 AntD 组件
@@ -336,7 +335,6 @@ class AlevelSubject extends React.Component {
   render() {
     return (
       <div>
-        <Header></Header>
         <main className="ant-container">
           <section className="next-cate-header paper-header">
             <div className="left">

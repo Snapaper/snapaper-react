@@ -21,6 +21,10 @@ import Router from "next/router";
 // Google Analytics 配置
 import withAnalytics from "next-analytics";
 
+//动态引入顶部组件
+import dynamic from "next/dynamic";
+const Header = dynamic(() => import("../components/header"));
+
 // React Router 配置加载进度条
 Router.onRouteChangeStart = (url) => {
   NProgress.inc();
@@ -29,7 +33,12 @@ Router.onRouteChangeComplete = () => NProgress.done();
 Router.onRouteChangeError = () => NProgress.done();
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <div>
+      <Header></Header>
+      <Component {...pageProps} />
+    </div>
+  );
 }
 
 export default withAnalytics(Router, {

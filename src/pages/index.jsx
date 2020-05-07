@@ -1,9 +1,9 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import React from "react";
+import axios from "axios";
 
 //动态引入组件
-const Header = dynamic(() => import("../components/header"));
 const Footer = dynamic(() => import("../components/footer"));
 
 // 引入 AntD 图标
@@ -16,10 +16,21 @@ import {
 } from "@ant-design/icons";
 
 // 按需引入 AntD 组件
-import { Input, Tooltip, Modal, Select, Button, notification } from "antd";
+import {
+  Input,
+  Tooltip,
+  Modal,
+  Select,
+  Button,
+  notification,
+  Cascader,
+} from "antd";
 
 // 使用 Select 的衍生组件 Option
 const { Option } = Select;
+
+// 引入 Cookies 获取模块
+import Cookies from "js-cookie";
 
 // 配置提示触发函数
 const openNotificationWithIcon = (type, content) => {
@@ -40,6 +51,18 @@ export default class Index extends React.Component {
       type: "qp",
       paper: "",
       year: "",
+      options: [
+        {
+          value: "IGCSE",
+          label: "IGCSE",
+          isLeaf: false,
+        },
+        {
+          value: "A Levels",
+          label: "A Levels",
+          isLeaf: false,
+        },
+      ],
     };
   }
   handleCancel = (e) => {
@@ -59,20 +82,59 @@ export default class Index extends React.Component {
   handleYearChange = (e) => {
     this.setState({ year: e.target.value });
   };
-  handleSubjectChange = (e) => {
-    this.setState({ subject: e.target.value });
+  handleSubjectChange = (value) => {
+    this.setState({ subject: value });
   };
+  loadData = async (selectedOptions) => {
+    const targetOption = selectedOptions[selectedOptions.length - 1];
+    targetOption.loading = true;
+
+    // 请求 API 数据
+    await axios
+      .get(
+        "https://www.snapaper.com/api/cates/" +
+          targetOption.value +
+          "/" +
+          (Cookies.get("snapaper_server") &&
+          parseInt(Cookies.get("snapaper_server")) !== 0
+            ? Cookies.get("snapaper_server")
+            : "1")
+      )
+      .then((res) => {
+        targetOption.children = [];
+        // 增加到 children 数组
+        res.data.cates.map((item) => {
+          targetOption.children[targetOption.children.length] = {
+            label: item.name,
+            value: item.name,
+          };
+        });
+        targetOption.loading = false;
+      });
+    // 更新选项
+    this.setState({
+      options: [...this.state.options],
+    });
+  };
+
   // 一步功能
   oneStep = () => {
     if (
       !!this.state.month &&
-      !!this.state.subject &&
+      !!this.state.subject.length &&
       !!this.state.year &&
       !!this.state.type &&
       !!this.state.paper
     ) {
-      // 获取服务器
-      let server = "https://cie.fraft.org/";
+      // 获取服务器地址
+      let server =
+        (Cookies.get("snapaper_server") &&
+        parseInt(Cookies.get("snapaper_server")) !== 0
+          ? Cookies.get("snapaper_server")
+          : "1") == "1"
+          ? "https://papers.gceguide.com"
+          : "https://papers.gceguide.xyz";
+
       // 获取月份
       switch (this.state.month) {
         case "fm":
@@ -85,10 +147,21 @@ export default class Index extends React.Component {
           var month = "w";
           break;
       }
+
+      // 获取学科代码
+      let code = this.state.subject[1]
+        .split("(")[1]
+        .substr(0, this.state.subject[1].split("(")[1].length - 1);
+
       // 获取网址
       let url =
         server +
-        this.state.subject +
+        "/" +
+        this.state.subject[0] +
+        "/" +
+        this.state.subject[1] +
+        "/" +
+        code +
         "_" +
         month +
         this.state.year +
@@ -97,8 +170,9 @@ export default class Index extends React.Component {
         "_" +
         this.state.paper +
         ".pdf";
+
       //导航至网址
-      window.location.href = url;
+      window.open(url, "_blank");
     } else {
       //信息不全触发提示
       openNotificationWithIcon("error", "Incomplete information");
@@ -107,7 +181,6 @@ export default class Index extends React.Component {
   render() {
     return (
       <div>
-        <Header></Header>
         <main className="ant-container">
           <section className="next-index-section-one">
             <section
@@ -129,16 +202,12 @@ export default class Index extends React.Component {
               onCancel={this.handleCancel}
               footer={false}
             >
-              <Input
+              <Cascader
+                options={this.state.options}
+                loadData={this.loadData}
                 onChange={this.handleSubjectChange}
-                placeholder="Enter subject Code"
+                changeOnSelect
                 size="large"
-                prefix={<FieldNumberOutlined className="site-form-item-icon" />}
-                suffix={
-                  <Tooltip title="eg.9701 from 9701/43/O/N/16">
-                    <InfoCircleOutlined style={{ color: "rgba(0,0,0,.45)" }} />
-                  </Tooltip>
-                }
               />
               <Input
                 onChange={this.handlePaperChange}
@@ -146,6 +215,7 @@ export default class Index extends React.Component {
                 className="next-index-os-div"
                 prefix={<NumberOutlined className="site-form-item-icon" />}
                 size="large"
+                maxLength="2"
               />
               <Select
                 className="next-index-os-div"
@@ -165,6 +235,7 @@ export default class Index extends React.Component {
                 className="next-index-os-div"
                 prefix={<CalendarOutlined className="site-form-item-icon" />}
                 size="large"
+                maxLength="2"
               />
               <Select
                 className="next-index-os-div"
@@ -262,7 +333,11 @@ export default class Index extends React.Component {
             </div>
             <div className="next-index-card-right">
               <div>
-                <a href="https://www.ouorz.com/donation" target="_blank" rel="noreferrer">
+                <a
+                  href="https://www.ouorz.com/donation"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <h1>Donation</h1>
                 </a>
                 <p>Snapaper is alway going to be powered by Love</p>

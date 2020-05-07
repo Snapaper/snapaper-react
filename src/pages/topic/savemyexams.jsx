@@ -2,7 +2,6 @@ import React from "react";
 import dynamic from "next/dynamic";
 
 //动态引入组件
-const Header = dynamic(() => import("../../components/header"));
 const Footer = dynamic(() => import("../../components/footer"));
 
 // 引入 AntD 资源
@@ -23,12 +22,13 @@ const openNotificationWithIcon = (type, content) => {
   });
 };
 
-// 文件下载创建函数
-function downloadFile(srcUrl) {
-  var $a = $("<a/>")
-    .attr("href", "https://www.snapaper.com/download?filename=" + srcUrl)
-    .attr("download", "");
-  $a[0].click();
+// 在线预览
+function liveView(url) {
+  window.open(
+    url,
+    "_blank",
+    "top=0,left=100,width=700,height=750,scrollbars=no,toolbar=no, menubar=no, location=no, status=no"
+  ).location;
 }
 
 export default class sme extends React.Component {
@@ -43,7 +43,6 @@ export default class sme extends React.Component {
   render() {
     return (
       <div>
-        <Header></Header>
         <main className="ant-container">
           <section className="next-cate-header next-topic-header">
             <div className="left">
@@ -147,12 +146,12 @@ export default class sme extends React.Component {
                               <div
                                 key={index}
                                 onClick={() => {
-                                  downloadFile(item.url);
+                                  liveView(item.url);
                                 }}
                               >
                                 <h2>{item.name.replace("amp;", "")}</h2>
                                 <p>
-                                  <em>{item.type}</em>Click to Download{" "}
+                                  <em>{item.type}</em>Click to View{" "}
                                   <CaretRightOutlined />
                                 </p>
                               </div>

@@ -2,7 +2,6 @@ import React from "react";
 import dynamic from "next/dynamic";
 
 // 动态引入组件
-const Header = dynamic(() => import("../../components/header"));
 const Footer = dynamic(() => import("../../components/footer"));
 
 
@@ -14,7 +13,6 @@ export default class About extends React.Component {
   render() {
     return (
       <div>
-        <Header></Header>
         <main className="ant-container">
           <div className="page-container">
             <div>

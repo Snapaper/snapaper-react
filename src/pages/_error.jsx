@@ -5,13 +5,11 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 
 //动态引入组件
-const Header = dynamic(() => import("../components/header"));
 const Footer = dynamic(() => import("../components/footer"));
 
 function Error() {
   return (
     <div>
-      <Header></Header>
       <Result
         status="500"
         title="500"
