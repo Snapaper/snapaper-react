@@ -51,6 +51,7 @@ export default class Index extends React.Component {
       type: "qp",
       paper: "",
       year: "",
+      display: true,
       options: [
         {
           value: "IGCSE",
@@ -179,177 +180,179 @@ export default class Index extends React.Component {
     }
   };
   render() {
-    return (
-      <div>
-        <main className="ant-container">
-          <section className="next-index-section-one">
-            <section
-              className="next-index-card-large"
-              onClick={() => {
-                this.setState({ OSvisible: true });
-              }}
-            >
-              <img src="https://www.snapaper.com/vue/image?place=index_1" />
-              <div>
-                <h1>One Step</h1>
-                <p>A nice and easy way to find a paper</p>
-              </div>
-            </section>
-            {/* 一步弹窗 */}
-            <Modal
-              title="One Step"
-              visible={this.state.OSvisible}
-              onCancel={this.handleCancel}
-              footer={false}
-            >
-              <Cascader
-                options={this.state.options}
-                loadData={this.loadData}
-                onChange={this.handleSubjectChange}
-                changeOnSelect
-                size="large"
-              />
-              <Input
-                onChange={this.handlePaperChange}
-                placeholder="Enter paper number eg.42"
-                className="next-index-os-div"
-                prefix={<NumberOutlined className="site-form-item-icon" />}
-                size="large"
-                maxLength="2"
-              />
-              <Select
-                className="next-index-os-div"
-                placeholder="Exam Month"
-                defaultValue={this.state.month}
-                onChange={this.handleMonthChange}
-                style={{ width: "100%" }}
-                size="large"
+    if (this.state.display) {
+      return (
+        <div>
+          <main className="ant-container">
+            <section className="next-index-section-one">
+              <section
+                className="next-index-card-large"
+                onClick={() => {
+                  this.setState({ OSvisible: true });
+                }}
               >
-                <Option key="fm">February / March</Option>
-                <Option key="mj">May / June</Option>
-                <Option key="on">October / November</Option>
-              </Select>
-              <Input
-                onChange={this.handleYearChange}
-                placeholder="Enter year number eg.17"
-                className="next-index-os-div"
-                prefix={<CalendarOutlined className="site-form-item-icon" />}
-                size="large"
-                maxLength="2"
-              />
-              <Select
-                className="next-index-os-div"
-                placeholder="Type of paper"
-                defaultValue={this.state.type}
-                onChange={this.handleTypeChange}
-                style={{ width: "100%" }}
-                size="large"
-              >
-                <Option key="qp">Question Paper</Option>
-                <Option key="ms">Mark Scheme</Option>
-              </Select>
-              <Button
-                size="large"
-                type="primary"
-                onClick={this.oneStep}
-                className="next-index-os-btn"
-              >
-                Find
-              </Button>
-            </Modal>
-            {/* 一步弹窗 */}
-            <section className="next-index-section-cards">
-              <Link href="/cate/igcse">
-                <div className="card">
-                  <div>
-                    <img src="https://www.snapaper.com/vue/image?place=index_2" />
-                  </div>
-                  <div>
-                    <h2>IGCSE</h2>
-                    <p>
-                      Cambridge International General Certificate of Secondary
-                      Education
-                    </p>
-                  </div>
-                </div>
-              </Link>
-              <Link href="/cate/alevels">
-                <div className="card">
-                  <div>
-                    <img src="https://www.snapaper.com/vue/image?place=index_3" />
-                  </div>
-                  <div>
-                    <h2>A Levels</h2>
-                    <p>
-                      Cambridge International General Certificate of Education
-                      Advanced Level
-                    </p>
-                  </div>
-                </div>
-              </Link>
-              <Link href="/topic/ebooks">
-                <div className="card">
-                  <div>
-                    <img src="https://www.snapaper.com/vue/image?place=index_4" />
-                  </div>
-                  <div>
-                    <h2>PDF eBooks</h2>
-                    <p>
-                      Cambridge International Curriculum PDF electronic
-                      textbooks
-                    </p>
-                  </div>
-                </div>
-              </Link>
-              <Link href="/topic/savemyexams">
-                <div className="card">
-                  <div>
-                    <img src="https://www.snapaper.com/vue/image?place=index_5" />
-                  </div>
-                  <div>
-                    <h2>Save My Exams</h2>
-                    <p>
-                      Awesome practice exams from SaveMyExams website (Mark
-                      Scheme Only)
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            </section>
-          </section>
-          <section className="next-index-section-two">
-            <div className="next-index-card-left">
-              <Link href="/page/about">
+                <img src="https://www.snapaper.com/vue/image?place=index_1" />
                 <div>
-                  <h1>
-                    About Us <InfoCircleFilled />
-                  </h1>
-                  <p>
-                    Everything about the Snapaper platform and the ones behind
-                    it
-                  </p>
+                  <h1>One Step</h1>
+                  <p>A nice and easy way to find a paper</p>
                 </div>
-              </Link>
-            </div>
-            <div className="next-index-card-right">
-              <div>
-                <a
-                  href="https://www.ouorz.com/donation"
-                  target="_blank"
-                  rel="noreferrer"
+              </section>
+              {/* 一步弹窗 */}
+              <Modal
+                title="One Step"
+                visible={this.state.OSvisible}
+                onCancel={this.handleCancel}
+                footer={false}
+              >
+                <Cascader
+                  options={this.state.options}
+                  loadData={this.loadData}
+                  onChange={this.handleSubjectChange}
+                  changeOnSelect
+                  size="large"
+                />
+                <Input
+                  onChange={this.handlePaperChange}
+                  placeholder="Enter paper number eg.42"
+                  className="next-index-os-div"
+                  prefix={<NumberOutlined className="site-form-item-icon" />}
+                  size="large"
+                  maxLength="2"
+                />
+                <Select
+                  className="next-index-os-div"
+                  placeholder="Exam Month"
+                  defaultValue={this.state.month}
+                  onChange={this.handleMonthChange}
+                  style={{ width: "100%" }}
+                  size="large"
                 >
-                  <h1>Donation</h1>
-                </a>
-                <p>Snapaper is alway going to be powered by Love</p>
+                  <Option key="fm">February / March</Option>
+                  <Option key="mj">May / June</Option>
+                  <Option key="on">October / November</Option>
+                </Select>
+                <Input
+                  onChange={this.handleYearChange}
+                  placeholder="Enter year number eg.17"
+                  className="next-index-os-div"
+                  prefix={<CalendarOutlined className="site-form-item-icon" />}
+                  size="large"
+                  maxLength="2"
+                />
+                <Select
+                  className="next-index-os-div"
+                  placeholder="Type of paper"
+                  defaultValue={this.state.type}
+                  onChange={this.handleTypeChange}
+                  style={{ width: "100%" }}
+                  size="large"
+                >
+                  <Option key="qp">Question Paper</Option>
+                  <Option key="ms">Mark Scheme</Option>
+                </Select>
+                <Button
+                  size="large"
+                  type="primary"
+                  onClick={this.oneStep}
+                  className="next-index-os-btn"
+                >
+                  Find
+                </Button>
+              </Modal>
+              {/* 一步弹窗 */}
+              <section className="next-index-section-cards">
+                <Link href="/cate/igcse">
+                  <div className="card">
+                    <div>
+                      <img src="https://www.snapaper.com/vue/image?place=index_2" />
+                    </div>
+                    <div>
+                      <h2>IGCSE</h2>
+                      <p>
+                        Cambridge International General Certificate of Secondary
+                        Education
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+                <Link href="/cate/alevels">
+                  <div className="card">
+                    <div>
+                      <img src="https://www.snapaper.com/vue/image?place=index_3" />
+                    </div>
+                    <div>
+                      <h2>A Levels</h2>
+                      <p>
+                        Cambridge International General Certificate of Education
+                        Advanced Level
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+                <Link href="/topic/ebooks">
+                  <div className="card">
+                    <div>
+                      <img src="https://www.snapaper.com/vue/image?place=index_4" />
+                    </div>
+                    <div>
+                      <h2>PDF eBooks</h2>
+                      <p>
+                        Cambridge International Curriculum PDF electronic
+                        textbooks
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+                <Link href="/topic/savemyexams">
+                  <div className="card">
+                    <div>
+                      <img src="https://www.snapaper.com/vue/image?place=index_5" />
+                    </div>
+                    <div>
+                      <h2>Save My Exams</h2>
+                      <p>
+                        Awesome practice exams from SaveMyExams website (Mark
+                        Scheme Only)
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              </section>
+            </section>
+            <section className="next-index-section-two">
+              <div className="next-index-card-left">
+                <Link href="/page/about">
+                  <div>
+                    <h1>
+                      About Us <InfoCircleFilled />
+                    </h1>
+                    <p>
+                      Everything about the Snapaper platform and the ones behind
+                      it
+                    </p>
+                  </div>
+                </Link>
               </div>
-              <div>
-                <img src="https://www.snapaper.com/vue/image?place=index_6" />
+              <div className="next-index-card-right">
+                <div>
+                  <a
+                    href="https://www.ouorz.com/donation"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <h1>Donation</h1>
+                  </a>
+                  <p>Snapaper is alway going to be powered by Love</p>
+                </div>
+                <div>
+                  <img src="https://www.snapaper.com/vue/image?place=index_6" />
+                </div>
               </div>
-            </div>
-          </section>
-        </main>
-        <Footer></Footer>
-      </div>
-    );
+            </section>
+          </main>
+          <Footer></Footer>
+        </div>
+      );
+    }
   }
 }
