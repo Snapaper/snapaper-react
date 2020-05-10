@@ -138,8 +138,13 @@ export default class Header extends React.Component {
           </SubMenu>
           <SubMenu icon={<CaretDownOutlined />} title="Resources">
             <Menu.Item>
-              <Link href="/topic/savemyexams">
+              <Link href="/topic/ebooks">
                 <a>PDF ebooks</a>
+              </Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Link href="/topic/savemyexams">
+                <a>Save My Exams</a>
               </Link>
             </Menu.Item>
             <Menu.Item>
