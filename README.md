@@ -1,16 +1,20 @@
 <div align="center">
   <h1>Snapaper</h1>
   <p>An Integrated Platform of Past Papers and More Study Resources</p>
-  <a href="https://github.com/Snapaper/snapaper-react">
+  <a href="https://github.com/Snapaper/snapaper-react/network/members">
     <img src="https://img.shields.io/github/forks/Snapaper/snapaper-react.svg" alt="forks">
   </a>
 
-  <a href="https://github.com/Snapaper/snapaper-react">
+  <a href="https://github.com/Snapaper/snapaper-react/stargazers">
     <img src="https://img.shields.io/github/stars/Snapaper/snapaper-react.svg" alt="stars">
   </a>
 
-  <a href="https://github.com/Snapaper/snapaper-react">
+  <a href="https://github.com/Snapaper/snapaper-react/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/Snapaper/snapaper-react.svg" alt="license">
+  </a>
+
+  <a href="https://travis-ci.com/Snapaper/snapaper-react">
+    <img src="https://travis-ci.com/Snapaper/snapaper-react.svg?branch=master" alt="license">
   </a>
 </div>
 
