@@ -83,7 +83,7 @@ export default class Index extends React.Component {
     // 请求 API 数据
     await axios
       .get(
-        "https://www.snapaper.com/api/cates/" +
+        "https://node.snapaper.com/api/cates/" +
           targetOption.value +
           "/" +
           (Cookies.get("snapaper_server") &&
@@ -174,13 +174,17 @@ export default class Index extends React.Component {
       return (
         <div>
           <main className="ant-container">
-            <section className="notice" style="background: #f9f9f9;border-radius: 6px;padding: 10px 15px;color: #999999;margin-bottom: 25px;border: 1px solid #f1f2f3;">
-              <div style="display: flex;">
-                <p style="margin: 0px;flex: 1;padding-top: 3.1px;font-size: 15px;">
+            <section className="notice">
+              <div>
+                <p>
                   Listen to our podcast to learn more about life of studying
                   abroad...
                 </p>
-                <a style="background: #40a9ff1a;padding: 3px 10px;border-radius: 6px;">
+                <a
+                  href="https://music.163.com/#/program?id=2071267202"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Netease Music →
                 </a>
               </div>
@@ -192,7 +196,7 @@ export default class Index extends React.Component {
                   this.setState({ OSvisible: true });
                 }}
               >
-                <img src="https://www.snapaper.com/vue/image?place=index_1" />
+                <img src="https://node.snapaper.com/vue/image?place=index_1" />
                 <div>
                   <h1>One Step</h1>
                   <p>A nice and easy way to find a paper</p>
@@ -265,7 +269,7 @@ export default class Index extends React.Component {
                 <Link href="/cate/igcse">
                   <div className="card">
                     <div>
-                      <img src="https://www.snapaper.com/vue/image?place=index_2" />
+                      <img src="https://node.snapaper.com/vue/image?place=index_2" />
                     </div>
                     <div>
                       <h2>IGCSE</h2>
@@ -279,7 +283,7 @@ export default class Index extends React.Component {
                 <Link href="/cate/alevels">
                   <div className="card">
                     <div>
-                      <img src="https://www.snapaper.com/vue/image?place=index_3" />
+                      <img src="https://node.snapaper.com/vue/image?place=index_3" />
                     </div>
                     <div>
                       <h2>A Levels</h2>
@@ -293,7 +297,7 @@ export default class Index extends React.Component {
                 <Link href="/topic/ebooks">
                   <div className="card">
                     <div>
-                      <img src="https://www.snapaper.com/vue/image?place=index_4" />
+                      <img src="https://node.snapaper.com/vue/image?place=index_4" />
                     </div>
                     <div>
                       <h2>PDF eBooks</h2>
@@ -307,7 +311,7 @@ export default class Index extends React.Component {
                 <Link href="/topic/savemyexams">
                   <div className="card">
                     <div>
-                      <img src="https://www.snapaper.com/vue/image?place=index_5" />
+                      <img src="https://node.snapaper.com/vue/image?place=index_5" />
                     </div>
                     <div>
                       <h2>Save My Exams</h2>
@@ -343,7 +347,7 @@ export default class Index extends React.Component {
                   <p>Snapaper is 100% Free to use</p>
                 </div>
                 <div>
-                  <img src="https://www.snapaper.com/vue/image?place=index_6" />
+                  <img src="https://node.snapaper.com/vue/image?place=index_6" />
                 </div>
               </div>
             </section>

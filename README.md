@@ -86,11 +86,11 @@ yarn run start
 <br/>
 
 
-### Donate to me
-Your name will be on the list [Donation](https://www.ouorz.com/donation)
+### Sponsor me
+Your name will be on the list [Sponsors](https://www.ouorz.com/sponsor)
 <br/>
 
-![Donate](https://i.loli.net/2019/02/18/5c6a80afd1e26.png)
+![Sponsor](https://i.loli.net/2019/02/18/5c6a80afd1e26.png)
 
 <br/>
 

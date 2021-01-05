@@ -655,6 +655,29 @@ tr {
   width: 73%;
 }
 
+.notice {
+  background: #f9f9f9;
+  border-radius: 6px;
+  padding: 10px 15px;
+  color: #999999;
+  margin-bottom: 25px;
+  border: 1px solid #f1f2f3;
+  div {
+    display: flex;
+    p {
+      margin: 0px;
+      flex: 1;
+      padding-top: 3.1px;
+      font-size: 15px;
+    }
+    a {
+      background: #40a9ff1a;
+      padding: 3px 10px;
+      border-radius: 6px;
+    }
+  }
+}
+
 @media screen and (max-width: 850px) {
   .notice {
     display: none;

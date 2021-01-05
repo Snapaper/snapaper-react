@@ -103,7 +103,7 @@ export default class sme extends React.Component {
             {this.state.subjectDisplay ? (
               <Get
                 url={
-                  "https://www.snapaper.com/case/cases?cate=sme&sub=" +
+                  "https://node.snapaper.com/case/cases?cate=sme&sub=" +
                   this.state.subject
                 }
                 onSuccess={(response) =>

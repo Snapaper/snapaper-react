@@ -70,7 +70,7 @@ export default class Ebooks extends React.Component {
           <section>
             <Get
               url={
-                "https://www.snapaper.com/case/cases?cate=ebooks&sub=A%20Levels"
+                "https://node.snapaper.com/case/cases?cate=ebooks&sub=A%20Levels"
               }
               onSuccess={(response) =>
                 this.setState({
