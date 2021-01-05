@@ -9,22 +9,12 @@ const Footer = dynamic(() => import("../components/footer"));
 // 引入 AntD 图标
 import {
   InfoCircleFilled,
-  FieldNumberOutlined,
-  InfoCircleOutlined,
   CalendarOutlined,
   NumberOutlined,
 } from "@ant-design/icons";
 
 // 按需引入 AntD 组件
-import {
-  Input,
-  Tooltip,
-  Modal,
-  Select,
-  Button,
-  notification,
-  Cascader,
-} from "antd";
+import { Input, Modal, Select, Button, notification, Cascader } from "antd";
 
 // 使用 Select 的衍生组件 Option
 const { Option } = Select;
@@ -184,6 +174,17 @@ export default class Index extends React.Component {
       return (
         <div>
           <main className="ant-container">
+            <section className="notice" style="background: #f9f9f9;border-radius: 6px;padding: 10px 15px;color: #999999;margin-bottom: 25px;border: 1px solid #f1f2f3;">
+              <div style="display: flex;">
+                <p style="margin: 0px;flex: 1;padding-top: 3.1px;font-size: 15px;">
+                  Listen to our podcast to learn more about life of studying
+                  abroad...
+                </p>
+                <a style="background: #40a9ff1a;padding: 3px 10px;border-radius: 6px;">
+                  Netease Music →
+                </a>
+              </div>
+            </section>
             <section className="next-index-section-one">
               <section
                 className="next-index-card-large"
@@ -311,8 +312,8 @@ export default class Index extends React.Component {
                     <div>
                       <h2>Save My Exams</h2>
                       <p>
-                        Awesome practice exams from SaveMyExams website (Mark
-                        Scheme Only)
+                        Awesome practice exams from SaveMyExams (Mark Scheme
+                        Only)
                       </p>
                     </div>
                   </div>
@@ -326,23 +327,20 @@ export default class Index extends React.Component {
                     <h1>
                       About Us <InfoCircleFilled />
                     </h1>
-                    <p>
-                      Everything about the Snapaper platform and the ones behind
-                      it
-                    </p>
+                    <p>Learn more about Snapaper</p>
                   </div>
                 </Link>
               </div>
               <div className="next-index-card-right">
                 <div>
                   <a
-                    href="https://www.ouorz.com/donation"
+                    href="https://www.ouorz.com/sponsor"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <h1>Donation</h1>
+                    <h1>Sponsor</h1>
                   </a>
-                  <p>Snapaper is alway going to be powered by Love</p>
+                  <p>Snapaper is 100% Free to use</p>
                 </div>
                 <div>
                   <img src="https://www.snapaper.com/vue/image?place=index_6" />

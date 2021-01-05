@@ -656,6 +656,9 @@ tr {
 }
 
 @media screen and (max-width: 850px) {
+  .notice {
+    display: none;
+  }
   .next-nav {
     display: initial !important;
   }
