@@ -342,7 +342,7 @@ export default class Index extends React.Component {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <h1>Sponsor</h1>
+                    <h1>Sponsor Us</h1>
                   </a>
                   <p>Snapaper is 100% Free to use</p>
                 </div>
