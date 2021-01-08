@@ -656,12 +656,13 @@ tr {
 }
 
 .notice {
-  background: #f9f9f9;
   border-radius: 6px;
   padding: 10px 15px;
-  color: #999999;
+  color: #73849a;
+  font-weight: 300;
   margin-bottom: 25px;
-  border: 1px solid #f1f2f3;
+  box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1),
+    0 0.085em 0.175em rgba(2, 8, 20, 0.08);
   div {
     display: flex;
     p {
@@ -1205,6 +1206,7 @@ tr {
   max-width: 1200px !important;
   margin: 0 auto !important;
   padding-top: 135px !important;
+  min-height: calc(100vh - 245px);
 }
 
 .ant-menu-item,

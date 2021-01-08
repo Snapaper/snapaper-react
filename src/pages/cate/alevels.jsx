@@ -163,7 +163,7 @@ export default class Alevel extends React.Component {
                 (Cookies.get("snapaper_server") &&
                 parseInt(Cookies.get("snapaper_server")) !== 0
                   ? Cookies.get("snapaper_server")
-                  : "1")
+                  : "2")
               }
               onSuccess={(response) =>
                 this.setState({
