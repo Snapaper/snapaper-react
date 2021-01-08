@@ -1891,3 +1891,8 @@ tr {
 .ant-cascader-picker {
   width: 100%;
 }
+
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu {
+  margin: -1px 0px 0 !important;
+}
