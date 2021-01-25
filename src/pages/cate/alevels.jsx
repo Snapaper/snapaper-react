@@ -88,7 +88,7 @@ export default class Alevel extends React.Component {
                 <h2>
                   <FireOutlined /> Most Browsed Subjects
                 </h2>
-                <p>Click to expand list of most browsed subjects</p>
+                <p>Click to see the list of most browsed subjects</p>
               </div>
               <Modal
                 title="Most Browsed Subjects"

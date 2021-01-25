@@ -1,4 +1,4 @@
-import Document, { Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 
 const APP_NAME = "Snapaper";
 const APP_DESCRIPTION =
@@ -11,8 +11,9 @@ export default class extends Document {
 
   render() {
     return (
-      <html lang="en" dir="ltr">
+      <Html>
         <Head>
+          <meta name="viewport" content="viewport-fit=cover" />
           <meta name="application-name" content={APP_NAME} />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta
@@ -45,7 +46,7 @@ export default class extends Document {
           <Main />
           <NextScript />
         </body>
-      </html>
+      </Html>
     );
   }
 }

@@ -23,7 +23,7 @@ class Footer extends React.Component {
         <div className="footer-container">
           <div>
             <p>
-              &copy; Copyright 2018-2020 Snapaper · Made with <HeartFilled />{" "}
+              &copy; Copyright 2018-2021 Snapaper · Made with <HeartFilled />{" "}
               for the People of the Internet ·{" "}
               <a
                 href="http://www.beian.miit.gov.cn"

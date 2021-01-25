@@ -1,3 +1,4 @@
+import React from "react";
 import Link from "next/link";
 import Head from "next/head";
 import Cookies from "js-cookie";
@@ -126,15 +127,6 @@ export default class Header extends React.Component {
                 Eugrade
               </a>
             </Menu.Item>
-            <Menu.Item>
-              <a
-                href="https://platform.snapaper.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Study Platform
-              </a>
-            </Menu.Item>
           </SubMenu>
           <SubMenu icon={<CaretDownOutlined />} title="Resources">
             <Menu.Item>
@@ -155,17 +147,12 @@ export default class Header extends React.Component {
           </SubMenu>
           <SubMenu icon={<CaretDownOutlined />} title="Support">
             <Menu.Item>
-              <Link href="/page/about">
-                <a>About us</a>
-              </Link>
-            </Menu.Item>
-            <Menu.Item>
               <a
-                href="https://www.ouorz.com/donation"
+                href="https://www.ouorz.com/sponsor"
                 target="_blank"
                 rel="noreferrer"
               >
-                Donation
+                Sponsor
               </a>
             </Menu.Item>
             <Menu.Item>
@@ -199,19 +186,10 @@ export default class Header extends React.Component {
                 onVisibleChange={this.handleClickChange}
               >
                 <li className="nav-2-icon1 next-nav-icon-1">
-                  Node<b>{this.state.serverID ? this.state.serverID : '1'}</b>
+                  Node<b>{this.state.serverID ? this.state.serverID : "1"}</b>
                 </li>
               </Popover>
             </Popover>
-
-            <li className="nav-2-icon1 next-nav-icon-2">
-              <a
-                href="https://shimo.im/forms/KcY8hKypp9wkrtG6/fill"
-                target="_blank"
-              >
-                @next
-              </a>
-            </li>
           </ul>
         </Menu>
       </div>
