@@ -174,21 +174,23 @@ export default class Index extends React.Component {
       return (
         <div>
           <main className="ant-container">
-            <section className="notice">
-              <div>
-                <p>
-                  Listen to our podcast to learn more about life of studying
-                  abroad...
-                </p>
-                <a
-                  href="https://music.163.com/#/program?id=2071267202"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Netease Music →
-                </a>
-              </div>
-            </section>
+            {false && (
+              <section className="notice">
+                <div>
+                  <p>
+                    Listen to our podcast to learn more about life of studying
+                    abroad...
+                  </p>
+                  <a
+                    href="https://music.163.com/#/program?id=2071267202"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Netease Music →
+                  </a>
+                </div>
+              </section>
+            )}
             <section className="next-index-section-one">
               <section
                 className="next-index-card-large"
