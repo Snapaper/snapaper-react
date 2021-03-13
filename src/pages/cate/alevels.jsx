@@ -3,6 +3,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 import isMobile from "ismobilejs";
 import config from "../../config";
+import MBS from "../../components/mbs";
 
 // 动态引入组件
 const Footer = dynamic(() => import("../../components/footer"));
@@ -36,6 +37,8 @@ export default class Alevel extends React.Component {
       display: false,
       MBSvisible: false,
       subjectCount: 0,
+      YCvisible: false,
+      YCsubject: "",
     };
   }
   componentDidMount() {
@@ -90,69 +93,80 @@ export default class Alevel extends React.Component {
                 </h2>
                 <p>Click to see the list of most browsed subjects</p>
               </div>
+              <MBS
+                cate="alevel"
+                MBSvisible={this.state.MBSvisible}
+                cancelDisplay={() => {
+                  this.setState({ MBSvisible: false });
+                }}
+                toggleYearChoose={(subject) => {
+                  this.setState({
+                    YCsubject: subject.replace("amp;", ""),
+                    YCvisible: true,
+                  });
+                }}
+              />
               <Modal
-                title="Most Browsed Subjects"
-                visible={this.state.MBSvisible}
+                title="Exam Years"
+                visible={this.state.YCvisible}
                 footer={null}
-                onCancel={() => this.setState({ MBSvisible: false })}
+                zIndex={2}
+                onCancel={() => this.setState({ YCvisible: false })}
               >
-                <Link href="/paper/alevels/Chemistry%20(9701)" prefetch={false}>
-                  <div className="next-cate-subjects-list">
-                    <h2>Chemistry</h2>
-                    <p>
-                      Click to browse all papers <CaretRightOutlined />
-                    </p>
-                  </div>
-                </Link>
-                <Link href="/paper/alevels/Physics%20(9702)" prefetch={false}>
-                  <div className="next-cate-subjects-list">
-                    <h2>Physics</h2>
-                    <p>
-                      Click to browse all papers <CaretRightOutlined />
-                    </p>
-                  </div>
-                </Link>
-                <Link href="/paper/alevels/Economics%20(9708)" prefetch={false}>
-                  <div className="next-cate-subjects-list">
-                    <h2>Economics</h2>
-                    <p>
-                      Click to browse all papers <CaretRightOutlined />
-                    </p>
-                  </div>
-                </Link>
-                <Link
-                  href="/paper/alevels/Mathematics%20(9709)"
-                  prefetch={false}
-                >
-                  <div className="next-cate-subjects-list">
-                    <h2>Mathematics</h2>
-                    <p>
-                      Click to browse all papers <CaretRightOutlined />
-                    </p>
-                  </div>
-                </Link>
-                <Link
-                  href="/paper/alevels/Mathematics%20-%20Further%20(9231)"
-                  prefetch={false}
-                >
-                  <div className="next-cate-subjects-list">
-                    <h2>Further Mathematics</h2>
-                    <p>
-                      Click to browse all papers <CaretRightOutlined />
-                    </p>
-                  </div>
-                </Link>
-                <div className="next-cate-subjects-list">
-                  <a
-                    href="https://www.examsolutions.net/a-level-maths/ocr/"
-                    target="_blank"
-                  >
-                    <h2>Further Mathematics OCR</h2>
-                  </a>
-                  <p>
-                    Click title to visit website <CaretRightOutlined />
-                  </p>
-                </div>
+                <Get url={config.apiUrl.years.alevel + this.state.YCsubject}>
+                  {(error, response, isLoading) => {
+                    if (error) {
+                      openNotificationWithIcon(
+                        "error",
+                        "Request error, please report to TonyHe"
+                      );
+                      return (
+                        <div className="next-cate-error">
+                          <Empty description={false} />
+                          <p>{error.message}</p>
+                        </div>
+                      );
+                    } else if (isLoading) {
+                      return (
+                        <div>
+                          <Skeleton active />
+                          <Skeleton active />
+                        </div>
+                      );
+                    } else if (response !== null) {
+                      // 请求成功展示列表
+                      return (
+                        <div className="next-cate-years">
+                          {response.data.years.map((item, index) => {
+                            return (
+                              <Link
+                                href={
+                                  "/paper/alevels/com/" +
+                                  item.name +
+                                  "/" +
+                                  this.state.YCsubject
+                                }
+                                prefetch={false}
+                                key={index}
+                              >
+                                <div>
+                                  <h2>{item.name}</h2>
+                                  <CaretRightOutlined />
+                                </div>
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      );
+                    }
+                    return (
+                      <div>
+                        <Skeleton active />
+                        <Skeleton active />
+                      </div>
+                    );
+                  }}
+                </Get>
               </Modal>
             </div>
           </section>
@@ -163,7 +177,7 @@ export default class Alevel extends React.Component {
                 (Cookies.get("snapaper_server") &&
                 parseInt(Cookies.get("snapaper_server")) !== 0
                   ? Cookies.get("snapaper_server")
-                  : "2")
+                  : "1")
               }
               onSuccess={(response) =>
                 this.setState({
@@ -202,24 +216,45 @@ export default class Alevel extends React.Component {
                     <div className="next-cate-subject">
                       {response.data.cates.map((item, index) => {
                         if (!!item.name && item.name !== "error_log") {
-                          return (
-                            <Link
-                              href={
-                                "/paper/alevels/" +
-                                item.name.replace("amp;", "")
-                              }
-                              prefetch={false}
-                              key={index}
-                            >
-                              <div>
+                          if (
+                            parseInt(Cookies.get("snapaper_server")) == 1 ||
+                            !Cookies.get("snapaper_server")
+                          ) {
+                            return (
+                              <div
+                                onClick={() => {
+                                  this.setState({
+                                    YCsubject: item.name.replace("amp;", ""),
+                                    YCvisible: true,
+                                  });
+                                }}
+                              >
                                 <h2>{item.name.replace("amp;", "")}</h2>
                                 <p>
-                                  Click to browse all papers{" "}
-                                  <CaretRightOutlined />
+                                  Click to browse papers <CaretRightOutlined />
                                 </p>
                               </div>
-                            </Link>
-                          );
+                            );
+                          } else {
+                            return (
+                              <Link
+                                href={
+                                  "/paper/alevels/xyz/" +
+                                  item.name.replace("amp;", "")
+                                }
+                                prefetch={false}
+                                key={index}
+                              >
+                                <div>
+                                  <h2>{item.name.replace("amp;", "")}</h2>
+                                  <p>
+                                    Click to browse papers{" "}
+                                    <CaretRightOutlined />
+                                  </p>
+                                </div>
+                              </Link>
+                            );
+                          }
                         }
                       })}
                     </div>

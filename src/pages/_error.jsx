@@ -17,7 +17,7 @@ function Error() {
         className="ant-result-pc"
         extra={
           <Link href="/">
-            <Button type="primary">Back Home</Button>
+            <Button type="primary">Back to Home</Button>
           </Link>
         }
       />

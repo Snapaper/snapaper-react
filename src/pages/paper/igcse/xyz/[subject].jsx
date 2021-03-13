@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import isMobile from "ismobilejs";
-import config from "../../../config";
+import config from "../../../../config";
 
 // 动态引入组件
-const Footer = dynamic(() => import("../../../components/footer"));
+const Footer = dynamic(() => import("../../../../components/footer"));
 
 // 引入 AntD 组件
 import {
@@ -467,13 +467,8 @@ class igcseSubject extends React.Component {
               this.state.isMobile ? (
                 <Get
                   url={
-                    config.apiUrl.papers.igcse +
-                    this.props.router.query.subject +
-                    "/" +
-                    (Cookies.get("snapaper_server") &&
-                    parseInt(Cookies.get("snapaper_server")) !== 0
-                      ? Cookies.get("snapaper_server")
-                      : "2")
+                    config.apiUrl.papers.xyz.igcse +
+                    this.props.router.query.subject
                   }
                   onSuccess={(response) =>
                     this.setState({
@@ -542,13 +537,8 @@ class igcseSubject extends React.Component {
               ) : (
                 <Get
                   url={
-                    config.apiUrl.papers.igcse +
-                    this.props.router.query.subject +
-                    "/" +
-                    (Cookies.get("snapaper_server") &&
-                    parseInt(Cookies.get("snapaper_server")) !== 0
-                      ? Cookies.get("snapaper_server")
-                      : "2")
+                    config.apiUrl.papers.xyz.igcse +
+                    this.props.router.query.subject
                   }
                   onSuccess={(response) =>
                     this.setState({

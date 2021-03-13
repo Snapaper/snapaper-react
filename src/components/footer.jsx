@@ -41,7 +41,7 @@ class Footer extends React.Component {
               target="_blank"
               rel="noreferrer"
             >
-              <GithubFilled /> Open-source
+              <GithubFilled /> OSS
             </a>{" "}
             &nbsp;{" "}
             <a href="https://www.ouorz.com" target="_blank">

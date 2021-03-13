@@ -21,7 +21,7 @@ export default class Header extends React.Component {
         Cookies.get("snapaper_server") &&
         parseInt(Cookies.get("snapaper_server")) !== 0
           ? Cookies.get("snapaper_server")
-          : "2",
+          : "1",
     });
   }
   hide = () => {
@@ -50,8 +50,8 @@ export default class Header extends React.Component {
           this.setState({ serverID: "1" });
           break;
         default:
-          Cookies.set("snapaper_server", "2");
-          this.setState({ serverID: "2" });
+          Cookies.set("snapaper_server", "1");
+          this.setState({ serverID: "1" });
           break;
       }
     }
@@ -61,7 +61,7 @@ export default class Header extends React.Component {
     });
   };
   render() {
-    const hoverContent = <div>Click to Switch Server Node</div>;
+    const hoverContent = <div>Click to Switch Content Source</div>;
     const clickContent = (
       <div>
         <CheckCircleOutlined /> Success

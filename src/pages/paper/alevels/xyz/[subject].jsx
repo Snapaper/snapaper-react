@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import dynamic from "next/dynamic";
 import isMobile from "ismobilejs";
-import config from "../../../config";
+import config from "../../../../config";
 
 // 动态引入组件
-const Footer = dynamic(() => import("../../../components/footer"));
+const Footer = dynamic(() => import("../../../../components/footer"));
 
 // 引入 AntD 组件
 import {
@@ -459,13 +459,8 @@ class AlevelSubject extends React.Component {
             this.state.isMobile ? (
               <Get
                 url={
-                  config.apiUrl.papers.alevel +
-                  this.props.router.query.subject +
-                  "/" +
-                  (Cookies.get("snapaper_server") &&
-                  parseInt(Cookies.get("snapaper_server")) !== 0
-                    ? Cookies.get("snapaper_server")
-                    : "2")
+                  config.apiUrl.papers.xyz.alevel +
+                  this.props.router.query.subject
                 }
                 onSuccess={(response) =>
                   this.setState({
@@ -534,13 +529,8 @@ class AlevelSubject extends React.Component {
             ) : (
               <Get
                 url={
-                  config.apiUrl.papers.alevel +
-                  this.props.router.query.subject +
-                  "/" +
-                  (Cookies.get("snapaper_server") &&
-                  parseInt(Cookies.get("snapaper_server")) !== 0
-                    ? Cookies.get("snapaper_server")
-                    : "2")
+                  config.apiUrl.papers.xyz.alevel +
+                  this.props.router.query.subject
                 }
                 onSuccess={(response) =>
                   this.setState({
@@ -563,7 +553,7 @@ class AlevelSubject extends React.Component {
                     return (
                       <div className="next-cate-error">
                         <Empty description={false} />
-                        <p>{error.message}</p>
+                        <p>Please make sure you are using Node 2</p>
                       </div>
                     );
                   } else if (isLoading) {

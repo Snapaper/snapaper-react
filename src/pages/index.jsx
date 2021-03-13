@@ -346,7 +346,7 @@ export default class Index extends React.Component {
                   >
                     <h1>Sponsor Us</h1>
                   </a>
-                  <p>Snapaper is 100% Free to use</p>
+                  <p>Support the development of Snapaper</p>
                 </div>
                 <div>
                   <img src="https://node.snapaper.com/vue/image?place=index_6" />

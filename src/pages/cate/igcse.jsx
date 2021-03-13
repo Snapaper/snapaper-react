@@ -3,6 +3,7 @@ import React from "react";
 import dynamic from "next/dynamic";
 import isMobile from "ismobilejs";
 import config from "../../config";
+import MBS from "../../components/mbs";
 
 // 动态引入组件
 const Footer = dynamic(() => import("../../components/footer"));
@@ -36,6 +37,8 @@ export default class igcse extends React.Component {
       display: false,
       MBSvisible: false,
       subjectCount: 0,
+      YCvisible: false,
+      YCsubject: "",
     };
   }
   componentDidMount() {
@@ -90,66 +93,80 @@ export default class igcse extends React.Component {
                 </h2>
                 <p>Click to expand list of most browsed subjects</p>
               </div>
+              <MBS
+                cate="igcse"
+                MBSvisible={this.state.MBSvisible}
+                cancelDisplay={() => {
+                  this.setState({ MBSvisible: false });
+                }}
+                toggleYearChoose={(subject) => {
+                  this.setState({
+                    YCsubject: subject.replace("amp;", ""),
+                    YCvisible: true,
+                  });
+                }}
+              />
               <Modal
-                title="Most Browsed Subjects"
-                visible={this.state.MBSvisible}
+                title="Exam Years"
+                visible={this.state.YCvisible}
                 footer={null}
-                onCancel={() => this.setState({ MBSvisible: false })}
+                zIndex={2}
+                onCancel={() => this.setState({ YCvisible: false })}
               >
-                <Link href="/paper/igcse/Chemistry%20(0620)" prefetch={false}>
-                  <div className="next-cate-subjects-list">
-                    <h2>Chemistry</h2>
-                    <p>
-                      Click to browse all papers <CaretRightOutlined />
-                    </p>
-                  </div>
-                </Link>
-                <Link href="/paper/igcse/Physics%20(0625)" prefetch={false}>
-                  <div className="next-cate-subjects-list">
-                    <h2>Physics</h2>
-                    <p>
-                      Click to browse all papers <CaretRightOutlined />
-                    </p>
-                  </div>
-                </Link>
-                <Link href="/paper/igcse/Economics%20(0455)" prefetch={false}>
-                  <div className="next-cate-subjects-list">
-                    <h2>Economics</h2>
-                    <p>
-                      Click to browse all papers <CaretRightOutlined />
-                    </p>
-                  </div>
-                </Link>
-                <Link href="/paper/igcse/Mathematics%20(0580)" prefetch={false}>
-                  <div className="next-cate-subjects-list">
-                    <h2>Mathematics</h2>
-                    <p>
-                      Click to browse all papers <CaretRightOutlined />
-                    </p>
-                  </div>
-                </Link>
-                <Link
-                  href="/paper/igcse/Mathematics%20-%20Additional%20(0606)"
-                  prefetch={false}
-                >
-                  <div className="next-cate-subjects-list">
-                    <h2>Additional Mathematics</h2>
-                    <p>
-                      Click to browse all papers <CaretRightOutlined />
-                    </p>
-                  </div>
-                </Link>
-                <Link
-                  href="/paper/igcse/Global%20Perspectives%20(0457)"
-                  prefetch={false}
-                >
-                  <div className="next-cate-subjects-list">
-                    <h2>Global Perspectives</h2>
-                    <p>
-                      Click to browse all papers <CaretRightOutlined />
-                    </p>
-                  </div>
-                </Link>
+                <Get url={config.apiUrl.years.igcse + this.state.YCsubject}>
+                  {(error, response, isLoading) => {
+                    if (error) {
+                      openNotificationWithIcon(
+                        "error",
+                        "Request error, please report to TonyHe"
+                      );
+                      return (
+                        <div className="next-cate-error">
+                          <Empty description={false} />
+                          <p>{error.message}</p>
+                        </div>
+                      );
+                    } else if (isLoading) {
+                      return (
+                        <div>
+                          <Skeleton active />
+                          <Skeleton active />
+                        </div>
+                      );
+                    } else if (response !== null) {
+                      // 请求成功展示列表
+                      return (
+                        <div className="next-cate-years">
+                          {response.data.years.map((item, index) => {
+                            return (
+                              <Link
+                                href={
+                                  "/paper/igcse/com/" +
+                                  item.name +
+                                  "/" +
+                                  this.state.YCsubject
+                                }
+                                prefetch={false}
+                                key={index}
+                              >
+                                <div>
+                                  <h2>{item.name}</h2>
+                                  <CaretRightOutlined />
+                                </div>
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      );
+                    }
+                    return (
+                      <div>
+                        <Skeleton active />
+                        <Skeleton active />
+                      </div>
+                    );
+                  }}
+                </Get>
               </Modal>
             </div>
           </section>
@@ -160,7 +177,7 @@ export default class igcse extends React.Component {
                 (Cookies.get("snapaper_server") &&
                 parseInt(Cookies.get("snapaper_server")) !== 0
                   ? Cookies.get("snapaper_server")
-                  : "2")
+                  : "1")
               }
               onSuccess={(response) =>
                 this.setState({
@@ -199,23 +216,45 @@ export default class igcse extends React.Component {
                     <div className="next-cate-subject">
                       {response.data.cates.map((item, index) => {
                         if (!!item.name && item.name !== "error_log") {
-                          return (
-                            <Link
-                              href={
-                                "/paper/igcse/" + item.name.replace("amp;", "")
-                              }
-                              prefetch={false}
-                              key={index}
-                            >
-                              <div key={index}>
+                          if (
+                            parseInt(Cookies.get("snapaper_server")) == 1 ||
+                            !Cookies.get("snapaper_server")
+                          ) {
+                            return (
+                              <div
+                                onClick={() => {
+                                  this.setState({
+                                    YCsubject: item.name.replace("amp;", ""),
+                                    YCvisible: true,
+                                  });
+                                }}
+                              >
                                 <h2>{item.name.replace("amp;", "")}</h2>
                                 <p>
-                                  Click to browse all papers{" "}
-                                  <CaretRightOutlined />
+                                  Click to browse papers <CaretRightOutlined />
                                 </p>
                               </div>
-                            </Link>
-                          );
+                            );
+                          } else {
+                            return (
+                              <Link
+                                href={
+                                  "/paper/igcse/xyz/" +
+                                  item.name.replace("amp;", "")
+                                }
+                                prefetch={false}
+                                key={index}
+                              >
+                                <div key={index}>
+                                  <h2>{item.name.replace("amp;", "")}</h2>
+                                  <p>
+                                    Click to browse all papers{" "}
+                                    <CaretRightOutlined />
+                                  </p>
+                                </div>
+                              </Link>
+                            );
+                          }
                         }
                       })}
                     </div>

@@ -13,7 +13,6 @@ export default class extends Document {
     return (
       <Html>
         <Head>
-          <meta name="viewport" content="viewport-fit=cover" />
           <meta name="application-name" content={APP_NAME} />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta
@@ -25,10 +24,6 @@ export default class extends Document {
           <meta name="format-detection" content="telephone=no" />
           <meta name="mobile-web-app-capable" content="yes" />
           <meta name="theme-color" content="#f1f2f3" />
-          <meta
-            name="viewport"
-            content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
-          />
           <link
             rel="apple-touch-icon"
             sizes="192x192"

@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 // 全局样式引入
 import "../styles/global.scss";
 
@@ -34,10 +36,17 @@ Router.onRouteChangeError = () => NProgress.done();
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div>
+    <>
+      <Head>
+        <meta name="viewport" content="viewport-fit=cover" />
+        <meta
+            name="viewport"
+            content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
+          />
+      </Head>
       <Header></Header>
       <Component {...pageProps} />
-    </div>
+    </>
   );
 }
 

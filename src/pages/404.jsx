@@ -13,11 +13,11 @@ export default function Custom404() {
       <Result
         status="404"
         title="404"
-        subTitle="Sorry, the page you visited does not exist."
+        subTitle="Sorry, this page does not exist."
         className="ant-result-pc"
         extra={
           <Link href="/">
-            <Button type="primary">Back Home</Button>
+            <Button type="primary">Back to Home</Button>
           </Link>
         }
       />
