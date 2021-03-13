@@ -30,14 +30,6 @@
 <br/>
 
 
-### Tech Stack
-- React.js 16.13.1
-- Next.js 9.3
-
-
-<br/>
-
-
 ### Development
 ```bash
 git clone git@github.com:Snapaper/snapaper-react.git
@@ -45,18 +37,13 @@ yarn install
 ```
 
 ```bash
-// Development Server
+// Development
 yarn run dev
 ```
 
 ```bash
-// Production Build
+// Production
 yarn run build
-```
-
-```bash
-// Static Website
-yarn run export
 ```
 
 ```bash
@@ -68,30 +55,8 @@ yarn run start
 <br/>
 
 
-### Features
-+ Ant Design 4
-+ React-Axios
-+ Ismobilejs
-+ Js-Cookie
-+ Next-pwa
-
-
-<br/>
-
-
-### Change Logs
-[https://www.snapaper.com](https://www.snapaper.com/about)
-
-
-<br/>
-
-
 ### Sponsor me
 Your name will be on the list [Sponsors](https://www.ouorz.com/sponsor)
-<br/>
-
-![Sponsor](https://i.loli.net/2019/02/18/5c6a80afd1e26.png)
-
 <br/>
 
 File an issue if you encountered any problem
