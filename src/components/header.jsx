@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Head from "next/head";
 import Cookies from "js-cookie";
-import { Menu, Popover, Button } from "antd";
+import { Menu, Popover, Button, notification } from "antd";
 import { CaretDownOutlined, CheckCircleOutlined } from "@ant-design/icons";
 
 const { SubMenu } = Menu;
@@ -54,6 +54,7 @@ export default class Header extends React.Component {
           this.setState({ serverID: "1" });
           break;
       }
+      location.reload();
     }
     this.setState({
       clicked: visible,
@@ -67,6 +68,25 @@ export default class Header extends React.Component {
         <CheckCircleOutlined /> Success
       </div>
     );
+    if (this.state.serverID == "2") {
+      notification["info"]({
+        duration: 0,
+        message: "Consider using Node 1",
+        description: (
+          <p style={{ marginBottom: "0px" }}>
+            We have made a lot of improvements to Node 1, now it has more papers
+            and a better classification system. Try it out now! Suggestions?{" "}
+            <a
+              href="mailto:tony.hlp@hotmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Reach out.
+            </a>
+          </p>
+        ),
+      });
+    }
     return (
       <div className="header-div">
         <Head>
