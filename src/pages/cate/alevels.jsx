@@ -156,6 +156,19 @@ export default class Alevel extends React.Component {
                               </Link>
                             );
                           })}
+                          {response.data.years.length == 0 && (
+                            <Link
+                              href={
+                                "/paper/alevels/com/all" + this.state.YCsubject
+                              }
+                              prefetch={false}
+                            >
+                              <div>
+                                <h2>All years</h2>
+                                <CaretRightOutlined />
+                              </div>
+                            </Link>
+                          )}
                         </div>
                       );
                     }
