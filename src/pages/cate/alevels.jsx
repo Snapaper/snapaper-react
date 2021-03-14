@@ -159,7 +159,7 @@ export default class Alevel extends React.Component {
                           {response.data.years.length == 0 && (
                             <Link
                               href={
-                                "/paper/alevels/com/all" + this.state.YCsubject
+                                "/paper/alevels/com/all/" + this.state.YCsubject
                               }
                               prefetch={false}
                             >

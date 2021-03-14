@@ -158,7 +158,9 @@ export default class igcse extends React.Component {
                           })}
                           {response.data.years.length == 0 && (
                             <Link
-                              href={"/paper/igcse/com/all" + this.state.YCsubject}
+                              href={
+                                "/paper/igcse/com/all/" + this.state.YCsubject
+                              }
                               prefetch={false}
                             >
                               <div>
