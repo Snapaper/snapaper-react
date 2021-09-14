@@ -47,11 +47,11 @@ export default class About extends React.Component {
               <p>
                 This website was developed by <b>TonyHe</b>.
                 <br />
-                If you found this project helpful or interesting, please
+                If you found this project helpful, please
                 consider{" "}
                 <a href="https://www.ouorz.com/sponsor">sponsoring him</a>.
                 <br />
-                If you encounter any problem during the use of this website,
+                If you encountered any problem during the use of this website,
                 please contact him through <b>Email (tony.hlp@hotmail.com)</b>
                 .
                 <br />
@@ -69,7 +69,7 @@ export default class About extends React.Component {
             </div>
           </div>
         </main>
-        <Footer></Footer>
+        <Footer />
       </div>
     );
   }

@@ -16,13 +16,32 @@ export default class Header extends React.Component {
     };
   }
   componentDidMount() {
+    const serverID = Cookies.get("snapaper_server") &&
+      parseInt(Cookies.get("snapaper_server")) !== 0
+      ? Cookies.get("snapaper_server")
+      : "1";
     this.setState({
-      serverID:
-        Cookies.get("snapaper_server") &&
-        parseInt(Cookies.get("snapaper_server")) !== 0
-          ? Cookies.get("snapaper_server")
-          : "1",
+      serverID
     });
+    if (serverID === "2") {
+      notification["info"]({
+        duration: 0,
+        message: "Consider using Node 1",
+        description: (
+          <p style={{ marginBottom: "0px" }}>
+            We have made lots of improvements to Node 1, now it has more papers
+            and a better classification system. Try it out now! Suggestions?{" "}
+            <a
+              href="mailto:tony.hlp@hotmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Reach out.
+            </a>
+          </p>
+        ),
+      });
+    }
   }
   hide = () => {
     this.setState({
@@ -68,25 +87,6 @@ export default class Header extends React.Component {
         <CheckCircleOutlined /> Success
       </div>
     );
-    if (this.state.serverID == "2") {
-      notification["info"]({
-        duration: 0,
-        message: "Consider using Node 1",
-        description: (
-          <p style={{ marginBottom: "0px" }}>
-            We have made a lot of improvements to Node 1, now it has more papers
-            and a better classification system. Try it out now! Suggestions?{" "}
-            <a
-              href="mailto:tony.hlp@hotmail.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Reach out.
-            </a>
-          </p>
-        ),
-      });
-    }
     return (
       <div className="header-div">
         <Head>
@@ -132,22 +132,6 @@ export default class Header extends React.Component {
               <a>Home</a>
             </Link>
           </Menu.Item>
-          <SubMenu icon={<CaretDownOutlined />} title="Platform">
-            <Menu.Item>
-              <Link href="/">
-                <a>Snapaper</a>
-              </Link>
-            </Menu.Item>
-            <Menu.Item>
-              <a
-                href="https://www.eugrade.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Eugrade
-              </a>
-            </Menu.Item>
-          </SubMenu>
           <SubMenu icon={<CaretDownOutlined />} title="Resources">
             <Menu.Item>
               <Link href="/topic/ebooks">
@@ -167,6 +151,9 @@ export default class Header extends React.Component {
           </SubMenu>
           <SubMenu icon={<CaretDownOutlined />} title="Support">
             <Menu.Item>
+              <a href="https://www.ouorz.com/">Blog</a>
+            </Menu.Item>
+            <Menu.Item>
               <a
                 href="https://www.ouorz.com/sponsor"
                 target="_blank"
@@ -176,7 +163,18 @@ export default class Header extends React.Component {
               </a>
             </Menu.Item>
             <Menu.Item>
-              <a href="https://www.ouorz.com/">Blog</a>
+              <a href="mailto:tony.hlp@hotmail.com">Email</a>
+            </Menu.Item>
+          </SubMenu>
+          <SubMenu icon={<CaretDownOutlined />} title="Other">
+            <Menu.Item>
+              <a
+                href="https://www.snapodcast.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Snapod
+              </a>
             </Menu.Item>
           </SubMenu>
           <ul className="nav-2">

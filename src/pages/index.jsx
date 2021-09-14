@@ -84,12 +84,12 @@ export default class Index extends React.Component {
     await axios
       .get(
         "https://node.snapaper.com/api/cates/" +
-          targetOption.value +
-          "/" +
-          (Cookies.get("snapaper_server") &&
+        targetOption.value +
+        "/" +
+        (Cookies.get("snapaper_server") &&
           parseInt(Cookies.get("snapaper_server")) !== 0
-            ? Cookies.get("snapaper_server")
-            : "1")
+          ? Cookies.get("snapaper_server")
+          : "1")
       )
       .then((res) => {
         targetOption.children = [];
@@ -120,7 +120,7 @@ export default class Index extends React.Component {
       // 获取服务器地址
       let server =
         (Cookies.get("snapaper_server") &&
-        parseInt(Cookies.get("snapaper_server")) !== 0
+          parseInt(Cookies.get("snapaper_server")) !== 0
           ? Cookies.get("snapaper_server")
           : "1") == "1"
           ? "https://papers.gceguide.com"
@@ -201,7 +201,7 @@ export default class Index extends React.Component {
                 <img src="https://node.snapaper.com/vue/image?place=index_1" />
                 <div>
                   <h1>One Step</h1>
-                  <p>A nice and easy way to find a paper</p>
+                  <p>The fastest and easiest way to find a paper</p>
                 </div>
               </section>
               {/* 一步弹窗 */}
