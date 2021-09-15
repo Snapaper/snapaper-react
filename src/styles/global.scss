@@ -661,8 +661,7 @@ tr {
   color: #73849a;
   font-weight: 300;
   margin-bottom: 25px;
-  box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1),
-    0 0.085em 0.175em rgba(2, 8, 20, 0.08);
+  box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1), 0 0.085em 0.175em rgba(2, 8, 20, 0.08);
   div {
     display: flex;
     p {
@@ -1251,16 +1250,14 @@ tr {
 
 .next-index-card-large {
   cursor: pointer;
-  box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1),
-    0 0.085em 0.175em rgba(2, 8, 20, 0.08);
+  box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1), 0 0.085em 0.175em rgba(2, 8, 20, 0.08);
   transition: 0.2s ease;
   border-radius: 6px;
   margin-right: 1.35rem;
   width: 400px;
 
   &:hover {
-    box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1),
-      0 0.175em 0.5em rgba(2, 8, 20, 0.08);
+    box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1), 0 0.175em 0.5em rgba(2, 8, 20, 0.08);
     transform: translateY(-1px);
   }
 
@@ -1299,15 +1296,13 @@ tr {
 
   .card {
     cursor: pointer;
-    box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1),
-      0 0.085em 0.175em rgba(2, 8, 20, 0.08);
+    box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1), 0 0.085em 0.175em rgba(2, 8, 20, 0.08);
     transition: 0.2s ease;
     border-radius: 6px;
     padding: 1.65em 2em;
 
     &:hover {
-      box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1),
-        0 0.175em 0.5em rgba(2, 8, 20, 0.08);
+      box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1), 0 0.175em 0.5em rgba(2, 8, 20, 0.08);
       transform: translateY(-1px);
     }
 
@@ -1358,16 +1353,14 @@ tr {
 }
 
 .next-index-card-left {
-  box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1),
-    0 0.085em 0.175em rgba(2, 8, 20, 0.08);
+  box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1), 0 0.085em 0.175em rgba(2, 8, 20, 0.08);
   transition: 0.2s ease;
   border-radius: 6px;
   margin-right: 1.35rem;
   flex: 1;
 
   &:hover {
-    box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1),
-      0 0.175em 0.5em rgba(2, 8, 20, 0.08);
+    box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1), 0 0.175em 0.5em rgba(2, 8, 20, 0.08);
     transform: translateY(-1px);
   }
 
@@ -1399,16 +1392,14 @@ tr {
 }
 
 .next-index-card-right {
-  box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1),
-    0 0.085em 0.175em rgba(2, 8, 20, 0.08);
+  box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1), 0 0.085em 0.175em rgba(2, 8, 20, 0.08);
   transition: 0.2s ease;
   border-radius: 6px;
   display: flex;
   flex: 1;
 
   &:hover {
-    box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1),
-      0 0.175em 0.5em rgba(2, 8, 20, 0.08);
+    box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1), 0 0.175em 0.5em rgba(2, 8, 20, 0.08);
     transform: translateY(-1px);
   }
 
@@ -1545,16 +1536,14 @@ tr {
   }
 
   div:nth-child(2) {
-    box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1),
-      0 0.085em 0.175em rgba(2, 8, 20, 0.08);
+    box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1), 0 0.085em 0.175em rgba(2, 8, 20, 0.08);
     transition: 0.2s ease;
     border-radius: 6px;
     cursor: pointer;
     padding: 1.3em 1.8em;
 
     &:hover {
-      box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1),
-        0 0.175em 0.5em rgba(2, 8, 20, 0.08);
+      box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1), 0 0.175em 0.5em rgba(2, 8, 20, 0.08);
       transform: translateY(-1px);
     }
 
@@ -1570,8 +1559,7 @@ tr {
 }
 
 .next-cate-subjects-list {
-  box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1),
-    0 0.085em 0.175em rgba(2, 8, 20, 0.08);
+  box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1), 0 0.085em 0.175em rgba(2, 8, 20, 0.08);
   transition: 0.2s ease;
   border-radius: 6px;
   cursor: pointer;
@@ -1579,8 +1567,7 @@ tr {
   margin-bottom: 15px;
 
   &:hover {
-    box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1),
-      0 0.175em 0.5em rgba(2, 8, 20, 0.08);
+    box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1), 0 0.175em 0.5em rgba(2, 8, 20, 0.08);
     transform: translateY(-1px);
   }
 
@@ -1607,8 +1594,7 @@ tr {
   margin-bottom: 100px;
 
   div {
-    box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1),
-      0 0.085em 0.175em rgba(2, 8, 20, 0.08);
+    box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1), 0 0.085em 0.175em rgba(2, 8, 20, 0.08);
     transition: 0.2s ease;
     border-radius: 6px;
     cursor: pointer;
@@ -1617,8 +1603,7 @@ tr {
     border-left: 5px solid #eee;
 
     &:hover {
-      box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1),
-        0 0.175em 0.5em rgba(2, 8, 20, 0.08);
+      box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1), 0 0.175em 0.5em rgba(2, 8, 20, 0.08);
       transform: translateY(-1px);
       border-color: #1890ff;
     }
@@ -1650,8 +1635,7 @@ tr {
   div {
     display: flex;
     align-items: center;
-    box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1),
-      0 0.085em 0.175em rgba(2, 8, 20, 0.08);
+    box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1), 0 0.085em 0.175em rgba(2, 8, 20, 0.08);
     transition: 0.2s ease;
     border-radius: 6px;
     cursor: pointer;
@@ -1659,8 +1643,7 @@ tr {
     border-left: 5px solid #eee;
 
     &:hover {
-      box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1),
-        0 0.175em 0.5em rgba(2, 8, 20, 0.08);
+      box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1), 0 0.175em 0.5em rgba(2, 8, 20, 0.08);
       transform: translateY(-1px);
       border-color: #1890ff;
       span {
@@ -1695,8 +1678,7 @@ tr {
   .downloading {
     display: flex;
     .left {
-      box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1),
-        0 0.085em 0.175em rgba(2, 8, 20, 0.08);
+      box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1), 0 0.085em 0.175em rgba(2, 8, 20, 0.08);
       transition: 0.2s ease;
       border-radius: 6px;
       cursor: pointer;
@@ -1713,16 +1695,14 @@ tr {
       border-left: 3px solid #73849a;
 
       &:hover {
-        box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1),
-          0 0.175em 0.5em rgba(2, 8, 20, 0.08);
+        box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1), 0 0.175em 0.5em rgba(2, 8, 20, 0.08);
         transform: translateY(-1px);
       }
     }
     .right {
       div {
         display: inline-block;
-        box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1),
-          0 0.085em 0.175em rgba(2, 8, 20, 0.08);
+        box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1), 0 0.085em 0.175em rgba(2, 8, 20, 0.08);
         transition: 0.2s ease;
         border-radius: 6px;
         cursor: pointer;
@@ -1733,8 +1713,7 @@ tr {
         border-left: 3px solid #eee;
 
         &:hover {
-          box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1),
-            0 0.175em 0.5em rgba(2, 8, 20, 0.08);
+          box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1), 0 0.175em 0.5em rgba(2, 8, 20, 0.08);
           transform: translateY(-1px);
         }
 
@@ -1940,4 +1919,25 @@ tr {
 .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item,
 .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu {
   margin: -1px 0px 0 !important;
+}
+
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover::after,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu:hover::after,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-active::after,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-active::after,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-open::after,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-open::after,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-selected::after,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-selected::after {
+  border-bottom: none !important;
+}
+
+.ant-menu-horizontal > .ant-menu-item::after,
+.ant-menu-horizontal > .ant-menu-submenu::after {
+  border: none !important;
+}
+
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu {
+  padding: 0 5px !important;
 }

@@ -114,7 +114,7 @@ export default class Header extends React.Component {
           />
         </Head>
         <Menu mode="horizontal">
-          <Menu.Item className="header-ant-logo">
+          <Menu.Item key="logo" className="header-ant-logo">
             <Link href="/">
               <a>
                 <h3 className="nav-title">
@@ -127,33 +127,33 @@ export default class Header extends React.Component {
               </a>
             </Link>
           </Menu.Item>
-          <Menu.Item>
+          <Menu.Item key="home">
             <Link href="/">
               <a>Home</a>
             </Link>
           </Menu.Item>
-          <SubMenu icon={<CaretDownOutlined />} title="Resources">
-            <Menu.Item>
+          <SubMenu key="Resources" icon={<CaretDownOutlined />} title="Resources">
+            <Menu.Item key="pdfebooks">
               <Link href="/topic/ebooks">
                 <a>PDF ebooks</a>
               </Link>
             </Menu.Item>
-            <Menu.Item>
+            <Menu.Item key="sme">
               <Link href="/topic/savemyexams">
                 <a>Save My Exams</a>
               </Link>
             </Menu.Item>
-            <Menu.Item>
+            <Menu.Item key="resourceguide">
               <Link href="/page/about">
                 <a>Resource Guide</a>
               </Link>
             </Menu.Item>
           </SubMenu>
-          <SubMenu icon={<CaretDownOutlined />} title="Support">
-            <Menu.Item>
+          <SubMenu key="support" icon={<CaretDownOutlined />} title="Support">
+            <Menu.Item key="blog">
               <a href="https://www.ouorz.com/">Blog</a>
             </Menu.Item>
-            <Menu.Item>
+            <Menu.Item key="sponsor">
               <a
                 href="https://www.ouorz.com/sponsor"
                 target="_blank"
@@ -162,12 +162,12 @@ export default class Header extends React.Component {
                 Sponsor
               </a>
             </Menu.Item>
-            <Menu.Item>
+            <Menu.Item key="email">
               <a href="mailto:tony.hlp@hotmail.com">Email</a>
             </Menu.Item>
           </SubMenu>
-          <SubMenu icon={<CaretDownOutlined />} title="Other">
-            <Menu.Item>
+          <SubMenu key="other" icon={<CaretDownOutlined />} title="Other">
+            <Menu.Item key="snapod">
               <a
                 href="https://www.snapodcast.com"
                 target="_blank"
@@ -177,7 +177,7 @@ export default class Header extends React.Component {
               </a>
             </Menu.Item>
           </SubMenu>
-          <ul className="nav-2">
+          <Menu.Item className="nav-2">
             <Popover
               style={{ width: 500 }}
               content={hoverContent}
@@ -208,7 +208,7 @@ export default class Header extends React.Component {
                 </li>
               </Popover>
             </Popover>
-          </ul>
+          </Menu.Item>
         </Menu>
       </div>
     );
