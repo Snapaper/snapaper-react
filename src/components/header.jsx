@@ -3,7 +3,7 @@ import Link from "next/link";
 import Head from "next/head";
 import Cookies from "js-cookie";
 import { Menu, Popover, Button, notification } from "antd";
-import { CaretDownOutlined, CheckCircleOutlined } from "@ant-design/icons";
+import { HomeOutlined, CaretDownOutlined, CheckCircleOutlined } from "@ant-design/icons";
 
 const { SubMenu } = Menu;
 

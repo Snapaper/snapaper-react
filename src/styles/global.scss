@@ -378,6 +378,7 @@ html {
   margin: 0px;
   margin-top: 6px;
   padding: 0px;
+  flex: 1 !important;
 }
 
 .nav-2-icon1 {
@@ -678,7 +679,25 @@ tr {
   }
 }
 
+.ant-menu-submenu-disabled {
+  display: none !important;
+}
+
 @media screen and (max-width: 850px) {
+  .nav-title {
+    border-right: none !important;
+    padding-right: 0px !important;
+    margin-left: 35px !important;
+  }
+
+  .next-nav-icon-1 {
+    display: none;
+  }
+
+  .ant-menu-horizontal {
+    justify-content: center;
+  }
+
   .notice {
     display: none;
   }
@@ -1199,6 +1218,8 @@ tr {
 .header-ant-logo {
   padding-right: 15px !important;
   margin-left: -15px !important;
+  margin-right: 20px !important;
+  display: block !important;
 }
 
 .ant-container {
@@ -1800,6 +1821,11 @@ tr {
 }
 
 @media screen and (max-width: 600px) {
+  .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item,
+  .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu {
+    display: none;
+  }
+
   .header-div {
     text-align: center;
     p {
@@ -1918,7 +1944,7 @@ tr {
 
 .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item,
 .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu {
-  margin: -1px 0px 0 !important;
+  margin: -1px 0px 0;
 }
 
 .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover::after,
