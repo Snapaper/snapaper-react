@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Snapaper</h1>
-  <p>An Integrated Platform of Past Papers and More Study Resources</p>
+  <p>A Website for Downloading Past Papers and Other Study Resources</p>
   <a href="https://github.com/Snapaper/snapaper-react/network/members">
     <img src="https://img.shields.io/github/forks/Snapaper/snapaper-react.svg" alt="forks">
   </a>
@@ -18,6 +18,11 @@
   </a>
 </div>
 
+
+<br/>
+
+### Foreword
+Legacy code alert ⚠️
 
 <br/>
 
@@ -58,7 +63,3 @@ yarn run start
 ### Sponsor me
 Your name will be on the list [Sponsors](https://www.ouorz.com/sponsor)
 <br/>
-
-File an issue if you encountered any problem
-<br/>
-I will reply you as soon as possible

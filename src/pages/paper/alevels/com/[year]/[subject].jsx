@@ -98,7 +98,6 @@ function downloadList() {
         stillNeedDownloadlist.length
       ) {
         let list = stillNeedDownloadlist;
-        console.log(stillNeedDownloadlist);
         let i = 0;
         let download = function () {
           if (i >= list.length) {
