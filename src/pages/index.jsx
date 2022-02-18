@@ -317,9 +317,7 @@ export default class Index extends React.Component {
 										</div>
 										<div>
 											<h2>Save My Exams</h2>
-											<p>
-												Practice exams mark scheme for SaveMyExams
-											</p>
+											<p>Practice exams mark scheme for SaveMyExams</p>
 										</div>
 									</div>
 								</Link>
@@ -336,7 +334,12 @@ export default class Index extends React.Component {
 									</div>
 								</Link>
 							</div>
-							<div className='next-index-card-right'>
+							<div
+								className='next-index-card-right'
+								onClick={() => {
+									window.location.href = "https://www.ouorz.com/sponsor";
+								}}
+							>
 								<div>
 									<a
 										href='https://www.ouorz.com/sponsor'

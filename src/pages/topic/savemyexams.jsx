@@ -122,7 +122,7 @@ export default class sme extends React.Component {
                   if (error) {
                     openNotificationWithIcon(
                       "error",
-                      "Request error, please report to TonyHe"
+                      "An error has occurred, please use Support > Service Status to check Snapaper service status, and send an email to Tony for support."
                     );
                     return (
                       <div className="next-cate-error">

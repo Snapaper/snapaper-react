@@ -425,14 +425,14 @@ class igcseSubject extends React.Component {
                       </p>
                     </div>
                   }
-                  title="Select Downloading Mode"
+                  title="How to download"
                   trigger="hover"
                 >
-                  <div className="left">Downloading Mode</div>
+                  <div className="left">Download Settings</div>
                 </Popover>
                 {/* 下载模式 Modal */}
                 <div className="right">
-                  <div onClick={() => this.doDownloadList()}>Download List</div>
+                  <div onClick={() => this.doDownloadList()}>Download Selected</div>
                   <div onClick={() => this.doDownloadAll()}>Download All</div>
                 </div>
               </div>
@@ -486,7 +486,7 @@ class igcseSubject extends React.Component {
                     if (error) {
                       openNotificationWithIcon(
                         "error",
-                        "Request error, please report to TonyHe"
+                        "An error has occurred, please use Support > Service Status to check Snapaper service status, and send an email to Tony for support."
                       );
                       return (
                         <div className="next-cate-error">
@@ -556,7 +556,7 @@ class igcseSubject extends React.Component {
                     if (error) {
                       openNotificationWithIcon(
                         "error",
-                        "Request error, please report to TonyHe"
+                        "An error has occurred, please use Support > Service Status to check Snapaper service status, and send an email to Tony for support."
                       );
                       return (
                         <div className="next-cate-error">

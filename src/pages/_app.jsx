@@ -10,11 +10,11 @@ import "antd/dist/antd.css";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 NProgress.configure({
-  easing: "ease-in-out",
-  speed: 500,
-  showSpinner: false,
-  trickleSpeed: 200,
-  minimum: 0.2,
+	easing: "ease-in-out",
+	speed: 500,
+	showSpinner: false,
+	trickleSpeed: 200,
+	minimum: 0.2,
 });
 
 // React Router 引入以配置
@@ -29,27 +29,40 @@ const Header = dynamic(() => import("../components/header"));
 
 // React Router 配置加载进度条
 Router.onRouteChangeStart = (url) => {
-  NProgress.inc();
+	NProgress.inc();
 };
 Router.onRouteChangeComplete = () => NProgress.done();
 Router.onRouteChangeError = () => NProgress.done();
 
 function MyApp({ Component, pageProps }) {
-  return (
-    <>
-      <Head>
-        <meta name="viewport" content="viewport-fit=cover" />
-        <meta
-            name="viewport"
-            content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
-          />
-      </Head>
-      <Header></Header>
-      <Component {...pageProps} />
-    </>
-  );
+	return (
+		<>
+			<Head>
+				<meta name='viewport' content='viewport-fit=cover' />
+				<meta
+					name='viewport'
+					content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover'
+				/>
+				<link
+					rel='Shortcut Icon'
+					href='https://static.ouorz.com/snapaper@next_logo.ico'
+					type='image/x-icon'
+				/>
+				<meta
+					name='keywords'
+					content='CAIE past papers,CAIE,past papers,IGCSE,ALevel,OLevel,pastpapers,snapaper,snap,papers,exam papers,mock exams,past exam papers'
+				/>
+				<meta
+					name='description'
+					content='An Integrated Platform of Past-papers and More Study Resources'
+				/>
+			</Head>
+			<Header />
+			<Component {...pageProps} />
+		</>
+	);
 }
 
 export default withAnalytics(Router, {
-  ga: "UA-163998158-2",
+	ga: "UA-163998158-2",
 })(MyApp);

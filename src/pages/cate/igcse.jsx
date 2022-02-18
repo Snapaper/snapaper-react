@@ -89,7 +89,7 @@ export default class igcse extends React.Component {
               </div>
               <div onClick={() => this.setState({ MBSvisible: true })}>
                 <h2>
-                  <FireOutlined /> Most Browsed Subjects
+                  <FireOutlined /> Trending Subjects
                 </h2>
                 <p>Click to expand list of most browsed subjects</p>
               </div>
@@ -118,7 +118,7 @@ export default class igcse extends React.Component {
                     if (error) {
                       openNotificationWithIcon(
                         "error",
-                        "Request error, please report to TonyHe"
+                        "An error has occurred, please use Support > Service Status to check Snapaper service status, and send an email to Tony for support."
                       );
                       return (
                         <div className="next-cate-error">
@@ -208,7 +208,7 @@ export default class igcse extends React.Component {
                 if (error) {
                   openNotificationWithIcon(
                     "error",
-                    "Request error, please report to TonyHe"
+                    "An error has occurred, please use Support > Service Status to check Snapaper service status, and send an email to Tony for support."
                   );
                   return (
                     <div className="next-cate-error">
@@ -244,7 +244,7 @@ export default class igcse extends React.Component {
                               >
                                 <h2>{item.name.replace("amp;", "")}</h2>
                                 <p>
-                                  Click to browse papers <CaretRightOutlined />
+                                  Choose an Exam Year <CaretRightOutlined />
                                 </p>
                               </div>
                             );
@@ -261,7 +261,7 @@ export default class igcse extends React.Component {
                                 <div key={index}>
                                   <h2>{item.name.replace("amp;", "")}</h2>
                                   <p>
-                                    Click to browse all papers{" "}
+                                    All papers{" "}
                                     <CaretRightOutlined />
                                   </p>
                                 </div>

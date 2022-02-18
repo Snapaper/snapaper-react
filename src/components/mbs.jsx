@@ -13,7 +13,7 @@ export default function MBS({
   if (cate == "alevel") {
     return (
       <Modal
-        title="Most Browsed Subjects"
+        title="Trending Subjects"
         visible={MBSvisible}
         footer={null}
         zIndex={1}
@@ -29,7 +29,7 @@ export default function MBS({
             >
               <h2>Chemistry</h2>
               <p>
-                Click to browse all papers <CaretRightOutlined />
+                All papers <CaretRightOutlined />
               </p>
             </div>
             <div
@@ -40,7 +40,7 @@ export default function MBS({
             >
               <h2>Physics</h2>
               <p>
-                Click to browse all papers <CaretRightOutlined />
+                All papers <CaretRightOutlined />
               </p>
             </div>
             <div
@@ -51,7 +51,7 @@ export default function MBS({
             >
               <h2>Economics</h2>
               <p>
-                Click to browse all papers <CaretRightOutlined />
+                All papers <CaretRightOutlined />
               </p>
             </div>
             <div
@@ -62,7 +62,7 @@ export default function MBS({
             >
               <h2>Mathematics</h2>
               <p>
-                Click to browse all papers <CaretRightOutlined />
+                All papers <CaretRightOutlined />
               </p>
             </div>
             <div
@@ -73,7 +73,7 @@ export default function MBS({
             >
               <h2>Further Mathematics</h2>
               <p>
-                Click to browse all papers <CaretRightOutlined />
+                All papers <CaretRightOutlined />
               </p>
             </div>
           </div>
@@ -83,7 +83,7 @@ export default function MBS({
               <div className="next-cate-subjects-list">
                 <h2>Chemistry</h2>
                 <p>
-                  Click to browse all papers <CaretRightOutlined />
+                  All papers <CaretRightOutlined />
                 </p>
               </div>
             </Link>
@@ -91,7 +91,7 @@ export default function MBS({
               <div className="next-cate-subjects-list">
                 <h2>Physics</h2>
                 <p>
-                  Click to browse all papers <CaretRightOutlined />
+                  All papers <CaretRightOutlined />
                 </p>
               </div>
             </Link>
@@ -99,7 +99,7 @@ export default function MBS({
               <div className="next-cate-subjects-list">
                 <h2>Economics</h2>
                 <p>
-                  Click to browse all papers <CaretRightOutlined />
+                  All papers <CaretRightOutlined />
                 </p>
               </div>
             </Link>
@@ -110,7 +110,7 @@ export default function MBS({
               <div className="next-cate-subjects-list">
                 <h2>Mathematics</h2>
                 <p>
-                  Click to browse all papers <CaretRightOutlined />
+                  All papers <CaretRightOutlined />
                 </p>
               </div>
             </Link>
@@ -121,7 +121,7 @@ export default function MBS({
               <div className="next-cate-subjects-list">
                 <h2>Further Mathematics</h2>
                 <p>
-                  Click to browse all papers <CaretRightOutlined />
+                  All papers <CaretRightOutlined />
                 </p>
               </div>
             </Link>
@@ -143,7 +143,7 @@ export default function MBS({
   }
   return (
     <Modal
-      title="Most Browsed Subjects"
+      title="Trending Subjects"
       visible={MBSvisible}
       footer={null}
       zIndex={1}
@@ -159,7 +159,7 @@ export default function MBS({
           >
             <h2>Chemistry</h2>
             <p>
-              Click to browse all papers <CaretRightOutlined />
+              All papers <CaretRightOutlined />
             </p>
           </div>
           <div
@@ -170,7 +170,7 @@ export default function MBS({
           >
             <h2>Physics</h2>
             <p>
-              Click to browse all papers <CaretRightOutlined />
+              All papers <CaretRightOutlined />
             </p>
           </div>
           <div
@@ -181,7 +181,7 @@ export default function MBS({
           >
             <h2>Economics</h2>
             <p>
-              Click to browse all papers <CaretRightOutlined />
+              All papers <CaretRightOutlined />
             </p>
           </div>
           <div
@@ -192,7 +192,7 @@ export default function MBS({
           >
             <h2>Mathematics</h2>
             <p>
-              Click to browse all papers <CaretRightOutlined />
+              All papers <CaretRightOutlined />
             </p>
           </div>
           <div
@@ -203,7 +203,7 @@ export default function MBS({
           >
             <h2>Additional Mathematics</h2>
             <p>
-              Click to browse all papers <CaretRightOutlined />
+              All papers <CaretRightOutlined />
             </p>
           </div>
           <div
@@ -214,7 +214,7 @@ export default function MBS({
           >
             <h2>Global Perspectives</h2>
             <p>
-              Click to browse all papers <CaretRightOutlined />
+              All papers <CaretRightOutlined />
             </p>
           </div>
         </div>
@@ -224,7 +224,7 @@ export default function MBS({
             <div className="next-cate-subjects-list">
               <h2>Chemistry</h2>
               <p>
-                Click to browse all papers <CaretRightOutlined />
+                All papers <CaretRightOutlined />
               </p>
             </div>
           </Link>
@@ -232,7 +232,7 @@ export default function MBS({
             <div className="next-cate-subjects-list">
               <h2>Physics</h2>
               <p>
-                Click to browse all papers <CaretRightOutlined />
+                All papers <CaretRightOutlined />
               </p>
             </div>
           </Link>
@@ -240,7 +240,7 @@ export default function MBS({
             <div className="next-cate-subjects-list">
               <h2>Economics</h2>
               <p>
-                Click to browse all papers <CaretRightOutlined />
+                All papers <CaretRightOutlined />
               </p>
             </div>
           </Link>
@@ -248,7 +248,7 @@ export default function MBS({
             <div className="next-cate-subjects-list">
               <h2>Mathematics</h2>
               <p>
-                Click to browse all papers <CaretRightOutlined />
+                All papers <CaretRightOutlined />
               </p>
             </div>
           </Link>
@@ -259,7 +259,7 @@ export default function MBS({
             <div className="next-cate-subjects-list">
               <h2>Additional Mathematics</h2>
               <p>
-                Click to browse all papers <CaretRightOutlined />
+                All papers <CaretRightOutlined />
               </p>
             </div>
           </Link>
@@ -270,7 +270,7 @@ export default function MBS({
             <div className="next-cate-subjects-list">
               <h2>Global Perspectives</h2>
               <p>
-                Click to browse all papers <CaretRightOutlined />
+                All papers <CaretRightOutlined />
               </p>
             </div>
           </Link>

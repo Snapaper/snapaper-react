@@ -17,7 +17,7 @@ export default class About extends React.Component {
 						<div>
 							<h3 className='uk-card-title index-cate-h3'>Resource Guide</h3>
 							<p>
-								This image is from GCE Guide (http://www.gceguide.com)
+								Image from GCE Guide (http://www.gceguide.com):
 								<br />
 								<img
 									src='https://static.ouorz.com/res_guide.png'
@@ -29,41 +29,44 @@ export default class About extends React.Component {
 
 							<h3 className='uk-card-title index-cate-h3'>Copyrights</h3>
 							<p>
-								All the content & names of this website are assets of owner,
-								protected by law. Past papers are provided by{" "}
-								<b>GCE Guide (http://www.gceguide.com)</b> or{" "}
+								All the contents & names in this website are assets of owners,
+								protected by law. Past papers are sourced from{" "}
+								<b>GCE Guide (http://www.gceguide.com)</b> and{" "}
 								<b>SaveMyExams (https://www.savemyexams.co.uk)</b>
 							</p>
 							<p>
-								Snapaper does not have a database or file storage of any kind.
-								All the content are from GCE Guide (http://www.gceguide.com) or
-								SaveMyExams (https://www.savemyexams.co.uk), and has not been
-								changed or downloaded by Snapaper. This is a 100% non-profitable
-								website.
+								This is a 100% non-profitable website. Snapaper does not have a
+								database or data storage of any kind. All the contents are from
+								GCE Guide (http://www.gceguide.com) and SaveMyExams
+								(https://www.savemyexams.co.uk), and has not been changed or
+								downloaded by Snapaper.
 							</p>
 							<br />
 
 							<h3 className='uk-card-title index-cate-h3'>Author</h3>
 							<p>
-								This website was developed by <b>TonyHe</b>.
+								Snapaper (both frontend and backend) is developed by{" "}
+								<b>TonyHe</b>.
 								<br />
 								If you found this project helpful, please consider{" "}
-								<a href='https://www.ouorz.com/sponsor'>sponsoring him</a>.
+								<a href='https://www.ouorz.com/sponsor'>sponsoring him</a> and
+								his other open-source work.
 								<br />
-								If you encountered any problem during the use of this website,
+								If you encountered any issue during the use of this website,
 								please contact him through <b>Email (tony.hlp@hotmail.com)</b>
 								.
 								<br />
-								If you have any suggestions for this website, you can contact
-								him, but he will not necessarily care about you.
+								If you have any suggestions or concerns for this website, you
+								can contact him, but he will not necessarily care about you.
 							</p>
 							<br />
 
 							<h3 className='uk-card-title index-cate-h3'>Open source</h3>
 							<p>
-								Snapaper is an open-source project on Github, you are welcome to
-								contribute to the development of this project. But be aware that
-								this is a legcay project and no longer maintained by Tony.
+								Snapaper is an open-source project, the source code is publicly
+								accessible on Github. You are welcomed to contribute to the
+								development of this project. But be aware that this is a legcay
+								project and not actively maintained by Tony.
 							</p>
 							<a href='https://github.com/Snapaper/snapaper-react'>
 								https://github.com/Snapaper/snapaper-react
