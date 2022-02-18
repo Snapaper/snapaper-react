@@ -152,6 +152,8 @@ export default class Index extends React.Component {
 				"/" +
 				this.state.subject[1] +
 				"/" +
+				(2000 + parseInt(this.state.year)) +
+				"/" +
 				code +
 				"_" +
 				month +
@@ -162,8 +164,22 @@ export default class Index extends React.Component {
 				this.state.paper +
 				".pdf";
 
-			//导航至网址
-			window.open(url, "_blank");
+			fetch(`https://thingproxy.freeboard.io/fetch/${url}`).then((res) => {
+				if (res.status === 200) {
+					//导航至网址
+					window.open(url, "_blank");
+				} else {
+					openNotificationWithIcon(
+						"error",
+						<>
+							Desired paper not found, please try again later. <br />
+							<a href={url} target='_blank'>
+								Open anyway →
+							</a>
+						</>
+					);
+				}
+			});
 		} else {
 			//信息不全触发提示
 			openNotificationWithIcon("error", "Incomplete information");
@@ -217,6 +233,8 @@ export default class Index extends React.Component {
 									onChange={this.handleSubjectChange}
 									changeOnSelect
 									size='large'
+									className='next-index-os-cascader'
+									placeholder='Please select a subject'
 								/>
 								<Input
 									onChange={this.handlePaperChange}
