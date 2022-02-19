@@ -54,7 +54,7 @@ function MyApp({ Component, pageProps }) {
 				/>
 				<meta
 					name='description'
-					content='An Integrated Platform of Past-papers and More Study Resources'
+					content='The fastest way to find and download Cambridge Upper Secondary past papers and relevant study resources'
 				/>
 			</Head>
 			<Header />
