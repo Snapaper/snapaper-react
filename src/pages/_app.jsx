@@ -50,11 +50,11 @@ function MyApp({ Component, pageProps }) {
 				/>
 				<meta
 					name='keywords'
-					content='CAIE past papers,CAIE,past papers,IGCSE,ALevel,OLevel,pastpapers,snapaper,snap,papers,exam papers,mock exams,past exam papers'
+					content='CAIE past papers,CAIE,past papers,IGCSE,ALevel,OLevel,pastpapers,snapaper,snap,papers,exam papers,mock exams,past exam papers,Cambridge, May/June, October/November, February/March, Winter session, Summer session'
 				/>
 				<meta
 					name='description'
-					content='The fastest way to find and download Cambridge Upper Secondary past papers and relevant study resources'
+					content='The fastest way to find and download CAIE past papers and relevant study resources'
 				/>
 			</Head>
 			<Header />
