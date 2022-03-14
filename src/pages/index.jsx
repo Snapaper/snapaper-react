@@ -164,22 +164,34 @@ export default class Index extends React.Component {
 				this.state.paper +
 				".pdf";
 
-			fetch(`https://thingproxy.freeboard.io/fetch/${url}`).then((res) => {
-				if (res.status === 200) {
-					//导航至网址
-					window.open(url, "_blank");
-				} else {
+			fetch(`https://thingproxy.freeboard.io/fetch/${url}`)
+				.then((res) => {
+					if (res.status === 200) {
+						//导航至网址
+						window.open(url, "_blank");
+					} else {
+						openNotificationWithIcon(
+							"error",
+							<>
+								Paper not found, please try again later. <br />
+								<a href={url} target='_blank'>
+									Open anyway →
+								</a>
+							</>
+						);
+					}
+				})
+				.catch(() => {
 					openNotificationWithIcon(
 						"error",
 						<>
-							Desired paper not found, please try again later. <br />
+							Paper not found, please try again later. <br />
 							<a href={url} target='_blank'>
 								Open anyway →
 							</a>
 						</>
 					);
-				}
-			});
+				});
 		} else {
 			//信息不全触发提示
 			openNotificationWithIcon("error", "Incomplete information");
