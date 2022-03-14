@@ -202,23 +202,28 @@ export default class Index extends React.Component {
 			return (
 				<div>
 					<main className='ant-container'>
-						{/*
-            <section className="notice">
-                <div>
-                  <p>
-                    Listen to our podcast to learn more about life of studying
-                    abroad...
-                  </p>
-                  <a
-                    href="https://music.163.com/#/program?id=2071267202"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Netease Music →
-                  </a>
-                </div>
-            </section>
-            */}
+						<section className='notice'>
+							<div>
+								<p>Support the development of Snapaper...</p>
+								<div className="notice_actions">
+									<a
+										href='https://www.patreon.com/ttttonyhe'
+										target='_blank'
+										rel='noreferrer'
+									>
+										Patreon →
+									</a>
+									<a
+										href='https://afdian.net/@tonyhe'
+										target='_blank'
+										rel='noreferrer'
+									>
+										爱发电 →
+									</a>
+								</div>
+							</div>
+						</section>
+
 						<section className='next-index-section-one'>
 							<section
 								className='next-index-card-large'

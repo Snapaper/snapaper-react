@@ -662,8 +662,17 @@ tr {
 	color: #73849a;
 	font-weight: 300;
 	margin-bottom: 25px;
-	box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1),
-		0 0.085em 0.175em rgba(2, 8, 20, 0.08);
+	box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.04),
+		0 0.085em 0.175em rgba(2, 8, 20, 0.03);
+	transition: 0.2s ease;
+	border: solid 1px #e6e6e6;
+
+	&:hover {
+		box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.05),
+			0 0.175em 0.5em rgba(2, 8, 20, 0.04);
+		transform: translateY(-1px);
+	}
+
 	div {
 		display: flex;
 		p {
@@ -677,6 +686,10 @@ tr {
 			padding: 3px 10px;
 			border-radius: 6px;
 		}
+	}
+	.notice_actions {
+		display: flex;
+		column-gap: 8px;
 	}
 }
 
