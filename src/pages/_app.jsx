@@ -64,5 +64,5 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default withAnalytics(Router, {
-	ga: "UA-163998158-2",
+	ga: "G-HQP4BLJVKF",
 })(MyApp);
