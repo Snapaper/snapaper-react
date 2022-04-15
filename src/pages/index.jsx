@@ -164,7 +164,7 @@ export default class Index extends React.Component {
 				this.state.paper +
 				".pdf";
 
-			fetch(`https://thingproxy.freeboard.io/fetch/${url}`)
+			fetch(`https://cors-anywhere.herokuapp.com/${url}`)
 				.then((res) => {
 					if (res.status === 200) {
 						//导航至网址
