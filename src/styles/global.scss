@@ -662,14 +662,11 @@ tr {
 	color: #73849a;
 	font-weight: 300;
 	margin-bottom: 25px;
-	box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.04),
-		0 0.085em 0.175em rgba(2, 8, 20, 0.03);
 	transition: 0.2s ease;
-	border: solid 1px #e6e6e6;
+	border: solid 1px #f1f2f3;
 
 	&:hover {
-		box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.05),
-			0 0.175em 0.5em rgba(2, 8, 20, 0.04);
+		border: solid 1px #e9e9e9;
 		transform: translateY(-1px);
 	}
 
@@ -2004,4 +2001,10 @@ tr {
 .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item,
 .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu {
 	padding: 0 5px !important;
+}
+
+.about-us-text {
+	display: flex;
+	align-items: center;
+	column-gap: 8px;
 }

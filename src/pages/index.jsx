@@ -362,7 +362,7 @@ export default class Index extends React.Component {
 							<div className='next-index-card-left'>
 								<Link href='/page/about'>
 									<div>
-										<h1>
+										<h1 className="about-us-text">
 											<InfoCircleFilled /> About Us
 										</h1>
 										<p>Learn more about Snapaper</p>
