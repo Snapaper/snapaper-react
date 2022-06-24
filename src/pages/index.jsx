@@ -164,7 +164,7 @@ export default class Index extends React.Component {
 				this.state.paper +
 				".pdf";
 
-			fetch(`https://cors-anywhere.herokuapp.com/${url}`)
+			fetch(`https://snapaper-cors-anywhere.herokuapp.com/${url}`)
 				.then((res) => {
 					if (res.status === 200) {
 						//导航至网址
@@ -205,7 +205,7 @@ export default class Index extends React.Component {
 						<section className='notice'>
 							<div>
 								<p>Support the development of Snapaper...</p>
-								<div className="notice_actions">
+								<div className='notice_actions'>
 									<a
 										href='https://www.patreon.com/ttttonyhe'
 										target='_blank'
@@ -231,7 +231,7 @@ export default class Index extends React.Component {
 									this.setState({ OSvisible: true });
 								}}
 							>
-								<img src='https://node.snapaper.com/vue/image?place=index_1' />
+								<img src='https://static.ouorz.com/onestep.jpeg' />
 								<div>
 									<h1>One Step</h1>
 									<p>The fastest and easiest way to find a paper</p>
@@ -306,7 +306,7 @@ export default class Index extends React.Component {
 								<Link href='/cate/igcse'>
 									<div className='card'>
 										<div>
-											<img src='https://node.snapaper.com/vue/image?place=index_2' />
+											<img src='https://static.ouorz.com/igcse.jpeg' />
 										</div>
 										<div>
 											<h2>IGCSE</h2>
@@ -320,7 +320,7 @@ export default class Index extends React.Component {
 								<Link href='/cate/alevels'>
 									<div className='card'>
 										<div>
-											<img src='https://node.snapaper.com/vue/image?place=index_3' />
+											<img src='https://static.ouorz.com/alevel.jpeg' />
 										</div>
 										<div>
 											<h2>A Levels</h2>
@@ -334,7 +334,7 @@ export default class Index extends React.Component {
 								<Link href='/topic/ebooks'>
 									<div className='card'>
 										<div>
-											<img src='https://node.snapaper.com/vue/image?place=index_4' />
+											<img src='https://static.ouorz.com/ebooks.jpeg' />
 										</div>
 										<div>
 											<h2>PDF eBooks</h2>
@@ -348,7 +348,7 @@ export default class Index extends React.Component {
 								<Link href='/topic/savemyexams'>
 									<div className='card'>
 										<div>
-											<img src='https://node.snapaper.com/vue/image?place=index_5' />
+											<img src='https://static.ouorz.com/sme.jpeg' />
 										</div>
 										<div>
 											<h2>Save My Exams</h2>
@@ -363,7 +363,7 @@ export default class Index extends React.Component {
 								<Link href='/page/about'>
 									<div>
 										<h1>
-											About Us <InfoCircleFilled />
+											<InfoCircleFilled /> About Us
 										</h1>
 										<p>Learn more about Snapaper</p>
 									</div>
@@ -386,7 +386,7 @@ export default class Index extends React.Component {
 									<p>Support the development of Snapaper</p>
 								</div>
 								<div>
-									<img src='https://node.snapaper.com/vue/image?place=index_6' />
+									<img src='https://static.ouorz.com/sponsor.jpeg' />
 								</div>
 							</div>
 						</section>
