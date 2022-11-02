@@ -90,7 +90,7 @@ export default class Header extends React.Component {
 			</div>
 		);
 		return (
-            <div className='header-div'>
+			<div className='header-div'>
 				<Head>
 					<title>
 						Snapaper | Past Papers and More Study Resources for Cambridge
@@ -118,19 +118,13 @@ export default class Header extends React.Component {
 						title='Resources'
 					>
 						<Menu.Item key='pdfebooks'>
-							<Link href='/topic/ebooks'>
-								PDF ebooks
-							</Link>
+							<Link href='/topic/ebooks'>PDF ebooks</Link>
 						</Menu.Item>
 						<Menu.Item key='sme'>
-							<Link href='/topic/savemyexams'>
-								Save My Exams
-							</Link>
+							<Link href='/topic/savemyexams'>Save My Exams</Link>
 						</Menu.Item>
 						<Menu.Item key='resourceguide'>
-							<Link href='/page/about'>
-								Resource Guide
-							</Link>
+							<Link href='/page/about'>Resource Guide</Link>
 						</Menu.Item>
 						<Menu.Item key='snapod'>
 							<a
@@ -193,6 +187,6 @@ export default class Header extends React.Component {
 					</Menu.Item>
 				</Menu>
 			</div>
-        );
+		);
 	}
 }
