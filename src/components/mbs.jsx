@@ -79,7 +79,10 @@ export default function MBS({
           </div>
         ) : (
           <div>
-            <Link href="/paper/alevels/xyz/Chemistry%20(9701)" prefetch={false}>
+            <Link
+              href="/paper/alevels/xyz/Chemistry%20(9701)"
+              prefetch={false}
+              legacyBehavior>
               <div className="next-cate-subjects-list">
                 <h2>Chemistry</h2>
                 <p>
@@ -87,7 +90,10 @@ export default function MBS({
                 </p>
               </div>
             </Link>
-            <Link href="/paper/alevels/xyz/Physics%20(9702)" prefetch={false}>
+            <Link
+              href="/paper/alevels/xyz/Physics%20(9702)"
+              prefetch={false}
+              legacyBehavior>
               <div className="next-cate-subjects-list">
                 <h2>Physics</h2>
                 <p>
@@ -95,7 +101,10 @@ export default function MBS({
                 </p>
               </div>
             </Link>
-            <Link href="/paper/alevels/xyz/Economics%20(9708)" prefetch={false}>
+            <Link
+              href="/paper/alevels/xyz/Economics%20(9708)"
+              prefetch={false}
+              legacyBehavior>
               <div className="next-cate-subjects-list">
                 <h2>Economics</h2>
                 <p>
@@ -106,7 +115,7 @@ export default function MBS({
             <Link
               href="/paper/alevels/xyz/Mathematics%20(9709)"
               prefetch={false}
-            >
+              legacyBehavior>
               <div className="next-cate-subjects-list">
                 <h2>Mathematics</h2>
                 <p>
@@ -117,7 +126,7 @@ export default function MBS({
             <Link
               href="/paper/alevels/xyz/Mathematics%20-%20Further%20(9231)"
               prefetch={false}
-            >
+              legacyBehavior>
               <div className="next-cate-subjects-list">
                 <h2>Further Mathematics</h2>
                 <p>
@@ -220,7 +229,10 @@ export default function MBS({
         </div>
       ) : (
         <div>
-          <Link href="/paper/igcse/xyz/Chemistry%20(0620)" prefetch={false}>
+          <Link
+            href="/paper/igcse/xyz/Chemistry%20(0620)"
+            prefetch={false}
+            legacyBehavior>
             <div className="next-cate-subjects-list">
               <h2>Chemistry</h2>
               <p>
@@ -228,7 +240,7 @@ export default function MBS({
               </p>
             </div>
           </Link>
-          <Link href="/paper/igcse/xyz/Physics%20(0625)" prefetch={false}>
+          <Link href="/paper/igcse/xyz/Physics%20(0625)" prefetch={false} legacyBehavior>
             <div className="next-cate-subjects-list">
               <h2>Physics</h2>
               <p>
@@ -236,7 +248,10 @@ export default function MBS({
               </p>
             </div>
           </Link>
-          <Link href="/paper/igcse/xyz/Economics%20(0455)" prefetch={false}>
+          <Link
+            href="/paper/igcse/xyz/Economics%20(0455)"
+            prefetch={false}
+            legacyBehavior>
             <div className="next-cate-subjects-list">
               <h2>Economics</h2>
               <p>
@@ -244,7 +259,10 @@ export default function MBS({
               </p>
             </div>
           </Link>
-          <Link href="/paper/igcse/xyz/Mathematics%20(0580)" prefetch={false}>
+          <Link
+            href="/paper/igcse/xyz/Mathematics%20(0580)"
+            prefetch={false}
+            legacyBehavior>
             <div className="next-cate-subjects-list">
               <h2>Mathematics</h2>
               <p>
@@ -255,7 +273,7 @@ export default function MBS({
           <Link
             href="/paper/igcse/xyz/Mathematics%20-%20Additional%20(0606)"
             prefetch={false}
-          >
+            legacyBehavior>
             <div className="next-cate-subjects-list">
               <h2>Additional Mathematics</h2>
               <p>
@@ -266,7 +284,7 @@ export default function MBS({
           <Link
             href="/paper/igcse/xyz/Global%20Perspectives%20(0457)"
             prefetch={false}
-          >
+            legacyBehavior>
             <div className="next-cate-subjects-list">
               <h2>Global Perspectives</h2>
               <p>

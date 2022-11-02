@@ -16,7 +16,7 @@ function Error() {
         subTitle="Sorry, something went wrong."
         className="ant-result-pc"
         extra={
-          <Link href="/">
+          <Link href="/" legacyBehavior>
             <Button type="primary">Back to Home</Button>
           </Link>
         }

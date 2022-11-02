@@ -16,7 +16,7 @@ export default function Custom404() {
         subTitle="Sorry, this page does not exist."
         className="ant-result-pc"
         extra={
-          <Link href="/">
+          <Link href="/" legacyBehavior>
             <Button type="primary">Back to Home</Button>
           </Link>
         }

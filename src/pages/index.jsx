@@ -200,7 +200,7 @@ export default class Index extends React.Component {
 	render() {
 		if (this.state.display) {
 			return (
-				<div>
+                <div>
 					<main className='ant-container'>
 						<section className='notice'>
 							<div>
@@ -303,7 +303,7 @@ export default class Index extends React.Component {
 							</Modal>
 							{/* 一步弹窗 */}
 							<section className='next-index-section-cards'>
-								<Link href='/cate/igcse'>
+								<Link href='/cate/igcse' legacyBehavior>
 									<div className='card'>
 										<div>
 											<img src='https://static.ouorz.com/igcse.jpeg' />
@@ -317,7 +317,7 @@ export default class Index extends React.Component {
 										</div>
 									</div>
 								</Link>
-								<Link href='/cate/alevels'>
+								<Link href='/cate/alevels' legacyBehavior>
 									<div className='card'>
 										<div>
 											<img src='https://static.ouorz.com/alevel.jpeg' />
@@ -331,7 +331,7 @@ export default class Index extends React.Component {
 										</div>
 									</div>
 								</Link>
-								<Link href='/topic/ebooks'>
+								<Link href='/topic/ebooks' legacyBehavior>
 									<div className='card'>
 										<div>
 											<img src='https://static.ouorz.com/ebooks.jpeg' />
@@ -345,7 +345,7 @@ export default class Index extends React.Component {
 										</div>
 									</div>
 								</Link>
-								<Link href='/topic/savemyexams'>
+								<Link href='/topic/savemyexams' legacyBehavior>
 									<div className='card'>
 										<div>
 											<img src='https://static.ouorz.com/sme.jpeg' />
@@ -360,7 +360,7 @@ export default class Index extends React.Component {
 						</section>
 						<section className='next-index-section-two'>
 							<div className='next-index-card-left'>
-								<Link href='/page/about'>
+								<Link href='/page/about' legacyBehavior>
 									<div>
 										<h1 className="about-us-text">
 											<InfoCircleFilled /> About Us
@@ -393,7 +393,7 @@ export default class Index extends React.Component {
 					</main>
 					<Footer></Footer>
 				</div>
-			);
+            );
 		}
 	}
 }

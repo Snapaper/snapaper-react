@@ -90,7 +90,7 @@ export default class Header extends React.Component {
 			</div>
 		);
 		return (
-			<div className='header-div'>
+            <div className='header-div'>
 				<Head>
 					<title>
 						Snapaper | Past Papers and More Study Resources for Cambridge
@@ -99,7 +99,7 @@ export default class Header extends React.Component {
 				</Head>
 				<Menu mode='horizontal'>
 					<Menu.Item key='logo' className='header-ant-logo'>
-						<Link href='/'>
+						<Link href='/' legacyBehavior>
 							<h3 className='nav-title'>
 								<img
 									src='https://static.ouorz.com/snapaper@next.png'
@@ -119,17 +119,17 @@ export default class Header extends React.Component {
 					>
 						<Menu.Item key='pdfebooks'>
 							<Link href='/topic/ebooks'>
-								<a>PDF ebooks</a>
+								PDF ebooks
 							</Link>
 						</Menu.Item>
 						<Menu.Item key='sme'>
 							<Link href='/topic/savemyexams'>
-								<a>Save My Exams</a>
+								Save My Exams
 							</Link>
 						</Menu.Item>
 						<Menu.Item key='resourceguide'>
 							<Link href='/page/about'>
-								<a>Resource Guide</a>
+								Resource Guide
 							</Link>
 						</Menu.Item>
 						<Menu.Item key='snapod'>
@@ -193,6 +193,6 @@ export default class Header extends React.Component {
 					</Menu.Item>
 				</Menu>
 			</div>
-		);
+        );
 	}
 }

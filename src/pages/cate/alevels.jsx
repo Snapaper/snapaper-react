@@ -48,7 +48,7 @@ export default class Alevel extends React.Component {
 	}
 	render() {
 		return (
-			<div>
+            <div>
 				<main className='ant-container'>
 					<section className='next-cate-header'>
 						<div className='left'>
@@ -136,33 +136,33 @@ export default class Alevel extends React.Component {
 										} else if (response !== null) {
 											// 请求成功展示列表
 											return (
-												<div className='next-cate-years'>
+                                                <div className='next-cate-years'>
 													{response.data.years.map((item, index) => {
 														return (
-															<Link
-																href={
+                                                            <Link
+                                                                href={
 																	"/paper/alevels/com/" +
 																	item.name +
 																	"/" +
 																	this.state.YCsubject
 																}
-																prefetch={false}
-																key={index}
-															>
+                                                                prefetch={false}
+                                                                key={index}
+                                                                legacyBehavior>
 																<div>
 																	<h2>{item.name}</h2>
 																	<CaretRightOutlined />
 																</div>
 															</Link>
-														);
+                                                        );
 													})}
 													{response.data.years.length == 0 && (
 														<Link
-															href={
+                                                            href={
 																"/paper/alevels/com/all/" + this.state.YCsubject
 															}
-															prefetch={false}
-														>
+                                                            prefetch={false}
+                                                            legacyBehavior>
 															<div>
 																<h2>All years</h2>
 																<CaretRightOutlined />
@@ -170,7 +170,7 @@ export default class Alevel extends React.Component {
 														</Link>
 													)}
 												</div>
-											);
+                                            );
 										}
 										return (
 											<div>
@@ -226,7 +226,7 @@ export default class Alevel extends React.Component {
 								} else if (response !== null) {
 									// 请求成功展示列表
 									return (
-										<div className='next-cate-subject'>
+                                        <div className='next-cate-subject'>
 											{response.data.cates.map((item, index) => {
 												if (!!item.name && item.name !== "error_log") {
 													if (
@@ -250,14 +250,14 @@ export default class Alevel extends React.Component {
 														);
 													} else {
 														return (
-															<Link
-																href={
+                                                            <Link
+                                                                href={
 																	"/paper/alevels/xyz/" +
 																	item.name.replace("amp;", "")
 																}
-																prefetch={false}
-																key={index}
-															>
+                                                                prefetch={false}
+                                                                key={index}
+                                                                legacyBehavior>
 																<div>
 																	<h2>{item.name.replace("amp;", "")}</h2>
 																	<p>
@@ -265,12 +265,12 @@ export default class Alevel extends React.Component {
 																	</p>
 																</div>
 															</Link>
-														);
+                                                        );
 													}
 												}
 											})}
 										</div>
-									);
+                                    );
 								}
 								return (
 									<div>
@@ -284,6 +284,6 @@ export default class Alevel extends React.Component {
 				</main>
 				<Footer></Footer>
 			</div>
-		);
+        );
 	}
 }

@@ -148,7 +148,7 @@ export default class igcse extends React.Component {
                                 }
                                 prefetch={false}
                                 key={index}
-                              >
+                                legacyBehavior>
                                 <div>
                                   <h2>{item.name}</h2>
                                   <CaretRightOutlined />
@@ -162,7 +162,7 @@ export default class igcse extends React.Component {
                                 "/paper/igcse/com/all/" + this.state.YCsubject
                               }
                               prefetch={false}
-                            >
+                              legacyBehavior>
                               <div>
                                 <h2>All years</h2>
                                 <CaretRightOutlined />
@@ -257,7 +257,7 @@ export default class igcse extends React.Component {
                                 }
                                 prefetch={false}
                                 key={index}
-                              >
+                                legacyBehavior>
                                 <div key={index}>
                                   <h2>{item.name.replace("amp;", "")}</h2>
                                   <p>
