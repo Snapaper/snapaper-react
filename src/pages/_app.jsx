@@ -1,5 +1,4 @@
 import Head from "next/head";
-// import { useEffect } from "react";
 
 // 全局样式引入
 import "../styles/global.scss";
@@ -18,66 +17,26 @@ NProgress.configure({
 	minimum: 0.2,
 });
 
-// React Router 引入以配置
-// import Router, { useRouter } from "next/router";
+// React Router 引入以配置加载进度条
 import Router from "next/router";
 
-// Google Analytics 配置
-// import Script from "next/script";
+// Vercel Analytics 配置
+import { Analytics } from "@vercel/analytics/react";
 
 //动态引入顶部组件
 import dynamic from "next/dynamic";
 const Header = dynamic(() => import("../components/header"));
 
 // React Router 配置加载进度条
-Router.onRouteChangeStart = (url) => {
+Router.onRouteChangeStart = () => {
 	NProgress.inc();
 };
 Router.onRouteChangeComplete = () => NProgress.done();
 Router.onRouteChangeError = () => NProgress.done();
 
-// export const GA_TRACKING_ID = "G-HQP4BLJVKF";
-
-// https://developers.google.com/analytics/devguides/collection/gtagjs/pages
-// const pageview = (url) => {
-// 	window.gtag("config", GA_TRACKING_ID, {
-// 		page_path: url,
-// 	});
-// };
-
 function MyApp({ Component, pageProps }) {
-	// const router = useRouter();
-	// useEffect(() => {
-	// 	const handleRouteChange = (url) => {
-	// 		pageview(url);
-	// 	};
-	// 	router.events.on("routeChangeComplete", handleRouteChange);
-	// 	return () => {
-	// 		router.events.off("routeChangeComplete", handleRouteChange);
-	// 	};
-	// }, [router.events]);
-
 	return (
 		<>
-			{/* Global Site Tag (gtag.js) - Google Analytics */}
-			{/* <Script
-				strategy='afterInteractive'
-				src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-			/> */}
-			{/* <Script
-				id='gtag-init'
-				strategy='afterInteractive'
-				dangerouslySetInnerHTML={{
-					__html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_TRACKING_ID}', {
-              page_path: window.location.pathname,
-            });
-          `,
-				}}
-			/> */}
 			<Head>
 				<meta name='viewport' content='viewport-fit=cover' />
 				<meta
@@ -100,6 +59,7 @@ function MyApp({ Component, pageProps }) {
 			</Head>
 			<Header />
 			<Component {...pageProps} />
+			<Analytics />
 		</>
 	);
 }
