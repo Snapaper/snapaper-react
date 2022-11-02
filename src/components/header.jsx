@@ -100,21 +100,17 @@ export default class Header extends React.Component {
 				<Menu mode='horizontal'>
 					<Menu.Item key='logo' className='header-ant-logo'>
 						<Link href='/'>
-							<a>
-								<h3 className='nav-title'>
-									<img
-										src='https://static.ouorz.com/snapaper@next.png'
-										className='nav-title-img'
-									/>
-									napaper
-								</h3>
-							</a>
+							<h3 className='nav-title'>
+								<img
+									src='https://static.ouorz.com/snapaper@next.png'
+									className='nav-title-img'
+								/>
+								napaper
+							</h3>
 						</Link>
 					</Menu.Item>
 					<Menu.Item key='home'>
-						<Link href='/'>
-							<a>Home</a>
-						</Link>
+						<Link href='/'>Home</Link>
 					</Menu.Item>
 					<SubMenu
 						key='Resources'

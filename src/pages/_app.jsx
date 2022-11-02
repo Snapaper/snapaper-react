@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 // 全局样式引入
 import "../styles/global.scss";
@@ -19,10 +19,11 @@ NProgress.configure({
 });
 
 // React Router 引入以配置
-import Router, { useRouter } from "next/router";
+// import Router, { useRouter } from "next/router";
+import Router from "next/router";
 
 // Google Analytics 配置
-import Script from "next/script";
+// import Script from "next/script";
 
 //动态引入顶部组件
 import dynamic from "next/dynamic";
@@ -35,35 +36,35 @@ Router.onRouteChangeStart = (url) => {
 Router.onRouteChangeComplete = () => NProgress.done();
 Router.onRouteChangeError = () => NProgress.done();
 
-export const GA_TRACKING_ID = "G-HQP4BLJVKF";
+// export const GA_TRACKING_ID = "G-HQP4BLJVKF";
 
 // https://developers.google.com/analytics/devguides/collection/gtagjs/pages
-const pageview = (url) => {
-	window.gtag("config", GA_TRACKING_ID, {
-		page_path: url,
-	});
-};
+// const pageview = (url) => {
+// 	window.gtag("config", GA_TRACKING_ID, {
+// 		page_path: url,
+// 	});
+// };
 
 function MyApp({ Component, pageProps }) {
-	const router = useRouter();
-	useEffect(() => {
-		const handleRouteChange = (url) => {
-			pageview(url);
-		};
-		router.events.on("routeChangeComplete", handleRouteChange);
-		return () => {
-			router.events.off("routeChangeComplete", handleRouteChange);
-		};
-	}, [router.events]);
+	// const router = useRouter();
+	// useEffect(() => {
+	// 	const handleRouteChange = (url) => {
+	// 		pageview(url);
+	// 	};
+	// 	router.events.on("routeChangeComplete", handleRouteChange);
+	// 	return () => {
+	// 		router.events.off("routeChangeComplete", handleRouteChange);
+	// 	};
+	// }, [router.events]);
 
 	return (
 		<>
 			{/* Global Site Tag (gtag.js) - Google Analytics */}
-			<Script
+			{/* <Script
 				strategy='afterInteractive'
 				src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-			/>
-			<Script
+			/> */}
+			{/* <Script
 				id='gtag-init'
 				strategy='afterInteractive'
 				dangerouslySetInnerHTML={{
@@ -76,7 +77,7 @@ function MyApp({ Component, pageProps }) {
             });
           `,
 				}}
-			/>
+			/> */}
 			<Head>
 				<meta name='viewport' content='viewport-fit=cover' />
 				<meta
