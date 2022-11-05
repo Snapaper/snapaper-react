@@ -41,6 +41,7 @@ export default class Index extends React.Component {
 			type: "qp",
 			paper: "",
 			year: "",
+			oneStepLoading: false,
 			display: true,
 			options: [
 				{
@@ -164,7 +165,10 @@ export default class Index extends React.Component {
 				this.state.paper +
 				".pdf";
 
-			fetch(`https://snapaper-cors-anywhere.herokuapp.com/${url}`)
+			this.setState({
+				oneStepLoading: true,
+			});
+			fetch(`https://cors.snapaper.com/${url}`)
 				.then((res) => {
 					if (res.status === 200) {
 						//导航至网址
@@ -180,6 +184,9 @@ export default class Index extends React.Component {
 							</>
 						);
 					}
+					this.setState({
+						oneStepLoading: false,
+					});
 				})
 				.catch(() => {
 					openNotificationWithIcon(
@@ -191,6 +198,9 @@ export default class Index extends React.Component {
 							</a>
 						</>
 					);
+					this.setState({
+						oneStepLoading: false,
+					});
 				});
 		} else {
 			//信息不全触发提示
@@ -200,7 +210,7 @@ export default class Index extends React.Component {
 	render() {
 		if (this.state.display) {
 			return (
-                <div>
+				<div>
 					<main className='ant-container'>
 						<section className='notice'>
 							<div>
@@ -297,6 +307,7 @@ export default class Index extends React.Component {
 									type='primary'
 									onClick={this.oneStep}
 									className='next-index-os-btn'
+									loading={this.state.oneStepLoading}
 								>
 									Find
 								</Button>
@@ -362,7 +373,7 @@ export default class Index extends React.Component {
 							<div className='next-index-card-left'>
 								<Link href='/page/about' legacyBehavior>
 									<div>
-										<h1 className="about-us-text">
+										<h1 className='about-us-text'>
 											<InfoCircleFilled /> About Us
 										</h1>
 										<p>Learn more about Snapaper</p>
@@ -393,7 +404,7 @@ export default class Index extends React.Component {
 					</main>
 					<Footer></Footer>
 				</div>
-            );
+			);
 		}
 	}
 }

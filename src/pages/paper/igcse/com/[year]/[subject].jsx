@@ -401,6 +401,7 @@ class igcseSubject extends React.Component {
 														Cookies.set("snapaper_download", "1");
 														this.setState({ downloadMode: "1" });
 													}}
+													style={{ width: "100%" }}
 												>
 													{this.state.downloadMode == "1" ||
 													!this.state.downloadMode ? (
@@ -411,13 +412,14 @@ class igcseSubject extends React.Component {
 													One at a time
 												</Button>
 											</p>
-											<p tyle={{ marginBottom: "0px" }}>
+											<p style={{ marginBottom: "0px" }}>
 												<Button
 													type={this.state.downloadMode == "2" ? "primary" : ""}
 													onClick={() => {
 														Cookies.set("snapaper_download", "2");
 														this.setState({ downloadMode: "2" });
 													}}
+													style={{ width: "100%" }}
 												>
 													{this.state.downloadMode == "2" ? (
 														<CheckCircleOutlined />
