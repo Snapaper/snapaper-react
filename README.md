@@ -1,6 +1,6 @@
 <div align="center">
   <h1>Snapaper</h1>
-  <p>A Website for Downloading Past Papers and Other Study Resources</p>
+  <p>CAIE Past Papers and Other Study Resources</p>
   <a href="https://github.com/Snapaper/snapaper-react/network/members">
     <img src="https://img.shields.io/github/forks/Snapaper/snapaper-react.svg" alt="forks">
   </a>
@@ -22,7 +22,8 @@
 <br/>
 
 ### Foreword
-Legacy code alert ⚠️
+> **Warning**
+> Legacy code alert
 
 <br/>
 
@@ -31,35 +32,33 @@ Legacy code alert ⚠️
 
 ![Thumbnail_index](https://i.loli.net/2020/05/04/i3dPmcohslFXgI9.png)
 
-
 <br/>
-
 
 ### Development
 ```bash
 git clone git@github.com:Snapaper/snapaper-react.git
 yarn install
-```
-
-```bash
-// Development
 yarn run dev
 ```
 
-```bash
-// Production
-yarn run build
-```
+<br/>
 
+### Deployment
 ```bash
-// Server-Side Rendering
+yarn run build
 yarn run start
 ```
 
-
 <br/>
 
+### Production Environment
+- Frontend: Vercel
+- Backend:
+  - Render
+  - Tencent Cloud CVM
+- DNS: DNSPod
+
+<br/>
 
 ### Sponsor me
 Your name will be on the list [Sponsors](https://www.ouorz.com/sponsor)
-<br/>
