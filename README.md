@@ -54,8 +54,8 @@ yarn run start
 ### Production Environment
 - Frontend: Vercel
 - Backend:
-  - Render
-  - Tencent Cloud CVM
+  - Fly.io (API)
+  - Huawei Cloud (File Service)
 - DNS: DNSPod
 
 <br/>
