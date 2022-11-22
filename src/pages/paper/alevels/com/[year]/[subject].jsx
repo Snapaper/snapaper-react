@@ -65,7 +65,7 @@ var stillNeedDownloadlist = [];
 /* 下载、预览交互函数 */
 function downloadFile(srcUrl) {
 	var $a = $("<a/>")
-		.attr("href", "https://node.snapaper.com/download?filename=" + srcUrl)
+		.attr("href", "https://files.snapaper.com/download?filename=" + srcUrl)
 		.attr("download", "");
 	$a[0].click();
 }
