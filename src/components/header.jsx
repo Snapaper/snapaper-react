@@ -30,7 +30,7 @@ export default class Header extends React.Component {
 				message: "Consider using Node 1",
 				description: (
 					<p style={{ marginBottom: "0px" }}>
-						Node 1 usually delivers a better quality of service, and it has more
+						Node 1 usually delivers better quality of service, and it has more
 						papers and a better classification system. Try it out now!
 						Suggestions?{" "}
 						<a
