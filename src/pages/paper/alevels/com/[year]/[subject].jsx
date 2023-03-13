@@ -33,8 +33,9 @@ import Cookies from "js-cookie";
 // 引入 Router 参数获取功能
 import { withRouter } from "next/router";
 
-// 引入 jQuery 以支持下载
-import $ from "jquery";
+// 引入功能函数
+import { downloadFile } from "../../../../../utilities/file-download";
+import { liveView } from "../../../../../utilities/live-view";
 
 // 配置提示触发函数
 const openNotificationWithIcon = (type, content) => {
@@ -61,22 +62,6 @@ var noDownloadNow = true;
 
 // 仍需下载数组(下载模式二在列表下载完成后继续从此列表下载)
 var stillNeedDownloadlist = [];
-
-/* 下载、预览交互函数 */
-function downloadFile(srcUrl) {
-	var $a = $("<a/>")
-		.attr("href", "https://files.snapaper.com/download?filename=" + srcUrl)
-		.attr("download", "");
-	$a[0].click();
-}
-
-function liveView(url) {
-	window.open(
-		url,
-		"_blank",
-		"top=0,left=100,width=700,height=750,scrollbars=no,toolbar=no, menubar=no, location=no, status=no"
-	).location;
-}
 
 // 下载列表
 function downloadList() {

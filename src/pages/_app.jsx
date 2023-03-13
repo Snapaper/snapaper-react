@@ -23,9 +23,8 @@ import Router from "next/router";
 // Vercel Analytics 配置
 import { Analytics } from "@vercel/analytics/react";
 
-//动态引入顶部组件
-import dynamic from "next/dynamic";
-const Header = dynamic(() => import("../components/header"));
+//引入顶部组件
+import Header from "../components/header";
 
 // React Router 配置加载进度条
 Router.onRouteChangeStart = () => {
