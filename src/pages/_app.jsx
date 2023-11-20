@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Script from "next/script";
 
 // 全局样式引入
 import "../styles/global.scss";
