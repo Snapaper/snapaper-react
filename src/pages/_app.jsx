@@ -20,9 +20,6 @@ NProgress.configure({
 // React Router 引入以配置加载进度条
 import Router from "next/router";
 
-// Vercel Analytics 配置
-import { Analytics } from "@vercel/analytics/react";
-
 //引入顶部组件
 import Header from "../components/header";
 
@@ -58,7 +55,14 @@ function MyApp({ Component, pageProps }) {
 			</Head>
 			<Header />
 			<Component {...pageProps} />
-			<Analytics />
+			<Script
+				async
+				defer
+				data-do-not-track='true'
+				data-domains='www.snapaper.com'
+				data-website-id='e37a4dbe-d539-464a-9023-723d925f41c0'
+				src='https://analytics.ouorz.com/analytics.js'
+			/>
 		</>
 	);
 }
