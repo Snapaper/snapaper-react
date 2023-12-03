@@ -1,10 +1,9 @@
-import dynamic from "next/dynamic";
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 import axios from "axios";
-
-//动态引入组件
-const Footer = dynamic(() => import("../components/footer"));
+import imagePlacerHolder from "../utilities/image-placeholder";
+import Footer from "../components/footer";
 
 // 引入 AntD 图标
 import {
@@ -214,7 +213,7 @@ export default class Index extends React.Component {
 					<main className='ant-container'>
 						<section className='notice'>
 							<div>
-								<p>Support the development of Snapaper...</p>
+								<p>The development and maintenance of Snapaper require time and money. Please consider supporting us through:</p>
 								<div className='notice_actions'>
 									<a
 										href='https://www.patreon.com/ttttonyhe'
@@ -241,7 +240,13 @@ export default class Index extends React.Component {
 									this.setState({ OSvisible: true });
 								}}
 							>
-								<img src='https://static.ouorz.com/onestep.jpeg' />
+								<Image
+									src='https://static.ouorz.com/onestep.jpeg'
+									width={400}
+									height={260}
+									placeholder='blur'
+									blurDataURL={imagePlacerHolder}
+								/>
 								<div>
 									<h1>One Step</h1>
 									<p>The fastest and easiest way to find a paper</p>
@@ -317,7 +322,13 @@ export default class Index extends React.Component {
 								<Link href='/cate/igcse' legacyBehavior>
 									<div className='card'>
 										<div>
-											<img src='https://static.ouorz.com/igcse.jpeg' />
+											<Image
+												src='https://static.ouorz.com/igcse.jpeg'
+												width={48}
+												height={48}
+												placeholder='blur'
+												blurDataURL={imagePlacerHolder}
+											/>
 										</div>
 										<div>
 											<h2>IGCSE</h2>
@@ -331,7 +342,13 @@ export default class Index extends React.Component {
 								<Link href='/cate/alevels' legacyBehavior>
 									<div className='card'>
 										<div>
-											<img src='https://static.ouorz.com/alevel.jpeg' />
+											<Image
+												src='https://static.ouorz.com/alevel.jpeg'
+												width={48}
+												height={48}
+												placeholder='blur'
+												blurDataURL={imagePlacerHolder}
+											/>
 										</div>
 										<div>
 											<h2>A Levels</h2>
@@ -345,7 +362,13 @@ export default class Index extends React.Component {
 								<Link href='/topic/ebooks' legacyBehavior>
 									<div className='card'>
 										<div>
-											<img src='https://static.ouorz.com/ebooks.jpeg' />
+											<Image
+												src='https://static.ouorz.com/ebooks.jpeg'
+												width={48}
+												height={48}
+												placeholder='blur'
+												blurDataURL={imagePlacerHolder}
+											/>
 										</div>
 										<div>
 											<h2>PDF eBooks</h2>
@@ -359,7 +382,13 @@ export default class Index extends React.Component {
 								<Link href='/topic/savemyexams' legacyBehavior>
 									<div className='card'>
 										<div>
-											<img src='https://static.ouorz.com/sme.jpeg' />
+											<Image
+												src='https://static.ouorz.com/sme.jpeg'
+												width={48}
+												height={48}
+												placeholder='blur'
+												blurDataURL={imagePlacerHolder}
+											/>
 										</div>
 										<div>
 											<h2>Save My Exams</h2>
@@ -397,7 +426,13 @@ export default class Index extends React.Component {
 									<p>Support the development of Snapaper</p>
 								</div>
 								<div>
-									<img src='https://static.ouorz.com/sponsor.jpeg' />
+									<Image
+										src='https://static.ouorz.com/sponsor.jpeg'
+										width={150}
+										height={150}
+										placeholder='blur'
+										blurDataURL={imagePlacerHolder}
+									/>
 								</div>
 							</div>
 						</section>

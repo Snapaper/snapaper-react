@@ -1,9 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import React from "react";
 import dynamic from "next/dynamic";
 import isMobile from "ismobilejs";
 import config from "../../config";
 import MBS from "../../components/mbs";
+import imagePlacerHolder from "../../utilities/image-placeholder";
 
 // 动态引入组件
 const Footer = dynamic(() => import("../../components/footer"));
@@ -48,7 +50,7 @@ export default class Alevel extends React.Component {
 	}
 	render() {
 		return (
-            <div>
+			<div>
 				<main className='ant-container'>
 					<section className='next-cate-header'>
 						<div className='left'>
@@ -63,15 +65,29 @@ export default class Alevel extends React.Component {
 								<div>
 									<p className='title'>Board</p>
 									<p className='source'>
-										<img src='https://static.ouorz.com/QQ20200114-203749@2x.png' />{" "}
+										<Image
+											src='https://static.ouorz.com/QQ20200114-203749@2x.png'
+											width={21}
+											height={21}
+											placeholder='blur'
+											blurDataURL={imagePlacerHolder}
+											alt='CAIE'
+										/>{" "}
 										CAIE
 									</p>
 								</div>
 								<div>
 									<p className='title'>Source</p>
 									<p className='source'>
-										<img src='https://static.ouorz.com/logo_gceguide.png' /> GCE
-										Guide
+										<Image
+											src='https://static.ouorz.com/logo_gceguide.png'
+											width={21}
+											height={21}
+											placeholder='blur'
+											blurDataURL={imagePlacerHolder}
+											alt='GCE Guide'
+										/>{" "}
+										GCE Guide
 									</p>
 								</div>
 							</div>
@@ -136,33 +152,35 @@ export default class Alevel extends React.Component {
 										} else if (response !== null) {
 											// 请求成功展示列表
 											return (
-                                                <div className='next-cate-years'>
+												<div className='next-cate-years'>
 													{response.data.years.map((item, index) => {
 														return (
-                                                            <Link
-                                                                href={
+															<Link
+																href={
 																	"/paper/alevels/com/" +
 																	item.name +
 																	"/" +
 																	this.state.YCsubject
 																}
-                                                                prefetch={false}
-                                                                key={index}
-                                                                legacyBehavior>
+																prefetch={false}
+																key={index}
+																legacyBehavior
+															>
 																<div>
 																	<h2>{item.name}</h2>
 																	<CaretRightOutlined />
 																</div>
 															</Link>
-                                                        );
+														);
 													})}
 													{response.data.years.length == 0 && (
 														<Link
-                                                            href={
+															href={
 																"/paper/alevels/com/all/" + this.state.YCsubject
 															}
-                                                            prefetch={false}
-                                                            legacyBehavior>
+															prefetch={false}
+															legacyBehavior
+														>
 															<div>
 																<h2>All years</h2>
 																<CaretRightOutlined />
@@ -170,7 +188,7 @@ export default class Alevel extends React.Component {
 														</Link>
 													)}
 												</div>
-                                            );
+											);
 										}
 										return (
 											<div>
@@ -226,7 +244,7 @@ export default class Alevel extends React.Component {
 								} else if (response !== null) {
 									// 请求成功展示列表
 									return (
-                                        <div className='next-cate-subject'>
+										<div className='next-cate-subject'>
 											{response.data.cates.map((item, index) => {
 												if (!!item.name && item.name !== "error_log") {
 													if (
@@ -250,14 +268,15 @@ export default class Alevel extends React.Component {
 														);
 													} else {
 														return (
-                                                            <Link
-                                                                href={
+															<Link
+																href={
 																	"/paper/alevels/xyz/" +
 																	item.name.replace("amp;", "")
 																}
-                                                                prefetch={false}
-                                                                key={index}
-                                                                legacyBehavior>
+																prefetch={false}
+																key={index}
+																legacyBehavior
+															>
 																<div>
 																	<h2>{item.name.replace("amp;", "")}</h2>
 																	<p>
@@ -265,12 +284,12 @@ export default class Alevel extends React.Component {
 																	</p>
 																</div>
 															</Link>
-                                                        );
+														);
 													}
 												}
 											})}
 										</div>
-                                    );
+									);
 								}
 								return (
 									<div>
@@ -284,6 +303,6 @@ export default class Alevel extends React.Component {
 				</main>
 				<Footer></Footer>
 			</div>
-        );
+		);
 	}
 }

@@ -149,14 +149,14 @@ const columns = [
 		key: "name",
 		width: 250,
 		ellipsis: true,
-		sorter: (a, b) => parseInt(a.year) - parseInt(b.year),
+		sorter: (a, b) => a.name.localeCompare(b.name),
 	},
 	{
 		title: "Link",
 		dataIndex: "url",
 		key: "url",
 		width: 100,
-		render: (link) => <a href={link}>Link</a>,
+		render: (link) => <a href={link}>Direct Link</a>,
 	},
 	{
 		title: "Type",

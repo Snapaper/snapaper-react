@@ -1,9 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Head from "next/head";
-import Cookies from "js-cookie";
-import { Menu, Popover, Button, notification } from "antd";
-import { CaretDownOutlined, CheckCircleOutlined } from "@ant-design/icons";
+import { Menu } from "antd";
+import { CaretDownOutlined } from "@ant-design/icons";
 
 const { SubMenu } = Menu;
 

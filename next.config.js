@@ -7,4 +7,13 @@ module.exports = withPWA({
 	pageExtensions: ["jsx", "js"],
 	poweredByHeader: false,
 	generateEtags: false,
+	images: {
+		remotePatterns: [
+			{
+				protocol: "https",
+				hostname: "static.ouorz.com",
+				pathname: "/**",
+			},
+		],
+	},
 });
