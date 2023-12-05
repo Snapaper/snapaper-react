@@ -1,5 +1,17 @@
-body a {
-	text-decoration: none !important;
+body {
+	margin: 0;
+	padding: 0;
+	background: #ffffff;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+		Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji,
+		Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+	font-variant: tabular-nums;
+	line-height: 1.5715;
+	font-feature-settings: "tnum", "tnum";
+
+	a {
+		text-decoration: none !important;
+	}
 }
 
 html {
@@ -349,18 +361,18 @@ html {
 .nav-title {
 	font-weight: 600;
 	color: #555;
-	margin-bottom: 0px;
-	margin-top: 5px;
-	display: inline-block;
+	margin: 0;
+	display: flex;
+	align-items: center;
+	column-gap: 5px;
 	border-right: 3px solid #eee;
-	line-height: 20px;
 	padding-right: 30px;
+	transform: translateY(-1px);
 }
 
 .nav-title-img {
 	width: 35px;
-	margin-right: 5px;
-	margin-top: -4px;
+	margin-top: -1px;
 	transform: scale(1.4);
 }
 
@@ -1222,7 +1234,6 @@ tr {
 .ant-menu-vertical-right .ant-menu-item:not(:last-child),
 .ant-menu-inline .ant-menu-item:not(:last-child) {
 	margin-bottom: 5px !important;
-	border-bottom: 1px solid #eee !important;
 	padding-top: 0px !important;
 }
 

@@ -5,7 +5,7 @@ import Script from "next/script";
 import "../styles/global.scss";
 
 // AntD 样式引入
-import "antd/dist/antd.css";
+// import "antd/dist/antd.css";
 
 // Nprogress 进度条引入与配置
 import NProgress from "nprogress";

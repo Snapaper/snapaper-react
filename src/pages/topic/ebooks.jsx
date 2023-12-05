@@ -11,9 +11,6 @@ import { ArrowLeftOutlined, CaretRightOutlined } from "@ant-design/icons";
 // 引入 axios 进行 HTTP 请求
 import { Get } from "react-axios";
 
-// 引入 jQuery 进行下载创建
-import $ from "jquery";
-
 // 配置提示触发函数
 const openNotificationWithIcon = (type, content) => {
   notification[type]({
