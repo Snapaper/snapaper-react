@@ -213,7 +213,10 @@ export default class Index extends React.Component {
 					<main className='ant-container'>
 						<section className='notice'>
 							<div>
-								<p>The development and maintenance of Snapaper require time and money. Please consider supporting us through:</p>
+								<p>
+									The development and maintenance of Snapaper require time and
+									money. Please consider supporting us through:
+								</p>
 								<div className='notice_actions'>
 									<a
 										href='https://www.patreon.com/ttttonyhe'
@@ -244,8 +247,8 @@ export default class Index extends React.Component {
 									src='https://static.ouorz.com/onestep.jpeg'
 									width={400}
 									height={260}
-									placeholder='blur'
-									blurDataURL={imagePlacerHolder}
+									placeholder={imagePlacerHolder}
+									alt='One Step'
 								/>
 								<div>
 									<h1>One Step</h1>
@@ -326,8 +329,8 @@ export default class Index extends React.Component {
 												src='https://static.ouorz.com/igcse.jpeg'
 												width={48}
 												height={48}
-												placeholder='blur'
-												blurDataURL={imagePlacerHolder}
+												placeholder={imagePlacerHolder}
+												alt='IGCSE'
 											/>
 										</div>
 										<div>
@@ -346,8 +349,8 @@ export default class Index extends React.Component {
 												src='https://static.ouorz.com/alevel.jpeg'
 												width={48}
 												height={48}
-												placeholder='blur'
-												blurDataURL={imagePlacerHolder}
+												placeholder={imagePlacerHolder}
+												alt='A Levels'
 											/>
 										</div>
 										<div>
@@ -366,8 +369,8 @@ export default class Index extends React.Component {
 												src='https://static.ouorz.com/ebooks.jpeg'
 												width={48}
 												height={48}
-												placeholder='blur'
-												blurDataURL={imagePlacerHolder}
+												placeholder={imagePlacerHolder}
+												alt='PDF eBooks'
 											/>
 										</div>
 										<div>
@@ -386,8 +389,8 @@ export default class Index extends React.Component {
 												src='https://static.ouorz.com/sme.jpeg'
 												width={48}
 												height={48}
-												placeholder='blur'
-												blurDataURL={imagePlacerHolder}
+												placeholder={imagePlacerHolder}
+												alt='Save My Exams'
 											/>
 										</div>
 										<div>
@@ -430,8 +433,8 @@ export default class Index extends React.Component {
 										src='https://static.ouorz.com/sponsor.jpeg'
 										width={150}
 										height={150}
-										placeholder='blur'
-										blurDataURL={imagePlacerHolder}
+										placeholder={imagePlacerHolder}
+										alt='Sponsor Us'
 									/>
 								</div>
 							</div>

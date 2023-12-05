@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 import { Menu } from "antd";
@@ -23,9 +24,12 @@ export default class Header extends React.Component {
 					<Menu.Item key='logo' className='header-ant-logo'>
 						<Link href='/' legacyBehavior>
 							<h3 className='nav-title'>
-								<img
+								<Image
 									src='https://static.ouorz.com/snapaper@next.png'
 									className='nav-title-img'
+									alt='snapaper'
+									width={49}
+									height={49}
 								/>
 								napaper
 							</h3>
