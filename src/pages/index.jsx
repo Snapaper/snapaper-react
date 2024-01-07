@@ -92,7 +92,7 @@ export default class Index extends React.Component {
 			// 			? Cookies.get("snapaper_server")
 			// 			: "1")
 			// )
-			.get("http://localhost:8080/api/cates/ppco/" + targetOption.value)
+			.get("http://node.snapaper.com/api/cates/ppco/" + targetOption.value)
 			.then((res) => {
 				targetOption.children = [];
 				// 增加到 children 数组
