@@ -157,7 +157,8 @@ export default class igcse extends React.Component {
 														return (
 															<Link
 																href={
-																	"/paper/igcse/com/" +
+																	// "/paper/igcse/com/" +
+																	"/paper/igcse/ppco/" +
 																	item.name +
 																	"/" +
 																	this.state.YCsubject
@@ -173,7 +174,7 @@ export default class igcse extends React.Component {
 															</Link>
 														);
 													})}
-													{response.data.years.length == 0 && (
+													{/* {response.data.years.length == 0 && (
 														<Link
 															href={
 																"/paper/igcse/com/all/" + this.state.YCsubject
@@ -186,7 +187,7 @@ export default class igcse extends React.Component {
 																<CaretRightOutlined />
 															</div>
 														</Link>
-													)}
+													)} */}
 												</div>
 											);
 										}
@@ -204,11 +205,12 @@ export default class igcse extends React.Component {
 					<section>
 						<Get
 							url={
-								config.apiUrl.cates.igcse +
-								(Cookies.get("snapaper_server") &&
-								parseInt(Cookies.get("snapaper_server")) !== 0
-									? Cookies.get("snapaper_server")
-									: "1")
+								// config.apiUrl.cates.igcse +
+								// (Cookies.get("snapaper_server") &&
+								// parseInt(Cookies.get("snapaper_server")) !== 0
+								// 	? Cookies.get("snapaper_server")
+								// 	: "1")
+								config.apiUrl.cates.igcse
 							}
 							onSuccess={(response) =>
 								this.setState({

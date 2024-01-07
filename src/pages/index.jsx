@@ -49,7 +49,8 @@ export default class Index extends React.Component {
 					isLeaf: false,
 				},
 				{
-					value: "A Levels",
+					// value: "A Levels",
+					value: "A-Level",
 					label: "A Levels",
 					isLeaf: false,
 				},
@@ -82,15 +83,16 @@ export default class Index extends React.Component {
 
 		// 请求 API 数据
 		await axios
-			.get(
-				"https://node.snapaper.com/api/cates/" +
-					targetOption.value +
-					"/" +
-					(Cookies.get("snapaper_server") &&
-					parseInt(Cookies.get("snapaper_server")) !== 0
-						? Cookies.get("snapaper_server")
-						: "1")
-			)
+			// .get(
+			// 	"https://node.snapaper.com/api/cates/" +
+			// 		targetOption.value +
+			// 		"/" +
+			// 		(Cookies.get("snapaper_server") &&
+			// 		parseInt(Cookies.get("snapaper_server")) !== 0
+			// 			? Cookies.get("snapaper_server")
+			// 			: "1")
+			// )
+			.get("http://localhost:8080/api/cates/ppco/" + targetOption.value)
 			.then((res) => {
 				targetOption.children = [];
 				// 增加到 children 数组
@@ -118,13 +120,14 @@ export default class Index extends React.Component {
 			!!this.state.paper
 		) {
 			// 获取服务器地址
-			let server =
-				(Cookies.get("snapaper_server") &&
-				parseInt(Cookies.get("snapaper_server")) !== 0
-					? Cookies.get("snapaper_server")
-					: "1") == "1"
-					? "https://papers.gceguide.com"
-					: "https://papers.gceguide.xyz";
+			// let server =
+			// 	(Cookies.get("snapaper_server") &&
+			// 	parseInt(Cookies.get("snapaper_server")) !== 0
+			// 		? Cookies.get("snapaper_server")
+			// 		: "1") == "1"
+			// 		? "https://papers.gceguide.com"
+			// 		: "https://papers.gceguide.xyz";
+			const server = "https://cie.fraft.cn/obj/Fetch/redir";
 
 			// 获取月份
 			switch (this.state.month) {

@@ -22,7 +22,7 @@ export default class Header extends React.Component {
 				</Head>
 				<Menu mode='horizontal'>
 					<Menu.Item key='logo' className='header-ant-logo'>
-						<Link href='/' legacyBehavior>
+						<Link href='/'>
 							<h3 className='nav-title'>
 								<Image
 									src='https://static.ouorz.com/snapaper@next.png'
