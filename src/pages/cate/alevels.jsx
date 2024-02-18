@@ -157,8 +157,8 @@ export default class Alevel extends React.Component {
 														return (
 															<Link
 																href={
-																	// "/paper/alevels/com/" +
-																	"/paper/alevels/ppco/" +
+																	"/paper/alevels/com/" +
+																	// "/paper/alevels/ppco/" +
 																	item.name +
 																	"/" +
 																	this.state.YCsubject
@@ -174,7 +174,7 @@ export default class Alevel extends React.Component {
 															</Link>
 														);
 													})}
-													{/* {response.data.years.length == 0 && (
+													{response.data.years.length == 0 && (
 														<Link
 															href={
 																"/paper/alevels/com/all/" + this.state.YCsubject
@@ -187,7 +187,7 @@ export default class Alevel extends React.Component {
 																<CaretRightOutlined />
 															</div>
 														</Link>
-													)} */}
+													)}
 												</div>
 											);
 										}
@@ -205,12 +205,12 @@ export default class Alevel extends React.Component {
 					<section>
 						<Get
 							url={
-								// config.apiUrl.cates.alevel +
-								// (Cookies.get("snapaper_server") &&
-								// parseInt(Cookies.get("snapaper_server")) !== 0
-								// 	? Cookies.get("snapaper_server")
-								// 	: "1")
-								config.apiUrl.cates.alevel
+								config.apiUrl.cates.alevel +
+								(Cookies.get("snapaper_server") &&
+								parseInt(Cookies.get("snapaper_server")) !== 0
+									? Cookies.get("snapaper_server")
+									: "1")
+								// config.apiUrl.cates.alevel
 							}
 							onSuccess={(response) =>
 								this.setState({

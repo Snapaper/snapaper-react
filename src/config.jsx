@@ -1,10 +1,10 @@
 export default {
 	apiUrl: {
 		cates: {
-			// alevel: "https://node.snapaper.com/api/cates/A%20Levels/",
-			// igcse: "https://node.snapaper.com/api/cates/IGCSE/",
-			alevel: "https://node.snapaper.com/api/cates/ppco/A-Level/",
-			igcse: "https://node.snapaper.com/api/cates/ppco/IGCSE/",
+			alevel: "https://node.snapaper.com/api/cates/A%20Levels/",
+			igcse: "https://node.snapaper.com/api/cates/IGCSE/",
+			// alevel: "https://node.snapaper.com/api/cates/ppco/A-Level/",
+			// igcse: "https://node.snapaper.com/api/cates/ppco/IGCSE/",
 		},
 		papers: {
 			xyz: {
@@ -21,10 +21,10 @@ export default {
 			},
 		},
 		years: {
-			// alevel: "https://node.snapaper.com/api/years/A%20Levels/",
-			// igcse: "https://node.snapaper.com/api/years/IGCSE/",
-			alevel: "https://node.snapaper.com/api/years/ppco/A-Level/",
-			igcse: "https://node.snapaper.com/api/years/ppco/IGCSE/",
+			alevel: "https://node.snapaper.com/api/years/A%20Levels/",
+			igcse: "https://node.snapaper.com/api/years/IGCSE/",
+			// alevel: "https://node.snapaper.com/api/years/ppco/A-Level/",
+			// igcse: "https://node.snapaper.com/api/years/ppco/IGCSE/",
 		},
 	},
 };
