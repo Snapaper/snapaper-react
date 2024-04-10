@@ -170,7 +170,7 @@ export default class Index extends React.Component {
 			this.setState({
 				oneStepLoading: true,
 			});
-			fetch(`https://cors.snapaper.com/${url}`)
+			fetch(`https://cors.ouorz.com/${url}`)
 				.then((res) => {
 					if (res.status === 200) {
 						//导航至网址
