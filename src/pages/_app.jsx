@@ -1,5 +1,6 @@
 import Head from "next/head";
-import Script from "next/script";
+// import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 
 // 全局样式引入
 import "../styles/global.scss";
@@ -56,14 +57,15 @@ function MyApp({ Component, pageProps }) {
 			</Head>
 			<Header />
 			<Component {...pageProps} />
-			<Script
+			<Analytics />
+			{/* <Script
 				async
 				defer
 				data-do-not-track='true'
 				data-domains='www.snapaper.com'
 				data-website-id='e37a4dbe-d539-464a-9023-723d925f41c0'
 				src='https://analytics.ouorz.com/analytics.js'
-			/>
+			/> */}
 		</>
 	);
 }
