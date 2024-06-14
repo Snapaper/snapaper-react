@@ -47,7 +47,7 @@ export default class Ebooks extends React.Component {
 								<h1>PDF eBooks</h1>
 								<p>
 									Cambridge International General Certificate of Education
-									Advanced Level
+									Advanced Level (not up-to-date)
 								</p>
 							</div>
 						</div>

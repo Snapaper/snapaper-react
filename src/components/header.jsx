@@ -15,10 +15,7 @@ export default class Header extends React.Component {
 		return (
 			<div className='header-div'>
 				<Head>
-					<title>
-						Snapaper | Past Papers and More Study Resources for Cambridge
-						Examinations
-					</title>
+					<title>Snapaper | CAIE Past Papers and Study Resources</title>
 				</Head>
 				<Menu mode='horizontal'>
 					<Menu.Item key='logo' className='header-ant-logo'>

@@ -215,7 +215,7 @@ export default class Index extends React.Component {
 			return (
 				<div>
 					<main className='ant-container'>
-						<section className='notice'>
+						{/* <section className='notice'>
 							<div>
 								<p>
 									The development and maintenance of Snapaper require time and
@@ -238,7 +238,7 @@ export default class Index extends React.Component {
 									</a>
 								</div>
 							</div>
-						</section>
+						</section> */}
 
 						<section className='next-index-section-one'>
 							<section
@@ -399,7 +399,7 @@ export default class Index extends React.Component {
 										</div>
 										<div>
 											<h2>Save My Exams</h2>
-											<p>Practice exams mark scheme for SaveMyExams</p>
+											<p>Practice exam mark schemes</p>
 										</div>
 									</div>
 								</Link>
@@ -412,7 +412,7 @@ export default class Index extends React.Component {
 										<h1 className='about-us-text'>
 											<InfoCircleFilled /> About Us
 										</h1>
-										<p>Learn more about Snapaper</p>
+										<p>Learn more about Snapaper and its author</p>
 									</div>
 								</Link>
 							</div>

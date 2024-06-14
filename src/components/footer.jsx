@@ -25,8 +25,8 @@ class Footer extends React.Component {
 				<div className='footer-container'>
 					<div>
 						<p>
-							&copy; Copyright 2018-2022 Snapaper · Made with <HeartFilled />{" "}
-							for the People of the Internet
+							&copy; Copyright 2018-{new Date().getFullYear()} Snapaper · Made
+							with <HeartFilled /> for the People of the Internet
 						</p>
 					</div>
 					<div>
@@ -36,10 +36,6 @@ class Footer extends React.Component {
 							rel='noreferrer'
 						>
 							<GithubFilled /> OSS
-						</a>{" "}
-						&nbsp;
-						<a href='https://www.ouorz.com' target='_blank'>
-							<UserOutlined /> TonyHe
 						</a>
 					</div>
 				</div>

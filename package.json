@@ -2,7 +2,7 @@
   "name": "snapaper-react",
   "version": "0.0.1",
   "description": "Snapaper @next Version",
-  "packageManager": "pnpm@8.11.0",
+  "packageManager": "pnpm@9.2.0",
   "scripts": {
     "dev": "next",
     "build": "next build",
@@ -32,6 +32,6 @@
     "react": "^18.3.1",
     "react-axios": "^2.0.6",
     "react-dom": "^18.3.1",
-    "sass": "^1.77.3"
+    "sass": "^1.77.5"
   }
 }

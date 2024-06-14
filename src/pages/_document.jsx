@@ -1,8 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
 const APP_NAME = "Snapaper";
-const APP_DESCRIPTION =
-	"An Integrated Platform of Past-papers and More Study Resources";
+const APP_DESCRIPTION = "CAIE Past Papers and Study Resources";
 
 export default class extends Document {
 	static async getInitialProps(ctx) {

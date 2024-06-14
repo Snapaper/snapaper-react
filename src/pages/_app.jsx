@@ -52,7 +52,7 @@ function MyApp({ Component, pageProps }) {
 				/>
 				<meta
 					name='description'
-					content='The fastest way to find and download CAIE past papers and relevant study resources'
+					content='A better way to explore and download CAIE past papers and relevant study resources'
 				/>
 			</Head>
 			<Header />

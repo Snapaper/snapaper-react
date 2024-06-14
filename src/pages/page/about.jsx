@@ -29,24 +29,24 @@ export default class About extends React.Component {
 
 							<h3 className='uk-card-title index-cate-h3'>Copyrights</h3>
 							<p>
-								All the contents & names in this website are assets of owners,
-								protected by law. Past papers are sourced from{" "}
+								Content & names in this website are assets of owners, protected
+								by law. Past papers are sourced from{" "}
 								<b>GCE Guide (http://www.gceguide.com)</b> and{" "}
 								<b>SaveMyExams (https://www.savemyexams.co.uk)</b>
 							</p>
 							<p>
-								This is a 100% non-profitable website. Snapaper does not have a
-								database or data storage of any kind. All the contents are from
-								GCE Guide (http://www.gceguide.com) and SaveMyExams
-								(https://www.savemyexams.co.uk), and has not been changed or
+								This is a 100% non-profitable website. Snapaper does maintain a
+								database or data storage of any kind. All the content are
+								provided by GCE Guide (http://www.gceguide.com) and SaveMyExams
+								(https://www.savemyexams.co.uk). They have not been changed or
 								downloaded by Snapaper.
 							</p>
 							<br />
 
 							<h3 className='uk-card-title index-cate-h3'>Author</h3>
 							<p>
-								Snapaper (both frontend and backend) is developed by{" "}
-								<b>TonyHe</b>.
+								Snapaper is a project originally developed by <b>Tony He</b>, it
+								is however no longer actively maintained.
 								<br />
 								If you found this project helpful, please consider{" "}
 								<a href='https://www.ouorz.com/sponsor'>sponsoring him</a> and
@@ -56,17 +56,18 @@ export default class About extends React.Component {
 								please contact him through <b>Email (tony.hlp@hotmail.com)</b>
 								.
 								<br />
-								If you have any suggestions or concerns for this website, you
-								can contact him, but he will not necessarily care about you.
+								Should you have any suggestions or concerns for this website,
+								please also use Email to reach out to him.
 							</p>
 							<br />
 
 							<h3 className='uk-card-title index-cate-h3'>Open source</h3>
 							<p>
-								Snapaper is an open-source project, the source code is publicly
-								accessible on Github. You are welcomed to contribute to the
-								development of this project. But be aware that this is a legcay
-								project and not actively maintained by Tony.
+								Snapaper is an open-source project, the source code (both
+								front-end and back-end) is publicly accessible on Github. You
+								are welcomed to contribute to the development of this project.
+								But be aware that this is a legcay project and is not actively
+								maintained.
 							</p>
 							<a href='https://github.com/Snapaper/snapaper-react'>
 								https://github.com/Snapaper/snapaper-react
