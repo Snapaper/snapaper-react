@@ -215,30 +215,24 @@ export default class Index extends React.Component {
 			return (
 				<div>
 					<main className='ant-container'>
-						{/* <section className='notice'>
+						<section className='notice'>
 							<div>
-								<p>
-									The development and maintenance of Snapaper require time and
-									money. Please consider supporting us through:
+								<p style={{ "font-spacing": "2px" }}>
+									Discover Snapaper, the ultimate tool for CAIE students
+									worldwide to effortlessly access past papers. Consider
+									supporting us through:
 								</p>
 								<div className='notice_actions'>
 									<a
-										href='https://www.patreon.com/ttttonyhe'
+										href='https://github.com/sponsors/ttttonyhe'
 										target='_blank'
 										rel='noreferrer'
 									>
-										Patreon →
-									</a>
-									<a
-										href='https://afdian.net/@tonyhe'
-										target='_blank'
-										rel='noreferrer'
-									>
-										爱发电 →
+										Github Sponsors →
 									</a>
 								</div>
 							</div>
-						</section> */}
+						</section>
 
 						<section className='next-index-section-one'>
 							<section
