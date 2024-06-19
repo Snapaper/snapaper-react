@@ -171,7 +171,7 @@ export default class Index extends React.Component {
 				oneStepLoading: true,
 			});
 
-			fetch(`https://corsproxy.io/?${encodeURIComponent(url)}`)
+			fetch(`https://cors.ouorz.com/?url=${encodeURIComponent(url)}`)
 				.then((res) => {
 					if (res.status === 200) {
 						//导航至网址
