@@ -120,14 +120,8 @@ export default class Index extends React.Component {
 			!!this.state.paper
 		) {
 			// 获取服务器地址
-			// let server =
-			// 	(Cookies.get("snapaper_server") &&
-			// 	parseInt(Cookies.get("snapaper_server")) !== 0
-			// 		? Cookies.get("snapaper_server")
-			// 		: "1") == "1"
-			// 		? "https://papers.gceguide.com"
-			// 		: "https://papers.gceguide.xyz";
-			const server = "https://cie.fraft.cn/obj/Fetch/redir";
+			let server = "https://papers.gceguide.net";
+			// const server = "https://cie.fraft.cn/obj/Fetch/redir";
 
 			// 获取月份
 			switch (this.state.month) {
