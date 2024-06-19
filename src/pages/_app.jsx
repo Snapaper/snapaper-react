@@ -48,24 +48,16 @@ function MyApp({ Component, pageProps }) {
 				/>
 				<meta
 					name='keywords'
-					content='past papers,CAIE past papers,CAIE,past papers,IGCSE,ALevel,OLevel,pastpapers,snapaper,snap,papers,exam papers,mock exams,past exam papers,Cambridge, May/June, October/November, February/March, Winter session, Summer session'
+					content='Past papers, mock exams, past exam papers, CAIE past papers, CIE past papers, IGCSE past papers, ALevel past papers, CAIE study resources, CAIE pdf textbooks, Save my exams'
 				/>
 				<meta
 					name='description'
-					content='A better way to explore and download CAIE past papers and relevant study resources'
+					content='Discover Snapaper, the ultimate tool for CAIE students worldwide to effortlessly access past papers.'
 				/>
 			</Head>
 			<Header />
 			<Component {...pageProps} />
 			<Analytics />
-			{/* <Script
-				async
-				defer
-				data-do-not-track='true'
-				data-domains='www.snapaper.com'
-				data-website-id='e37a4dbe-d539-464a-9023-723d925f41c0'
-				src='https://analytics.ouorz.com/analytics.js'
-			/> */}
 		</>
 	);
 }
