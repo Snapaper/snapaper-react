@@ -120,7 +120,7 @@ export default class Index extends React.Component {
 			!!this.state.paper
 		) {
 			// 获取服务器地址
-			let server = "https://papers.gceguide.net";
+			let server = "https://papers.gceguide.cc";
 			// const server = "https://cie.fraft.cn/obj/Fetch/redir";
 
 			// 获取月份
