@@ -23,6 +23,7 @@ import { Get } from "react-axios";
 
 // 引入 Cookies 获取模块
 import Cookies from "js-cookie";
+import { formatSubjectNameURL } from "../../utilities/url-formatter";
 
 // 提示触发函数
 const openNotificationWithIcon = (type, content) => {
@@ -117,7 +118,7 @@ export default class Alevel extends React.Component {
 								}}
 								toggleYearChoose={(subject) => {
 									this.setState({
-										YCsubject: subject.replace("amp;", ""),
+										YCsubject: formatSubjectNameURL(subject),
 										YCvisible: true,
 									});
 								}}
@@ -257,7 +258,7 @@ export default class Alevel extends React.Component {
 															<div
 																onClick={() => {
 																	this.setState({
-																		YCsubject: item.name.replace("amp;", ""),
+																		YCsubject: formatSubjectNameURL(item.name),
 																		YCvisible: true,
 																	});
 																}}

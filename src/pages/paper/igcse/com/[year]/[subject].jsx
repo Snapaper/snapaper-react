@@ -326,7 +326,7 @@ class igcseSubject extends React.Component {
 					<section className='next-cate-header paper-header'>
 						<div className='left'>
 							<div>
-								<h1>
+								<h1 style={{ textTransform: "capitalize" }}>
 									{this.props.router.query.subject
 										? this.props.router.query.subject.replace("amp;", "")
 										: "IGCSE"}

@@ -20,6 +20,7 @@ const { Option } = Select;
 
 // 引入 Cookies 获取模块
 import Cookies from "js-cookie";
+import { formatSubjectNameURL } from "../utilities/url-formatter";
 
 // 配置提示触发函数
 const openNotificationWithIcon = (type, content) => {
@@ -44,12 +45,12 @@ export default class Index extends React.Component {
 			display: true,
 			options: [
 				{
-					value: "IGCSE",
+					value: "cambridge-IGCSE",
 					label: "IGCSE",
 					isLeaf: false,
 				},
 				{
-					value: "A Levels",
+					value: "a-levels",
 					// value: "A-Level", // ppco
 					label: "A Levels",
 					isLeaf: false,
@@ -99,7 +100,7 @@ export default class Index extends React.Component {
 				res.data.cates.map((item) => {
 					targetOption.children[targetOption.children.length] = {
 						label: item.name,
-						value: item.name,
+						value: formatSubjectNameURL(item.name),
 					};
 				});
 				targetOption.loading = false;
