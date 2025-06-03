@@ -213,9 +213,8 @@ export default class Index extends React.Component {
 						<section className='notice'>
 							<div>
 								<p style={{ "font-spacing": "2px" }}>
-									Discover Snapaper, the ultimate tool for CAIE students
-									worldwide to effortlessly access past papers. Consider
-									supporting us through:
+									Discover Snapaper, the ultimate destination for CAIE past
+									papers. Consider supporting us through:
 								</p>
 								<div className='notice_actions'>
 									<a
@@ -251,7 +250,7 @@ export default class Index extends React.Component {
 							{/* 一步弹窗 */}
 							<Modal
 								title='One Step'
-								visible={this.state.OSvisible}
+								open={this.state.OSvisible}
 								onCancel={this.handleCancel}
 								footer={false}
 							>
