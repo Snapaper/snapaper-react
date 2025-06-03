@@ -212,7 +212,7 @@ export default class Index extends React.Component {
 					<main className='ant-container'>
 						<section className='notice'>
 							<div>
-								<p style={{ "font-spacing": "2px" }}>
+								<p style={{ fontSpacing: "2px" }}>
 									Discover Snapaper, the ultimate destination for CAIE past
 									papers. Consider supporting us through:
 								</p>
