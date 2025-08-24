@@ -69,7 +69,7 @@ export default function MBS({
 						<div
 							className='next-cate-subjects-list'
 							onClick={() => {
-								toggleYearChoose("Mathematics Further (9231)");
+								toggleYearChoose("Mathematics (9231)");
 							}}
 						>
 							<h2>Further Mathematics</h2>
@@ -214,7 +214,7 @@ export default function MBS({
 					<div
 						className='next-cate-subjects-list'
 						onClick={() => {
-							toggleYearChoose("Mathematics Additional (0606)");
+							toggleYearChoose("Mathematics (0606)");
 						}}
 					>
 						<h2>Additional Mathematics</h2>

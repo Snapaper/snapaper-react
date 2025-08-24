@@ -12,11 +12,7 @@ const Footer = dynamic(() => import("../../components/footer"));
 
 // 引入 AntD 组件
 import { notification, Skeleton, Button, Modal, Empty } from "antd";
-import {
-	ArrowLeftOutlined,
-	FireOutlined,
-	CaretRightOutlined,
-} from "@ant-design/icons";
+import { ArrowLeftOutlined, FireOutlined, CaretRightOutlined } from "@ant-design/icons";
 
 // 引入 axios 模块
 import { Get } from "react-axios";
@@ -58,8 +54,7 @@ export default class igcse extends React.Component {
 							<div>
 								<h1>IGCSE</h1>
 								<p>
-									Cambridge International General Certificate of Secondary
-									Education
+									Cambridge International General Certificate of Secondary Education
 								</p>
 							</div>
 							<div className='next-cate-header-badge'>
@@ -158,7 +153,8 @@ export default class igcse extends React.Component {
 														return (
 															<Link
 																href={
-																	"/paper/igcse/com/" +
+																	"/paper/igcse/ppca/" +
+																	// "/paper/igcse/com/" +
 																	// "/paper/igcse/ppco/" +
 																	item.name +
 																	"/" +
@@ -175,11 +171,9 @@ export default class igcse extends React.Component {
 															</Link>
 														);
 													})}
-													{response.data.years.length == 0 && (
+													{/* {response.data.years.length == 0 && (
 														<Link
-															href={
-																"/paper/igcse/com/all/" + this.state.YCsubject
-															}
+															href={"/paper/igcse/com/all/" + this.state.YCsubject}
 															prefetch={false}
 															legacyBehavior
 														>
@@ -188,7 +182,7 @@ export default class igcse extends React.Component {
 																<CaretRightOutlined />
 															</div>
 														</Link>
-													)}
+													)} */}
 												</div>
 											);
 										}
@@ -206,11 +200,12 @@ export default class igcse extends React.Component {
 					<section>
 						<Get
 							url={
-								config.apiUrl.cates.igcse +
-								(Cookies.get("snapaper_server") &&
-								parseInt(Cookies.get("snapaper_server")) !== 0
-									? Cookies.get("snapaper_server")
-									: "1")
+								config.apiUrl.cates.igcse
+								// +
+								// (Cookies.get("snapaper_server") &&
+								// parseInt(Cookies.get("snapaper_server")) !== 0
+								// 	? Cookies.get("snapaper_server")
+								// 	: "1")
 								// config.apiUrl.cates.igcse
 							}
 							onSuccess={(response) =>
@@ -273,8 +268,7 @@ export default class igcse extends React.Component {
 														return (
 															<Link
 																href={
-																	"/paper/igcse/xyz/" +
-																	item.name.replace("amp;", "")
+																	"/paper/igcse/xyz/" + item.name.replace("amp;", "")
 																}
 																prefetch={false}
 																key={index}

@@ -6,11 +6,7 @@ import imagePlacerHolder from "../utilities/image-placeholder";
 import Footer from "../components/footer";
 
 // 引入 AntD 图标
-import {
-	InfoCircleFilled,
-	CalendarOutlined,
-	NumberOutlined,
-} from "@ant-design/icons";
+import { InfoCircleFilled, CalendarOutlined, NumberOutlined } from "@ant-design/icons";
 
 // 按需引入 AntD 组件
 import { Input, Modal, Select, Button, notification, Cascader } from "antd";
@@ -19,8 +15,9 @@ import { Input, Modal, Select, Button, notification, Cascader } from "antd";
 const { Option } = Select;
 
 // 引入 Cookies 获取模块
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 import { formatSubjectNameURL } from "../utilities/url-formatter";
+import config from "../config";
 
 // 配置提示触发函数
 const openNotificationWithIcon = (type, content) => {
@@ -45,12 +42,12 @@ export default class Index extends React.Component {
 			display: true,
 			options: [
 				{
-					value: "cambridge-IGCSE",
+					value: "igcse",
 					label: "IGCSE",
 					isLeaf: false,
 				},
 				{
-					value: "a-levels",
+					value: "alevel",
 					// value: "A-Level", // ppco
 					label: "A Levels",
 					isLeaf: false,
@@ -85,13 +82,13 @@ export default class Index extends React.Component {
 		// 请求 API 数据
 		await axios
 			.get(
-				"https://node.snapaper.com/api/cates/" +
-					targetOption.value +
-					"/" +
-					(Cookies.get("snapaper_server") &&
-					parseInt(Cookies.get("snapaper_server")) !== 0
-						? Cookies.get("snapaper_server")
-						: "1")
+				config.apiUrl.cates[targetOption.value]
+				// +
+				// "/" +
+				// (Cookies.get("snapaper_server") &&
+				// parseInt(Cookies.get("snapaper_server")) !== 0
+				// 	? Cookies.get("snapaper_server")
+				// 	: "1")
 			)
 			// .get("http://node.snapaper.com/api/cates/ppco/" + targetOption.value)
 			.then((res) => {
@@ -121,7 +118,8 @@ export default class Index extends React.Component {
 			!!this.state.paper
 		) {
 			// 获取服务器地址
-			let server = "https://papers.gceguide.cc";
+			let server =
+				"https://pastpapers.papacambridge.com/directories/CAIE/CAIE-pastpapers/upload";
 			// const server = "https://cie.fraft.cn/obj/Fetch/redir";
 
 			// 获取月份
@@ -146,12 +144,12 @@ export default class Index extends React.Component {
 			let url =
 				server +
 				"/" +
-				this.state.subject[0] +
-				"/" +
-				this.state.subject[1] +
-				"/" +
-				(2000 + parseInt(this.state.year)) +
-				"/" +
+				// this.state.subject[0] +
+				// "/" +
+				// this.state.subject[1] +
+				// "/" +
+				// (2000 + parseInt(this.state.year)) +
+				// "/" +
 				code +
 				"_" +
 				month +
@@ -213,8 +211,8 @@ export default class Index extends React.Component {
 						<section className='notice'>
 							<div>
 								<p style={{ fontSpacing: "2px" }}>
-									Discover Snapaper, the ultimate destination for CAIE past
-									papers. Consider supporting us through:
+									Discover Snapaper, the ultimate destination for CAIE past papers.
+									Consider supporting us through:
 								</p>
 								<div className='notice_actions'>
 									<a
@@ -367,10 +365,7 @@ export default class Index extends React.Component {
 										</div>
 										<div>
 											<h2>PDF eBooks</h2>
-											<p>
-												Cambridge International Curriculum PDF electronic
-												textbooks
-											</p>
+											<p>Cambridge International Curriculum PDF electronic textbooks</p>
 										</div>
 									</div>
 								</Link>

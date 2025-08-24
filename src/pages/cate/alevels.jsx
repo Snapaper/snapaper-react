@@ -12,11 +12,7 @@ const Footer = dynamic(() => import("../../components/footer"));
 
 // 引入 AntD 组件
 import { notification, Skeleton, Button, Modal, Empty } from "antd";
-import {
-	ArrowLeftOutlined,
-	FireOutlined,
-	CaretRightOutlined,
-} from "@ant-design/icons";
+import { ArrowLeftOutlined, FireOutlined, CaretRightOutlined } from "@ant-design/icons";
 
 // 引入 axios 模块
 import { Get } from "react-axios";
@@ -58,8 +54,8 @@ export default class Alevel extends React.Component {
 							<div>
 								<h1>A Levels</h1>
 								<p>
-									Cambridge International General Certificate of Education
-									Advanced Level
+									Cambridge International General Certificate of Education Advanced
+									Level
 								</p>
 							</div>
 							<div className='next-cate-header-badge'>
@@ -158,7 +154,8 @@ export default class Alevel extends React.Component {
 														return (
 															<Link
 																href={
-																	"/paper/alevels/com/" +
+																	"/paper/alevels/ppca/" +
+																	// "/paper/alevels/com/" +
 																	// "/paper/alevels/ppco/" +
 																	item.name +
 																	"/" +
@@ -175,7 +172,7 @@ export default class Alevel extends React.Component {
 															</Link>
 														);
 													})}
-													{response.data.years.length == 0 && (
+													{/* {response.data.years.length == 0 && (
 														<Link
 															href={
 																"/paper/alevels/com/all/" + this.state.YCsubject
@@ -188,7 +185,7 @@ export default class Alevel extends React.Component {
 																<CaretRightOutlined />
 															</div>
 														</Link>
-													)}
+													)} */}
 												</div>
 											);
 										}
@@ -206,12 +203,12 @@ export default class Alevel extends React.Component {
 					<section>
 						<Get
 							url={
-								config.apiUrl.cates.alevel +
-								(Cookies.get("snapaper_server") &&
-								parseInt(Cookies.get("snapaper_server")) !== 0
-									? Cookies.get("snapaper_server")
-									: "1")
-								// config.apiUrl.cates.alevel
+								config.apiUrl.cates.alevel
+								// +
+								// (Cookies.get("snapaper_server") &&
+								// parseInt(Cookies.get("snapaper_server")) !== 0
+								// 	? Cookies.get("snapaper_server")
+								// 	: "1")
 							}
 							onSuccess={(response) =>
 								this.setState({
@@ -273,8 +270,7 @@ export default class Alevel extends React.Component {
 														return (
 															<Link
 																href={
-																	"/paper/alevels/xyz/" +
-																	item.name.replace("amp;", "")
+																	"/paper/alevels/xyz/" + item.name.replace("amp;", "")
 																}
 																prefetch={false}
 																key={index}
