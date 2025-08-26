@@ -76,14 +76,14 @@ export default class igcse extends React.Component {
 									<p className='title'>Source</p>
 									<p className='source'>
 										<Image
-											src='https://static.ouorz.com/logo_gceguide.png'
+											src='https://static.ouorz.com/papacambridge.png'
 											width={21}
 											height={21}
 											placeholder='blur'
 											blurDataURL={imagePlacerHolder}
-											alt='GCE Guide'
+											alt='PapaCambridge'
 										/>{" "}
-										GCE Guide
+										PapaCambridge
 									</p>
 								</div>
 							</div>

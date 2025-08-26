@@ -17,7 +17,7 @@ export default class About extends React.Component {
 						<div>
 							<h3 className='uk-card-title index-cate-h3'>Resource Guide</h3>
 							<p>
-								Image from GCE Guide (http://www.gceguide.cc):
+								Image from PapaCambridge (http://www.gceguide.cc):
 								<br />
 								<img
 									src='https://static.ouorz.com/res_guide.png'
@@ -31,13 +31,13 @@ export default class About extends React.Component {
 							<p>
 								Content & names in this website are assets of owners, protected
 								by law. Past papers are sourced from{" "}
-								<b>GCE Guide (http://www.gceguide.cc)</b> and{" "}
+								<b>PapaCambridge (http://www.gceguide.cc)</b> and{" "}
 								<b>SaveMyExams (https://www.savemyexams.co.uk)</b>
 							</p>
 							<p>
 								This is a 100% non-profitable website. Snapaper does maintain a
 								database or data storage of any kind. All the content are
-								provided by GCE Guide (http://www.gceguide.cc) and SaveMyExams
+								provided by PapaCambridge (http://www.gceguide.cc) and SaveMyExams
 								(https://www.savemyexams.co.uk). They have not been changed or
 								downloaded by Snapaper.
 							</p>

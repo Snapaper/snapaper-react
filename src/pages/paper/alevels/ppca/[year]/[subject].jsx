@@ -343,7 +343,7 @@ class AlevelSubject extends React.Component {
 								<div>
 									<p className='title'>Source</p>
 									<p className='source'>
-										<img src='https://static.ouorz.com/logo_gceguide.png' /> GCE Guide
+										<img src='https://static.ouorz.com/papacambridge.png' /> PapaCambridge
 									</p>
 								</div>
 								<div>

@@ -427,7 +427,7 @@ export default class Index extends React.Component {
 							</div>
 						</section>
 					</main>
-					<Footer></Footer>
+					<Footer />
 				</div>
 			);
 		}
