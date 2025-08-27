@@ -1,105 +1,95 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import Head from "next/head";
-import { Menu } from "antd";
-import { CaretDownOutlined } from "@ant-design/icons";
+'use client';
 
-export default class Header extends React.Component {
-	constructor(props) {
-		super(props);
-	}
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Menu } from 'antd';
+import { CaretDownOutlined } from '@ant-design/icons';
 
-	getMenuItems = () => {
-		return [
-			{
-				key: "logo",
-				className: "header-ant-logo",
-				label: (
-					<Link href='/'>
-						<h3 className='nav-title'>
-							<Image
-								src='https://static.ouorz.com/snapaper@next.png'
-								className='nav-title-img'
-								alt='snapaper'
-								width={49}
-								height={49}
-							/>
-							napaper
-						</h3>
-					</Link>
-				),
-			},
-			{
-				key: "home",
-				label: <Link href='/'>Home</Link>,
-			},
-			{
-				key: "Resources",
-				icon: <CaretDownOutlined />,
-				label: "Resources",
-				children: [
-					{
-						key: "pdfebooks",
-						label: <Link href='/topic/ebooks'>PDF ebooks</Link>,
-					},
-					{
-						key: "sme",
-						label: <Link href='/topic/savemyexams'>Save My Exams</Link>,
-					},
-					{
-						key: "resourceguide",
-						label: <Link href='/page/about'>Resource Guide</Link>,
-					},
-				],
-			},
-			{
-				key: "support",
-				icon: <CaretDownOutlined />,
-				label: "Support",
-				children: [
-					{
-						key: "status",
-						label: <a href='https://status.snapaper.com'>Service Status</a>,
-					},
-				],
-			},
-			{
-				key: "contribute",
-				icon: <CaretDownOutlined />,
-				label: "Contribute",
-				children: [
-					{
-						key: "email",
-						label: <a href='mailto:tony.hlp@hotmail.com'>Email</a>,
-					},
-				],
-			},
-			{
-				key: "feedback",
-				className: "nav-2",
-				label: (
-					<a
-						className='nav-2-icon1 next-nav-icon-1'
-						href='mailto:tony.hlp@hotmail.com'
-						target='_blank'
-						rel='noreferrer'
-					>
-						Feedback
-					</a>
-				),
-			},
-		];
-	};
+const Header = () => {
+  const menuItems = [
+    {
+      key: 'logo',
+      label: (
+        <Link href="/">
+          <div className="flex items-center">
+            <Image
+              src="https://static.ouorz.com/snapaper@next.png"
+              alt="snapaper"
+              width={40}
+              height={40}
+            />
+            <span className="ml-2 text-lg font-bold">napaper</span>
+          </div>
+        </Link>
+      ),
+    },
+    {
+      key: 'home',
+      label: <Link href="/">Home</Link>,
+    },
+    {
+      key: 'resources',
+      label: 'Resources',
+      icon: <CaretDownOutlined />,
+      children: [
+        {
+          key: 'pdfebooks',
+          label: <Link href="/topic/ebooks">PDF ebooks</Link>,
+        },
+        {
+          key: 'sme',
+          label: <Link href="/topic/savemyexams">Save My Exams</Link>,
+        },
+        {
+          key: 'resourceguide',
+          label: <Link href="/page/about">Resource Guide</Link>,
+        },
+      ],
+    },
+    {
+      key: 'support',
+      label: 'Support',
+      icon: <CaretDownOutlined />,
+      children: [
+        {
+          key: 'status',
+          label: <a href="https://status.snapaper.com">Service Status</a>,
+        },
+      ],
+    },
+    {
+      key: 'contribute',
+      label: 'Contribute',
+      icon: <CaretDownOutlined />,
+      children: [
+        {
+          key: 'email',
+          label: <a href="mailto:tony.hlp@hotmail.com">Email</a>,
+        },
+      ],
+    },
+    {
+      key: 'feedback',
+      label: (
+        <a
+          href="mailto:tony.hlp@hotmail.com"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Feedback
+        </a>
+      ),
+    },
+  ];
 
-	render() {
-		return (
-			<div className='header-div'>
-				<Head>
-					<title>Snapaper | CAIE Past Papers and Study Resources</title>
-				</Head>
-				<Menu mode='horizontal' items={this.getMenuItems()} />
-			</div>
-		);
-	}
-}
+  return (
+    <header className="bg-white shadow-md">
+      <div className="container mx-auto">
+        <Menu mode="horizontal" items={menuItems} />
+      </div>
+    </header>
+  );
+};
+
+export default Header;

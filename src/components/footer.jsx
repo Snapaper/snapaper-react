@@ -1,47 +1,42 @@
-import { BackTop } from "antd";
-import { HeartFilled, GithubFilled, UserOutlined } from "@ant-design/icons";
-import React from "react";
-import { withRouter } from "next/router";
+'use client';
 
-// useRouter 只可在 function 中调用(React Hook 特征)
-class Footer extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			page: props.router.route,
-		};
-	}
-	render() {
-		// 根据 loading 参数调整样式
-		return (
-			<footer
-				className={
-					this.state.page == "/topic/savemyexams"
-						? "footer-div footer-div-bottom"
-						: "footer-div"
-				}
-			>
-				<BackTop />
-				<div className='footer-container'>
-					<div>
-						<p>
-							&copy; Copyright 2018-{new Date().getFullYear()} Snapaper · Made
-							with <HeartFilled /> for the People of the Internet
-						</p>
-					</div>
-					<div>
-						<a
-							href='https://github.com/Snapaper'
-							target='_blank'
-							rel='noreferrer'
-						>
-							<GithubFilled /> OSS
-						</a>
-					</div>
-				</div>
-			</footer>
-		);
-	}
-}
+import { BackTop } from 'antd';
+import { HeartFilled, GithubFilled } from '@ant-design/icons';
+import React from 'react';
+import { usePathname } from 'next/navigation';
 
-export default withRouter(Footer);
+const Footer = () => {
+  const pathname = usePathname();
+  const isSaveMyExamsPage = pathname === '/topic/savemyexams';
+
+  return (
+    <footer
+      className={`py-4 text-center text-gray-500 ${
+        isSaveMyExamsPage ? 'pb-16' : ''
+      }`}
+    >
+      <BackTop />
+      <div className="container mx-auto">
+        <div>
+          <p>
+            &copy; Copyright 2018-{new Date().getFullYear()} Snapaper · Made
+            with <HeartFilled className="text-red-500" /> for the People of the
+            Internet
+          </p>
+        </div>
+        <div className="mt-2">
+          <a
+            href="https://github.com/Snapaper"
+            target="_blank"
+            rel="noreferrer"
+            className="text-gray-500 hover:text-gray-700"
+          >
+            <GithubFilled /> OSS
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

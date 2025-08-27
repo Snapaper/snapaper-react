@@ -4,11 +4,10 @@
   "description": "Snapaper @next Version",
   "packageManager": "pnpm@9.2.0",
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export",
-    "upgrade": "ncu -u -x axios,antd,next"
+    "lint": "next lint"
   },
   "repository": {
     "type": "git",
@@ -21,17 +20,24 @@
   },
   "homepage": "https://github.com/Snapaper/snapaper-react#readme",
   "dependencies": {
+    "@ant-design/cssinjs": "^1.21.0",
+    "@ant-design/nextjs-registry": "^1.1.0",
     "@vercel/analytics": "^1.5.0",
-    "antd": "^4.24.15",
-    "axios": "^0.27.2",
+    "antd": "^5.18.3",
     "ismobilejs": "^1.1.1",
     "js-cookie": "^3.0.5",
-    "next": "^13.0.2",
-    "next-pwa": "^5.6.0",
+    "next": "14.2.4",
     "nprogress": "^0.2.0",
     "react": "^18.3.1",
-    "react-axios": "^2.0.6",
     "react-dom": "^18.3.1",
-    "sass": "^1.89.1"
+    "zustand": "^4.5.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "14.2.4",
+    "postcss": "^8.4.38",
+    "prettier": "^3.3.2",
+    "tailwindcss": "^3.4.4"
   }
 }

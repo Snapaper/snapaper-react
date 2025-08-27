@@ -1,4 +1,4 @@
-export default {
+export const config = {
 	apiUrl: {
 		cates: {
 			alevel: "https://node.snapaper.com/api/cates/ppca/as-and-a-level/",
