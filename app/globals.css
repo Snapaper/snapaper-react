@@ -1,0 +1,395 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom global styles */
+@layer base {
+  body a {
+    color: #1890ff;
+    text-decoration: none;
+  }
+
+  body a:hover {
+    color: #40a9ff;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Container styles */
+@layer components {
+  .ant-container {
+    @apply mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8;
+  }
+
+  /* Notice banner */
+  .notice {
+    @apply mb-8 rounded-lg bg-blue-50 p-4 text-center;
+  }
+
+  .notice p {
+    @apply mb-3 text-sm text-gray-700;
+  }
+
+  .notice_actions {
+    @apply flex justify-center gap-4;
+  }
+
+  .notice_actions a {
+    @apply rounded-md bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-blue-600;
+  }
+
+  /* Index page sections */
+  .next-index-section-one {
+    @apply mb-8;
+  }
+
+  .next-index-card-large {
+    @apply mb-8 cursor-pointer overflow-hidden rounded-xl bg-white shadow-lg transition-transform hover:scale-[1.02] hover:shadow-xl;
+  }
+
+  .next-index-card-large img {
+    @apply h-64 w-full object-cover;
+  }
+
+  .next-index-card-large > div {
+    @apply p-6;
+  }
+
+  .next-index-card-large h1 {
+    @apply mb-2 text-2xl font-bold text-gray-900;
+  }
+
+  .next-index-card-large p {
+    @apply text-gray-600;
+  }
+
+  .next-index-section-cards {
+    @apply grid gap-6 md:grid-cols-2 lg:grid-cols-2;
+  }
+
+  .next-index-section-cards .card {
+    @apply flex cursor-pointer items-start gap-4 rounded-lg bg-white p-6 shadow transition-all hover:shadow-lg;
+  }
+
+  .next-index-section-cards .card h2 {
+    @apply mb-2 text-lg font-semibold text-gray-900;
+  }
+
+  .next-index-section-cards .card p {
+    @apply text-sm text-gray-600;
+  }
+
+  .next-index-section-two {
+    @apply mt-8 grid gap-6 md:grid-cols-2;
+  }
+
+  .next-index-card-left,
+  .next-index-card-right {
+    @apply cursor-pointer rounded-lg bg-white p-6 shadow transition-all hover:shadow-lg;
+  }
+
+  .next-index-card-right {
+    @apply flex items-center justify-between;
+  }
+
+  .about-us-text {
+    @apply mb-2 flex items-center gap-2 text-xl font-bold text-gray-900;
+  }
+
+  /* Category pages */
+  .next-cate-header {
+    @apply mb-8 rounded-lg bg-white p-6 shadow;
+  }
+
+  .next-cate-header .left > div:first-child h1 {
+    @apply mb-2 text-3xl font-bold text-gray-900;
+  }
+
+  .next-cate-header .left > div:first-child p {
+    @apply text-gray-600;
+  }
+
+  .next-cate-header-badge {
+    @apply mt-4 flex gap-6;
+  }
+
+  .next-cate-header-badge > div {
+    @apply flex flex-col;
+  }
+
+  .next-cate-header-badge .title {
+    @apply text-xs font-medium uppercase text-gray-500;
+  }
+
+  .next-cate-header-badge .source {
+    @apply mt-1 flex items-center gap-2 text-sm font-medium text-gray-900;
+  }
+
+  .next-cate-header-badge .source img {
+    @apply h-5 w-5;
+  }
+
+  .next-cate-header-info {
+    @apply mt-6 space-y-4;
+  }
+
+  .next-cate-header-info > div:first-child {
+    @apply flex gap-3;
+  }
+
+  .next-cate-header-info > div:nth-child(2) {
+    @apply cursor-pointer rounded-lg bg-orange-50 p-4 transition-colors hover:bg-orange-100;
+  }
+
+  .next-cate-header-info h2 {
+    @apply mb-1 flex items-center gap-2 text-lg font-semibold text-orange-600;
+  }
+
+  .next-cate-subject {
+    @apply grid gap-4 md:grid-cols-2 lg:grid-cols-3;
+  }
+
+  .next-cate-subject > div {
+    @apply cursor-pointer rounded-lg bg-white p-6 shadow transition-all hover:shadow-lg;
+  }
+
+  .next-cate-subject h2 {
+    @apply mb-2 text-lg font-semibold text-gray-900;
+  }
+
+  .next-cate-subject p {
+    @apply flex items-center text-sm text-gray-600;
+  }
+
+  .next-cate-years {
+    @apply space-y-2;
+  }
+
+  .next-cate-years > div {
+    @apply flex cursor-pointer items-center justify-between rounded-lg p-3 transition-colors hover:bg-gray-50;
+  }
+
+  .next-cate-years h2 {
+    @apply font-medium text-gray-900;
+  }
+
+  .next-cate-subjects-list {
+    @apply mb-3 flex cursor-pointer items-center justify-between rounded-lg p-3 transition-colors hover:bg-gray-50;
+  }
+
+  .next-cate-subjects-list h2 {
+    @apply font-medium text-gray-900;
+  }
+
+  .next-cate-subjects-list p {
+    @apply flex items-center text-sm text-gray-600;
+  }
+
+  .next-cate-error {
+    @apply flex flex-col items-center justify-center py-12;
+  }
+
+  .next-cate-error p {
+    @apply mt-4 text-red-600;
+  }
+
+  /* Paper pages */
+  .paper-header {
+    @apply mb-6;
+  }
+
+  .next-paper-header-info {
+    @apply mt-6;
+  }
+
+  .next-paper-header-info > div:first-child {
+    @apply mb-4 flex gap-3;
+  }
+
+  .downloading {
+    @apply flex items-center justify-between rounded-lg bg-gray-50 p-4;
+  }
+
+  .downloading .left {
+    @apply cursor-pointer font-medium text-gray-700 hover:text-gray-900;
+  }
+
+  .downloading .right {
+    @apply flex gap-3;
+  }
+
+  .downloading .right > div {
+    @apply cursor-pointer rounded-md bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-blue-600;
+  }
+
+  .next-paper-download-info {
+    @apply mb-4 text-center;
+  }
+
+  .next-paper-download-info h2 {
+    @apply mb-2 text-lg font-semibold text-gray-900;
+  }
+
+  .next-paper-download-info p {
+    @apply text-sm text-gray-600;
+  }
+
+  .next-paper-papers {
+    @apply overflow-x-auto;
+  }
+
+  .next-paper-live-btn {
+    @apply mr-2;
+  }
+
+  .mobile-list > div {
+    @apply mb-4 rounded-lg bg-white p-4 shadow;
+  }
+
+  .mobile-list h2 {
+    @apply mb-2 text-base font-medium text-gray-900;
+  }
+
+  .mobile-list p {
+    @apply flex items-center justify-between text-sm;
+  }
+
+  .mobile-list em {
+    @apply not-italic text-gray-600;
+  }
+
+  /* One Step Modal */
+  .next-index-os-cascader {
+    @apply mb-4 w-full;
+  }
+
+  .next-index-os-div {
+    @apply mb-4;
+  }
+
+  .next-index-os-btn {
+    @apply w-full;
+  }
+
+  /* Footer */
+  .footer-div {
+    @apply mt-auto border-t bg-gray-50 py-8;
+  }
+
+  .footer-div-bottom {
+    @apply fixed bottom-0 left-0 right-0;
+  }
+
+  .footer-container {
+    @apply mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8;
+  }
+
+  .footer-container p {
+    @apply text-sm text-gray-600;
+  }
+
+  .footer-container a {
+    @apply flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900;
+  }
+
+  /* Header */
+  .header-div {
+    @apply sticky top-0 z-50 border-b bg-white shadow-sm;
+  }
+
+  .header-ant-logo {
+    @apply !pl-0;
+  }
+
+  .nav-title {
+    @apply flex items-center gap-2 text-lg font-bold;
+  }
+
+  .nav-title-img {
+    @apply h-12 w-12;
+  }
+
+  .nav-2 {
+    @apply !ml-auto;
+  }
+
+  .next-nav-icon-1 {
+    @apply rounded-md bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-blue-600;
+  }
+
+  /* Topic pages */
+  .next-topic-header {
+    @apply mb-6;
+  }
+
+  .next-topic-ebooks {
+    @apply space-y-4;
+  }
+
+  .next-topic-ebooks > div {
+    @apply flex items-center justify-between rounded-lg bg-white p-4 shadow;
+  }
+
+  .next-topic-ebooks h2 {
+    @apply font-medium text-gray-900;
+  }
+
+  .next-topic-ebooks .actions {
+    @apply flex gap-2;
+  }
+
+  /* Page styles */
+  .page-container {
+    @apply mx-auto max-w-4xl px-4 py-8;
+  }
+
+  .page-title {
+    @apply mb-6 text-3xl font-bold text-gray-900;
+  }
+
+  .page-des {
+    @apply mb-4 text-lg text-gray-600;
+  }
+
+  .page-body {
+    @apply text-lg leading-relaxed text-gray-700;
+  }
+  
+  .page-body h2 {
+    @apply mb-4 mt-6 text-2xl font-bold text-gray-900;
+  }
+  
+  .page-body p {
+    @apply mb-4;
+  }
+  
+  .page-body ul {
+    @apply mb-4 list-inside list-disc space-y-2;
+  }
+  
+  .page-body a {
+    @apply text-primary hover:underline;
+  }
+
+  /* Loading states */
+  .loading-line {
+    @apply h-1 w-full animate-pulse bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600;
+  }
+
+  /* NProgress customization */
+  #nprogress {
+    @apply pointer-events-none;
+  }
+
+  #nprogress .bar {
+    @apply fixed left-0 top-0 z-[9999] h-0.5 w-full bg-primary;
+  }
+
+  #nprogress .peg {
+    @apply absolute right-0 block h-full w-24 -translate-y-1 translate-x-0 rotate-3 opacity-100;
+    box-shadow: 0 0 10px #1890ff, 0 0 5px #1890ff;
+  }
+}
