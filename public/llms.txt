@@ -1,0 +1,10 @@
+# Snapaper
+
+> Snapaper offers CAIE past papers and study resources for IGCSE and A-Level students.
+
+## Docs
+- [Homepage](https://snapaper.com) - Main site and resource hub.
+
+## Policies
+- [Robots.txt](https://snapaper.com/robots.txt) - Crawler directives.
+- [Sitemap](https://snapaper.com/sitemap.xml) - Indexable pages.

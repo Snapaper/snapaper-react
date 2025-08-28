@@ -2,3 +2,6 @@
 yarn.lock
 node_modules
 react-scratch
+
+# Generated sitemaps
+public/sitemap*.xml

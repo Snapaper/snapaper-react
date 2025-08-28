@@ -23,6 +23,7 @@
   "homepage": "https://github.com/Snapaper/snapaper-react#readme",
   "dependencies": {
     "@vercel/analytics": "^1.5.0",
+    "@vercel/og": "^0.8.5",
     "antd": "^4.24.15",
     "axios": "^0.27.2",
     "ismobilejs": "^1.1.1",

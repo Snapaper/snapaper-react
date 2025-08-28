@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps }) {
 	const defaultTitle = "Snapaper | CAIE Past Papers and Study Resources";
 	const defaultDescription =
 		"Discover Snapaper, the ultimate tool for CAIE students worldwide to effortlessly access past papers, mock exams, and study resources for IGCSE and A-Level.";
-	const defaultImage = "https://snapaper.com/snapaper_logo_512.png";
+        const defaultImage = "https://snapaper.com/api/og";
 
 	return (
 		<>
