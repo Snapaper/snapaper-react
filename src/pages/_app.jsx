@@ -1,6 +1,6 @@
 import Head from "next/head";
 // import Script from "next/script";
-import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // 全局样式引入
 import "../styles/global.scss";
@@ -153,9 +153,9 @@ function MyApp({ Component, pageProps }) {
 			</Head>
 			<Header />
 			<Component {...pageProps} />
-			<Analytics />
-		</>
-	);
+                        <SpeedInsights />
+                </>
+        );
 }
 
 export default MyApp;
