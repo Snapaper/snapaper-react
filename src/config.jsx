@@ -35,4 +35,4 @@ export default {
 			// igcse: "https://node.snapaper.com/api/years/ppco/IGCSE/",
 		},
 	},
-};
+}

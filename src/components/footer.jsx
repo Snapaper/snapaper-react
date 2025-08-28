@@ -1,15 +1,15 @@
-import { BackTop } from "antd";
-import { HeartFilled, GithubFilled, UserOutlined } from "@ant-design/icons";
-import React from "react";
-import { withRouter } from "next/router";
+import { HeartFilled, GithubFilled, UserOutlined } from "@ant-design/icons"
+import { BackTop } from "antd"
+import { withRouter } from "next/router"
+import React from "react"
 
 // useRouter 只可在 function 中调用(React Hook 特征)
 class Footer extends React.Component {
 	constructor(props) {
-		super(props);
+		super(props)
 		this.state = {
 			page: props.router.route,
-		};
+		}
 	}
 	render() {
 		// 根据 loading 参数调整样式
@@ -19,10 +19,9 @@ class Footer extends React.Component {
 					this.state.page == "/topic/savemyexams"
 						? "footer-div footer-div-bottom"
 						: "footer-div"
-				}
-			>
+				}>
 				<BackTop />
-				<div className='footer-container'>
+				<div className="footer-container">
 					<div>
 						<p>
 							&copy; Copyright 2018-{new Date().getFullYear()} Snapaper · Made
@@ -31,17 +30,16 @@ class Footer extends React.Component {
 					</div>
 					<div>
 						<a
-							href='https://github.com/Snapaper'
-							target='_blank'
-							rel='noreferrer'
-						>
+							href="https://github.com/Snapaper"
+							target="_blank"
+							rel="noreferrer">
 							<GithubFilled /> OSS
 						</a>
 					</div>
 				</div>
 			</footer>
-		);
+		)
 	}
 }
 
-export default withRouter(Footer);
+export default withRouter(Footer)

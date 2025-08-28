@@ -1,13 +1,13 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import Head from "next/head";
-import { Menu } from "antd";
-import { CaretDownOutlined } from "@ant-design/icons";
+import { CaretDownOutlined } from "@ant-design/icons"
+import { Menu } from "antd"
+import Head from "next/head"
+import Image from "next/image"
+import Link from "next/link"
+import React from "react"
 
 export default class Header extends React.Component {
 	constructor(props) {
-		super(props);
+		super(props)
 	}
 
 	getMenuItems = () => {
@@ -16,12 +16,12 @@ export default class Header extends React.Component {
 				key: "logo",
 				className: "header-ant-logo",
 				label: (
-					<Link href='/'>
-						<h3 className='nav-title'>
+					<Link href="/">
+						<h3 className="nav-title">
 							<Image
-								src='https://static.ouorz.com/snapaper@next.png'
-								className='nav-title-img'
-								alt='snapaper'
+								src="https://static.ouorz.com/snapaper@next.png"
+								className="nav-title-img"
+								alt="snapaper"
 								width={49}
 								height={49}
 							/>
@@ -32,7 +32,7 @@ export default class Header extends React.Component {
 			},
 			{
 				key: "home",
-				label: <Link href='/'>Home</Link>,
+				label: <Link href="/">Home</Link>,
 			},
 			{
 				key: "Resources",
@@ -41,15 +41,15 @@ export default class Header extends React.Component {
 				children: [
 					{
 						key: "pdfebooks",
-						label: <Link href='/topic/ebooks'>PDF ebooks</Link>,
+						label: <Link href="/topic/ebooks">PDF ebooks</Link>,
 					},
 					{
 						key: "sme",
-						label: <Link href='/topic/savemyexams'>Save My Exams</Link>,
+						label: <Link href="/topic/savemyexams">Save My Exams</Link>,
 					},
 					{
 						key: "resourceguide",
-						label: <Link href='/page/about'>Resource Guide</Link>,
+						label: <Link href="/page/about">Resource Guide</Link>,
 					},
 				],
 			},
@@ -60,7 +60,7 @@ export default class Header extends React.Component {
 				children: [
 					{
 						key: "status",
-						label: <a href='https://status.snapaper.com'>Service Status</a>,
+						label: <a href="https://status.snapaper.com">Service Status</a>,
 					},
 				],
 			},
@@ -71,7 +71,7 @@ export default class Header extends React.Component {
 				children: [
 					{
 						key: "email",
-						label: <a href='mailto:tony.hlp@hotmail.com'>Email</a>,
+						label: <a href="mailto:tony.hlp@hotmail.com">Email</a>,
 					},
 				],
 			},
@@ -80,26 +80,25 @@ export default class Header extends React.Component {
 				className: "nav-2",
 				label: (
 					<a
-						className='nav-2-icon1 next-nav-icon-1'
-						href='mailto:tony.hlp@hotmail.com'
-						target='_blank'
-						rel='noreferrer'
-					>
+						className="nav-2-icon1 next-nav-icon-1"
+						href="mailto:tony.hlp@hotmail.com"
+						target="_blank"
+						rel="noreferrer">
 						Feedback
 					</a>
 				),
 			},
-		];
-	};
+		]
+	}
 
 	render() {
 		return (
-			<div className='header-div'>
+			<div className="header-div">
 				<Head>
 					<title>Snapaper | CAIE Past Papers and Study Resources</title>
 				</Head>
-				<Menu mode='horizontal' items={this.getMenuItems()} />
+				<Menu mode="horizontal" items={this.getMenuItems()} />
 			</div>
-		);
+		)
 	}
 }

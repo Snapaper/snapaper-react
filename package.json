@@ -1,37 +1,44 @@
 {
-  "name": "snapaper-react",
-  "version": "0.0.1",
-  "description": "Snapaper @next Version",
-  "packageManager": "pnpm@9.2.0",
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "export": "next export",
-    "upgrade": "ncu -u -x axios,antd,next"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Snapaper/snapaper-react.git"
-  },
-  "author": "Tony L. He",
-  "license": "SEE LICENSE IN LICENSE",
-  "bugs": {
-    "url": "https://github.com/Snapaper/snapaper-react/issues"
-  },
-  "homepage": "https://github.com/Snapaper/snapaper-react#readme",
-  "dependencies": {
-    "@vercel/analytics": "^1.5.0",
-    "antd": "^4.24.15",
-    "axios": "^0.27.2",
-    "ismobilejs": "^1.1.1",
-    "js-cookie": "^3.0.5",
-    "next": "^13.0.2",
-    "next-pwa": "^5.6.0",
-    "nprogress": "^0.2.0",
-    "react": "^18.3.1",
-    "react-axios": "^2.0.6",
-    "react-dom": "^18.3.1",
-    "sass": "^1.89.1"
-  }
+	"name": "snapaper-react",
+	"version": "0.0.1",
+	"description": "Snapaper @next version",
+	"packageManager": "pnpm@10.15.0",
+	"scripts": {
+		"dev": "next",
+		"build": "next build",
+		"start": "next start",
+		"export": "next export",
+		"upgrade": "ncu -u -x axios,antd,next,react,react-dom",
+		"postbuild": "next-sitemap"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Snapaper/snapaper-react.git"
+	},
+	"author": "Tony L. He",
+	"license": "SEE LICENSE IN LICENSE",
+	"bugs": {
+		"url": "https://github.com/Snapaper/snapaper-react/issues"
+	},
+	"homepage": "https://github.com/Snapaper/snapaper-react#readme",
+	"dependencies": {
+		"@vercel/og": "^0.8.5",
+		"@vercel/speed-insights": "^1.2.0",
+		"antd": "^4.24.16",
+		"axios": "^0.27.2",
+		"ismobilejs": "^1.1.1",
+		"js-cookie": "^3.0.5",
+		"next": "^13.5.11",
+		"next-pwa": "^5.6.0",
+		"nprogress": "^0.2.0",
+		"react": "^18.3.1",
+		"react-axios": "^2.0.6",
+		"react-dom": "^18.3.1",
+		"sass": "^1.91.0"
+	},
+	"devDependencies": {
+		"@trivago/prettier-plugin-sort-imports": "^5.2.2",
+		"next-sitemap": "^4.2.3",
+		"prettier": "^3.6.2"
+	}
 }
