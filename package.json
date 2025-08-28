@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "upgrade": "ncu -u -x axios,antd,next"
+    "upgrade": "ncu -u -x axios,antd,next",
+    "postbuild": "next-sitemap"
   },
   "repository": {
     "type": "git",
@@ -33,5 +34,8 @@
     "react-axios": "^2.0.6",
     "react-dom": "^18.3.1",
     "sass": "^1.89.1"
+  },
+  "devDependencies": {
+    "next-sitemap": "^4.2.3"
   }
 }

@@ -88,8 +88,9 @@ function MyApp({ Component, pageProps }) {
 					content='CAIE Past Papers, Past papers, Mock exams, Past exam papers, CIE past papers, IGCSE past papers, ALevel past papers, CAIE study resources, CAIE pdf textbooks, Save my exams, Cambridge International, exam preparation, study materials, A-Level, IGCSE, CAIE'
 				/>
 				<meta name='description' content={defaultDescription} />
-				<meta name='author' content='Tony (Lipeng) He' />
-				<link rel='canonical' href={siteUrl} />
+                                <meta name='author' content='Tony (Lipeng) He' />
+                                <link rel='canonical' href={siteUrl} />
+                                <title>{defaultTitle}</title>
 
 				{/* Open Graph / Facebook */}
 				<meta property='og:type' content='website' />
@@ -120,6 +121,13 @@ function MyApp({ Component, pageProps }) {
 				{/* Additional Meta Tags */}
 				<meta name='format-detection' content='telephone=no' />
 				<meta name='referrer' content='origin-when-cross-origin' />
+
+				{/* Chinese Search Engines Optimization */}
+				<meta name='renderer' content='webkit' />
+				<meta name='force-rendering' content='webkit' />
+				<meta name='applicable-device' content='pc,mobile' />
+				<meta httpEquiv='Cache-Control' content='no-siteapp' />
+				<meta property='og:locale:alternate' content='zh_CN' />
 
 				{/* Structured Data - JSON-LD */}
 				<script
