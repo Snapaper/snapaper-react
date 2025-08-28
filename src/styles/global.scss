@@ -332,7 +332,9 @@ html {
 	background: #fff;
 	z-index: 1;
 	border-bottom: none;
-	box-shadow: 0 1px 3px rgba(2, 8, 20, 0.06), 0 1px 2px rgba(2, 8, 20, 0.04);
+	box-shadow:
+		0 1px 3px rgba(2, 8, 20, 0.06),
+		0 1px 2px rgba(2, 8, 20, 0.04);
 	transition: all 0.2s;
 }
 
@@ -1282,7 +1284,8 @@ tr {
 
 .next-index-card-large {
 	cursor: pointer;
-	box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1),
+	box-shadow:
+		0 0.175em 0.5em rgba(2, 8, 20, 0.1),
 		0 0.085em 0.175em rgba(2, 8, 20, 0.08);
 	transition: 0.2s ease;
 	border-radius: 6px;
@@ -1290,7 +1293,8 @@ tr {
 	width: 400px;
 
 	&:hover {
-		box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1),
+		box-shadow:
+			0 0.35em 1.175em rgba(2, 8, 20, 0.1),
 			0 0.175em 0.5em rgba(2, 8, 20, 0.08);
 		transform: translateY(-1px);
 	}
@@ -1330,14 +1334,16 @@ tr {
 
 	.card {
 		cursor: pointer;
-		box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1),
+		box-shadow:
+			0 0.175em 0.5em rgba(2, 8, 20, 0.1),
 			0 0.085em 0.175em rgba(2, 8, 20, 0.08);
 		transition: 0.2s ease;
 		border-radius: 6px;
 		padding: 1.65em 2em;
 
 		&:hover {
-			box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1),
+			box-shadow:
+				0 0.35em 1.175em rgba(2, 8, 20, 0.1),
 				0 0.175em 0.5em rgba(2, 8, 20, 0.08);
 			transform: translateY(-1px);
 		}
@@ -1389,7 +1395,8 @@ tr {
 }
 
 .next-index-card-left {
-	box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1),
+	box-shadow:
+		0 0.175em 0.5em rgba(2, 8, 20, 0.1),
 		0 0.085em 0.175em rgba(2, 8, 20, 0.08);
 	transition: 0.2s ease;
 	border-radius: 6px;
@@ -1397,7 +1404,8 @@ tr {
 	flex: 1;
 
 	&:hover {
-		box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1),
+		box-shadow:
+			0 0.35em 1.175em rgba(2, 8, 20, 0.1),
 			0 0.175em 0.5em rgba(2, 8, 20, 0.08);
 		transform: translateY(-1px);
 	}
@@ -1430,7 +1438,8 @@ tr {
 }
 
 .next-index-card-right {
-	box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1),
+	box-shadow:
+		0 0.175em 0.5em rgba(2, 8, 20, 0.1),
 		0 0.085em 0.175em rgba(2, 8, 20, 0.08);
 	transition: 0.2s ease;
 	border-radius: 6px;
@@ -1438,7 +1447,8 @@ tr {
 	flex: 1;
 
 	&:hover {
-		box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1),
+		box-shadow:
+			0 0.35em 1.175em rgba(2, 8, 20, 0.1),
 			0 0.175em 0.5em rgba(2, 8, 20, 0.08);
 		transform: translateY(-1px);
 	}
@@ -1576,7 +1586,8 @@ tr {
 	}
 
 	div:nth-child(2) {
-		box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1),
+		box-shadow:
+			0 0.175em 0.5em rgba(2, 8, 20, 0.1),
 			0 0.085em 0.175em rgba(2, 8, 20, 0.08);
 		transition: 0.2s ease;
 		border-radius: 6px;
@@ -1584,7 +1595,8 @@ tr {
 		padding: 1.3em 1.8em;
 
 		&:hover {
-			box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1),
+			box-shadow:
+				0 0.35em 1.175em rgba(2, 8, 20, 0.1),
 				0 0.175em 0.5em rgba(2, 8, 20, 0.08);
 			transform: translateY(-1px);
 		}
@@ -1601,7 +1613,8 @@ tr {
 }
 
 .next-cate-subjects-list {
-	box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1),
+	box-shadow:
+		0 0.175em 0.5em rgba(2, 8, 20, 0.1),
 		0 0.085em 0.175em rgba(2, 8, 20, 0.08);
 	transition: 0.2s ease;
 	border-radius: 6px;
@@ -1610,7 +1623,8 @@ tr {
 	margin-bottom: 15px;
 
 	&:hover {
-		box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1),
+		box-shadow:
+			0 0.35em 1.175em rgba(2, 8, 20, 0.1),
 			0 0.175em 0.5em rgba(2, 8, 20, 0.08);
 		transform: translateY(-1px);
 	}
@@ -1638,7 +1652,8 @@ tr {
 	margin-bottom: 100px;
 
 	div {
-		box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1),
+		box-shadow:
+			0 0.175em 0.5em rgba(2, 8, 20, 0.1),
 			0 0.085em 0.175em rgba(2, 8, 20, 0.08);
 		transition: 0.2s ease;
 		border-radius: 6px;
@@ -1648,7 +1663,8 @@ tr {
 		border-left: 5px solid #eee;
 
 		&:hover {
-			box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1),
+			box-shadow:
+				0 0.35em 1.175em rgba(2, 8, 20, 0.1),
 				0 0.175em 0.5em rgba(2, 8, 20, 0.08);
 			transform: translateY(-1px);
 			border-color: #1890ff;
@@ -1681,7 +1697,8 @@ tr {
 	div {
 		display: flex;
 		align-items: center;
-		box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1),
+		box-shadow:
+			0 0.175em 0.5em rgba(2, 8, 20, 0.1),
 			0 0.085em 0.175em rgba(2, 8, 20, 0.08);
 		transition: 0.2s ease;
 		border-radius: 6px;
@@ -1690,7 +1707,8 @@ tr {
 		border-left: 5px solid #eee;
 
 		&:hover {
-			box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1),
+			box-shadow:
+				0 0.35em 1.175em rgba(2, 8, 20, 0.1),
 				0 0.175em 0.5em rgba(2, 8, 20, 0.08);
 			transform: translateY(-1px);
 			border-color: #1890ff;
@@ -1726,7 +1744,8 @@ tr {
 	.downloading {
 		display: flex;
 		.left {
-			box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1),
+			box-shadow:
+				0 0.175em 0.5em rgba(2, 8, 20, 0.1),
 				0 0.085em 0.175em rgba(2, 8, 20, 0.08);
 			transition: 0.2s ease;
 			border-radius: 6px;
@@ -1744,7 +1763,8 @@ tr {
 			border-left: 3px solid #73849a;
 
 			&:hover {
-				box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1),
+				box-shadow:
+					0 0.35em 1.175em rgba(2, 8, 20, 0.1),
 					0 0.175em 0.5em rgba(2, 8, 20, 0.08);
 				transform: translateY(-1px);
 			}
@@ -1752,7 +1772,8 @@ tr {
 		.right {
 			div {
 				display: inline-block;
-				box-shadow: 0 0.175em 0.5em rgba(2, 8, 20, 0.1),
+				box-shadow:
+					0 0.175em 0.5em rgba(2, 8, 20, 0.1),
 					0 0.085em 0.175em rgba(2, 8, 20, 0.08);
 				transition: 0.2s ease;
 				border-radius: 6px;
@@ -1764,7 +1785,8 @@ tr {
 				border-left: 3px solid #eee;
 
 				&:hover {
-					box-shadow: 0 0.35em 1.175em rgba(2, 8, 20, 0.1),
+					box-shadow:
+						0 0.35em 1.175em rgba(2, 8, 20, 0.1),
 						0 0.175em 0.5em rgba(2, 8, 20, 0.08);
 					transform: translateY(-1px);
 				}

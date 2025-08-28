@@ -18,47 +18,52 @@
   </a>
 </div>
 
-
-<br/>
+<br />
 
 ### Foreword
+
 > **Warning**
 > Legacy code alert
 
-<br/>
+<br />
 
 ### ScreenShot
-<br/>
+
+<br />
 
 ![Thumbnail_index](https://i.loli.net/2020/05/04/i3dPmcohslFXgI9.png)
 
-<br/>
+<br />
 
 ### Development
+
 ```bash
 git clone git@github.com:Snapaper/snapaper-react.git
 yarn install
 yarn run dev
 ```
 
-<br/>
+<br />
 
 ### Deployment
+
 ```bash
 yarn run build
 yarn run start
 ```
 
-<br/>
+<br />
 
 ### Production Environment
+
 - Frontend: Vercel
 - Backend:
   - Fly.io (API)
   - Huawei Cloud (File Service)
 - DNS: DNSPod
 
-<br/>
+<br />
 
 ### Sponsor me
+
 Your name will be on the list [Sponsors](https://www.ouorz.com/sponsor)

@@ -1,11 +1,12 @@
-import React, { useState } from "react";
-import dynamic from "next/dynamic";
-import isMobile from "ismobilejs";
-import config from "../../../../../config";
-
-// 动态引入组件
-const Footer = dynamic(() => import("../../../../../components/footer"));
-
+import config from "../../../../../config"
+// 引入功能函数
+import { downloadFile } from "../../../../../utilities/file-download"
+import { liveView } from "../../../../../utilities/live-view"
+import {
+	ArrowLeftOutlined,
+	CheckCircleOutlined,
+	CaretRightOutlined,
+} from "@ant-design/icons"
 // 引入 AntD 组件
 import {
 	notification,
@@ -17,126 +18,120 @@ import {
 	Tag,
 	Progress,
 	Popover,
-} from "antd";
-import {
-	ArrowLeftOutlined,
-	CheckCircleOutlined,
-	CaretRightOutlined,
-} from "@ant-design/icons";
-
-// 引入 axios 库
-import { Get } from "react-axios";
-
+} from "antd"
+import isMobile from "ismobilejs"
 // 引入 Cookies 获取功能
-import Cookies from "js-cookie";
-
+import Cookies from "js-cookie"
+import dynamic from "next/dynamic"
 // 引入 Router 参数获取功能
-import { withRouter } from "next/router";
+import { withRouter } from "next/router"
+import React, { useState } from "react"
+// 引入 axios 库
+import { Get } from "react-axios"
 
-// 引入功能函数
-import { downloadFile } from "../../../../../utilities/file-download";
-import { liveView } from "../../../../../utilities/live-view";
+// 动态引入组件
+const Footer = dynamic(() => import("../../../../../components/footer"))
 
 // 配置提示触发函数
 const openNotificationWithIcon = (type, content) => {
 	notification[type]({
 		message: "Notification",
 		description: content,
-	});
-};
+	})
+}
 
 // 全部试卷数据
-var paperData = {};
+var paperData = {}
 
 // 已选择试卷 key 数组
-var selectedPapers = [];
+var selectedPapers = []
 
 // 下载进度
 var downloadProgress = {
 	done: 0,
 	all: 100,
-};
+}
 
 // 下载状态(以判断是否能关闭下载 Modal)
-var noDownloadNow = true;
+var noDownloadNow = true
 
 // 仍需下载数组(下载模式二在列表下载完成后继续从此列表下载)
-var stillNeedDownloadlist = [];
+var stillNeedDownloadlist = []
 
 // 下载列表
 function downloadList() {
-	noDownloadNow = false;
-	let keys = selectedPapers;
-	let length = keys.length;
-	let number = 0;
+	noDownloadNow = false
+	let keys = selectedPapers
+	let length = keys.length
+	let number = 0
 	let ListDownload = function () {
 		if (number == length) {
-			window.clearInterval(interval);
-			number = 0;
-			downloadProgress.done = 0;
-			noDownloadNow = true;
-			window.outter.setState({ progress: 0, downloadVisible: false });
+			window.clearInterval(interval)
+			number = 0
+			downloadProgress.done = 0
+			noDownloadNow = true
+			window.outter.setState({ progress: 0, downloadVisible: false })
 
 			// 同步下载模式
 			if (
 				window.outter.state.downloadMode == "2" &&
 				stillNeedDownloadlist.length
 			) {
-				let list = stillNeedDownloadlist;
-				let i = 0;
+				let list = stillNeedDownloadlist
+				let i = 0
 				let download = function () {
 					if (i == list.length) {
-						window.clearInterval(interval);
+						window.clearInterval(interval)
 					} else {
-						downloadFile(list[i]);
-						i++;
+						downloadFile(list[i])
+						i++
 					}
-				};
-				window.interval = setInterval(download, 3000);
+				}
+				window.interval = setInterval(download, 3000)
 			}
 		} else {
-			downloadFile(paperData[keys[number] - 1].url);
+			downloadFile(paperData[keys[number] - 1].url)
 
 			if (paperData[keys[number] - 1].name.indexOf("qp") > -1) {
 				stillNeedDownloadlist[stillNeedDownloadlist.length] = paperData[
 					keys[number] - 1
-				].url.replace("qp", "ms");
+				].url.replace("qp", "ms")
 			} else if (paperData[keys[number] - 1].name.indexOf("ms") > -1) {
 				stillNeedDownloadlist[stillNeedDownloadlist.length] = paperData[
 					keys[number] - 1
-				].url.replace("ms", "qp");
+				].url.replace("ms", "qp")
 			}
 
-			number += 1;
-			downloadProgress.done = Math.floor((number / length) * 100);
-			window.outter.setState({ progress: downloadProgress.done });
+			number += 1
+			downloadProgress.done = Math.floor((number / length) * 100)
+			window.outter.setState({ progress: downloadProgress.done })
 		}
-	};
-	window.interval = setInterval(ListDownload, 3000);
+	}
+	window.interval = setInterval(ListDownload, 3000)
 }
 
 // 下载全部
 function downloadAll() {
-	noDownloadNow = false;
-	let keys = paperData;
-	let length = keys.length;
-	let number = 0;
+	noDownloadNow = false
+	let keys = paperData
+	let length = keys.length
+	let number = 0
 	let ListDownload = function () {
 		if (number == length) {
-			window.clearInterval(interval);
-			number = 0;
-			downloadProgress.done = 0;
-			noDownloadNow = true;
-			window.outter.setState({ progress: 0, downloadVisible: false });
+			window.clearInterval(interval)
+			number = 0
+			downloadProgress.done = 0
+			noDownloadNow = true
+			window.outter.setState({ progress: 0, downloadVisible: false })
 		} else {
-			downloadFile(paperData[number].url);
-			number += 1;
-			downloadProgress.done = ((number / length) * 100).toFixed(2);
+			downloadFile(paperData[number].url)
+			number += 1
+			downloadProgress.done = ((number / length) * 100).toFixed(2)
 			// 调用类内部暴露出的 outter
-			window.outter.setState({ progress: downloadProgress.done });
+			window.outter.setState({ progress: downloadProgress.done })
 		}
-	};
-	window.interval = setInterval(ListDownload, 3000);
+	}
+	window.interval = setInterval(ListDownload, 3000)
 }
 /* 下载、预览交互函数 */
 
@@ -172,32 +167,32 @@ const columns = [
 				{info.map((info) => {
 					switch (info) {
 						case "Mark Scheme":
-							var color = "blue";
-							break;
+							var color = "blue"
+							break
 						case "Question Paper":
-							var color = "green";
-							break;
+							var color = "green"
+							break
 						case "Examiner Report":
-							var color = "orange";
-							break;
+							var color = "orange"
+							break
 						case "Confidential Instruction":
-							var color = "cyan";
-							break;
+							var color = "cyan"
+							break
 						case "Grade thresholds":
-							var color = "magenta";
-							break;
+							var color = "magenta"
+							break
 						case "Specimen Paper":
-							var color = "purple";
-							break;
+							var color = "purple"
+							break
 						default:
-							var color = "red";
-							break;
+							var color = "red"
+							break
 					}
 					return (
 						<Tag color={color} key={info}>
 							{info.toUpperCase()}
 						</Tag>
-					);
+					)
 				})}
 			</span>
 		),
@@ -219,20 +214,18 @@ const columns = [
 		render: (text, record) => (
 			<span>
 				<Button
-					type='default'
-					className='next-paper-live-btn'
+					type="default"
+					className="next-paper-live-btn"
 					onClick={() => {
-						liveView(record.url);
-					}}
-				>
+						liveView(record.url)
+					}}>
 					Live View
 				</Button>
 				<Button
-					type='primary'
+					type="primary"
 					onClick={() => {
-						downloadFile(record.url);
-					}}
-				>
+						downloadFile(record.url)
+					}}>
 					Download
 				</Button>
 				<Button
@@ -244,29 +237,28 @@ const columns = [
 					}
 					onClick={() => {
 						if (record.name.indexOf("ms") > -1) {
-							liveView(record.url.replace("ms", "qp"));
+							liveView(record.url.replace("ms", "qp"))
 						} else {
-							liveView(record.url.replace("qp", "ms"));
+							liveView(record.url.replace("qp", "ms"))
 						}
-					}}
-				>
+					}}>
 					{record.name.indexOf("ms") > -1 ? "Question Paper" : "Mark Scheme"}
 				</Button>
 			</span>
 		),
 	},
-];
+]
 
 // 表格选择回调函数
 const rowSelection = {
 	onChange: (selectedRowKeys) => {
-		selectedPapers = selectedRowKeys;
+		selectedPapers = selectedRowKeys
 	},
-};
+}
 
 // AntD 表格组件
 const Papertable = () => {
-	const [selectionType, setSelectionType] = useState("checkbox");
+	const [selectionType, setSelectionType] = useState("checkbox")
 	return (
 		<Table
 			rowSelection={{
@@ -275,56 +267,56 @@ const Papertable = () => {
 			}}
 			columns={columns}
 			dataSource={paperData}
-			size='middle'
+			size="middle"
 			pagination={false}
 			bordered
 		/>
-	);
-};
+	)
+}
 
 class igcseSubject extends React.Component {
 	constructor(props) {
-		super(props);
+		super(props)
 		this.state = {
 			display: false,
 			MBSvisible: false,
 			subjectCount: 0,
 			downloadVisible: false,
 			downloadMode: Cookies.get("snapaper_download"),
-		};
+		}
 	}
 	componentDidMount() {
 		this.setState({
 			isMobile: isMobile(window.navigator).any,
 			progress: downloadProgress.done,
-		});
+		})
 		// 暴露内部 this 给外部
-		window.outter = this;
+		window.outter = this
 	}
 	// 外部函数下载列表触发
 	doDownloadList() {
 		if (selectedPapers.length) {
-			this.setState({ downloadVisible: true });
-			downloadList();
+			this.setState({ downloadVisible: true })
+			downloadList()
 		} else {
-			openNotificationWithIcon("error", "None of the papers are selected");
+			openNotificationWithIcon("error", "None of the papers are selected")
 		}
 	}
 	// 外部函数下载全部触发
 	doDownloadAll() {
 		if (paperData.length) {
-			this.setState({ downloadVisible: true });
-			downloadAll();
+			this.setState({ downloadVisible: true })
+			downloadAll()
 		} else {
-			openNotificationWithIcon("error", "No papers are available to download");
+			openNotificationWithIcon("error", "No papers are available to download")
 		}
 	}
 	render() {
 		return (
 			<div>
-				<main className='ant-container'>
-					<section className='next-cate-header paper-header'>
-						<div className='left'>
+				<main className="ant-container">
+					<section className="next-cate-header paper-header">
+						<div className="left">
 							<div>
 								<h1>
 									{this.props.router.query.subject
@@ -336,42 +328,42 @@ class igcseSubject extends React.Component {
 									Education
 								</p>
 							</div>
-							<div className='next-cate-header-badge'>
+							<div className="next-cate-header-badge">
 								<div>
-									<p className='title'>Exam</p>
-									<p className='source'>
-										<img src='https://static.ouorz.com/QQ20200114-203749@2x.png' />{" "}
+									<p className="title">Exam</p>
+									<p className="source">
+										<img src="https://static.ouorz.com/QQ20200114-203749@2x.png" />{" "}
 										IGCSE
 									</p>
 								</div>
 								<div>
-									<p className='title'>Source</p>
-									<p className='source'>
-										<img src='https://static.ouorz.com/papacambridge.png' /> GCE
+									<p className="title">Source</p>
+									<p className="source">
+										<img src="https://static.ouorz.com/papacambridge.png" /> GCE
 										Guide
 									</p>
 								</div>
 								<div>
-									<p className='title'>Exam Year / Type</p>
-									<p className='source'>{this.props.router.query.year}</p>
+									<p className="title">Exam Year / Type</p>
+									<p className="source">{this.props.router.query.year}</p>
 								</div>
 							</div>
 						</div>
-						<div className='next-paper-header-info'>
+						<div className="next-paper-header-info">
 							<div>
 								<Button>
 									{this.state.display
 										? this.state.subjectCount + " Papers"
 										: "Loading..."}
 								</Button>
-								<Button type='primary' onClick={() => history.go(-1)}>
+								<Button type="primary" onClick={() => history.go(-1)}>
 									<ArrowLeftOutlined /> Back
 								</Button>
 							</div>
-							<div className='downloading'>
+							<div className="downloading">
 								{/* 下载模式 Modal */}
 								<Popover
-									placement='bottom'
+									placement="bottom"
 									content={
 										<div>
 											<p style={{ marginBottom: "5px" }}>
@@ -383,11 +375,10 @@ class igcseSubject extends React.Component {
 															: ""
 													}
 													onClick={() => {
-														Cookies.set("snapaper_download", "1");
-														this.setState({ downloadMode: "1" });
+														Cookies.set("snapaper_download", "1")
+														this.setState({ downloadMode: "1" })
 													}}
-													style={{ width: "100%" }}
-												>
+													style={{ width: "100%" }}>
 													{this.state.downloadMode == "1" ||
 													!this.state.downloadMode ? (
 														<CheckCircleOutlined />
@@ -401,11 +392,10 @@ class igcseSubject extends React.Component {
 												<Button
 													type={this.state.downloadMode == "2" ? "primary" : ""}
 													onClick={() => {
-														Cookies.set("snapaper_download", "2");
-														this.setState({ downloadMode: "2" });
+														Cookies.set("snapaper_download", "2")
+														this.setState({ downloadMode: "2" })
 													}}
-													style={{ width: "100%" }}
-												>
+													style={{ width: "100%" }}>
 													{this.state.downloadMode == "2" ? (
 														<CheckCircleOutlined />
 													) : (
@@ -416,13 +406,12 @@ class igcseSubject extends React.Component {
 											</p>
 										</div>
 									}
-									title='How to download'
-									trigger='hover'
-								>
-									<div className='left'>Download Settings</div>
+									title="How to download"
+									trigger="hover">
+									<div className="left">Download Settings</div>
 								</Popover>
 								{/* 下载模式 Modal */}
-								<div className='right'>
+								<div className="right">
 									<div onClick={() => this.doDownloadList()}>
 										Download Selected
 									</div>
@@ -431,18 +420,17 @@ class igcseSubject extends React.Component {
 							</div>
 							{/* 下载进度 Modal */}
 							<Modal
-								title='Downloading Papers'
+								title="Downloading Papers"
 								visible={this.state.downloadVisible}
 								onCancel={() => {
 									if (noDownloadNow) {
-										this.setState({ downloadVisible: false });
+										this.setState({ downloadVisible: false })
 									} else {
-										this.setState({ downloadVisible: true });
+										this.setState({ downloadVisible: true })
 									}
 								}}
-								footer={false}
-							>
-								<div className='next-paper-download-info'>
+								footer={false}>
+								<div className="next-paper-download-info">
 									<h2>Download is in progress</h2>
 									<p>
 										Please keep this page open until the download process is
@@ -478,58 +466,57 @@ class igcseSubject extends React.Component {
 										this.setState({
 											display: false,
 										})
-									}
-								>
+									}>
 									{(error, response, isLoading, onReload) => {
 										if (error) {
 											openNotificationWithIcon(
 												"error",
 												"An error has occurred, please use Support > Service Status to check Snapaper service status, and send an email to Tony for support."
-											);
+											)
 											return (
-												<div className='next-cate-error'>
+												<div className="next-cate-error">
 													<Empty description={false} />
 													<p>{error.message}</p>
 												</div>
-											);
+											)
 										} else if (isLoading) {
 											return (
 												<div>
 													<Skeleton active />
 													<Skeleton active />
 												</div>
-											);
+											)
 										} else if (response !== null) {
-											paperData = response.data.papers;
+											paperData = response.data.papers
 											// 请求成功展示列表
 											return (
-												<div className='next-cate-subject mobile-list'>
+												<div className="next-cate-subject mobile-list">
 													{response.data.papers.map((item, index) => {
 														if (!!item.name && item.name !== "error_log") {
 															return (
 																<div key={index}>
-																	<a href={item.url} target='_blank'>
+																	<a href={item.url} target="_blank">
 																		<h2>{item.name.replace("amp;", "")}</h2>
 																	</a>
 																	<p>
 																		<em>{item.type}</em>
-																		<a href={item.url} target='_blank'>
+																		<a href={item.url} target="_blank">
 																			Click to download <CaretRightOutlined />
 																		</a>
 																	</p>
 																</div>
-															);
+															)
 														}
 													})}
 												</div>
-											);
+											)
 										}
 										return (
 											<div>
 												<Skeleton active />
 												<Skeleton active />
 											</div>
-										);
+										)
 									}}
 								</Get>
 							) : (
@@ -550,42 +537,41 @@ class igcseSubject extends React.Component {
 										this.setState({
 											display: false,
 										})
-									}
-								>
+									}>
 									{(error, response, isLoading, onReload) => {
 										if (error) {
 											openNotificationWithIcon(
 												"error",
 												"An error has occurred, please use Support > Service Status to check Snapaper service status, and send an email to Tony for support."
-											);
+											)
 											return (
-												<div className='next-cate-error'>
+												<div className="next-cate-error">
 													<Empty description={false} />
 													<p>{error.message}</p>
 												</div>
-											);
+											)
 										} else if (isLoading) {
 											return (
 												<div>
 													<Skeleton active />
 													<Skeleton active />
 												</div>
-											);
+											)
 										} else if (response !== null) {
-											paperData = response.data.papers;
+											paperData = response.data.papers
 											// 请求成功展示列表
 											return (
-												<div className='next-paper-papers'>
+												<div className="next-paper-papers">
 													<Papertable></Papertable>
 												</div>
-											);
+											)
 										}
 										return (
 											<div>
 												<Skeleton active />
 												<Skeleton active />
 											</div>
-										);
+										)
 									}}
 								</Get>
 							)
@@ -599,8 +585,8 @@ class igcseSubject extends React.Component {
 				</main>
 				<Footer></Footer>
 			</div>
-		);
+		)
 	}
 }
 
-export default withRouter(igcseSubject);
+export default withRouter(igcseSubject)
