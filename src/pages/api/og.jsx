@@ -23,9 +23,9 @@ export default function handler() {
           width="256"
           height="256"
           alt="Snapaper logo"
-          style={{ marginRight: 40 }}
+          style={{ marginRight: 30 }}
         />
-        <span style={{ fontWeight: 700 }}>napaper</span>
+        <span style={{ fontWeight: 800 }}>napaper</span>
       </div>
     ),
     {
