@@ -2,6 +2,7 @@
 import Header from "../components/header"
 // 全局样式引入
 import "../styles/global.scss"
+import { Analytics } from "@vercel/analytics/next"
 // import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 // AntD 样式引入
@@ -96,10 +97,7 @@ function MyApp({ Component, pageProps }) {
 				<meta property="og:image" content={defaultImage} />
 				<meta property="og:image:width" content="1200" />
 				<meta property="og:image:height" content="630" />
-				<meta
-					property="og:image:alt"
-					content="Snapaper - CAIE Past Papers Platform"
-				/>
+				<meta property="og:image:alt" content="Snapaper - CAIE Past Papers" />
 				<meta property="og:site_name" content={siteName} />
 				<meta property="og:locale" content="en_US" />
 
@@ -111,7 +109,7 @@ function MyApp({ Component, pageProps }) {
 				<meta property="twitter:image" content={defaultImage} />
 				<meta
 					property="twitter:image:alt"
-					content="Snapaper - CAIE Past Papers Platform"
+					content="Snapaper - CAIE Past Papers"
 				/>
 
 				{/* Additional Meta Tags */}
@@ -150,6 +148,7 @@ function MyApp({ Component, pageProps }) {
 			<Header />
 			<Component {...pageProps} />
 			<SpeedInsights />
+			<Analytics />
 		</>
 	)
 }
