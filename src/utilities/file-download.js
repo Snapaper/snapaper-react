@@ -1,5 +1,8 @@
 export const downloadFile = (srcUrl) => {
-	const link = `https://files.snapaper.com/download?filename=${srcUrl}`
+	let link = `https://files.snapaper.com/download?filename=${srcUrl}`
+	if (srcUrl.includes(window.location.hostname)) {
+		link = `${srcUrl}?download=1`
+	}
 	const iframe = document.createElement("iframe")
 	iframe.setAttribute("id", new Date().getTime())
 	iframe.setAttribute("sandbox", "allow-downloads allow-scripts")

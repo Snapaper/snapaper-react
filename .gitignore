@@ -3,5 +3,8 @@ yarn.lock
 node_modules
 react-scratch
 
+# Local env files
+.env*.local
+
 # Generated sitemaps
 public/sitemap*.xml
