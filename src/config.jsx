@@ -1,38 +1,35 @@
+const API_BASE_URL =
+	process.env.NEXT_PUBLIC_API_BASE_URL || "https://node.snapaper.com"
+
+const api = (path) => `${API_BASE_URL}${path}`
+
 export default {
 	apiUrl: {
 		cates: {
-			alevel: "https://node.snapaper.com/api/cates/ppca/as-and-a-level/",
-			igcse: "https://node.snapaper.com/api/cates/ppca/igcse/",
-			// alevel: "https://node.snapaper.com/api/cates/a-levels/",
-			// igcse: "https://node.snapaper.com/api/cates/cambridge-IGCSE/",
-			// alevel: "https://node.snapaper.com/api/cates/ppco/A-Level/",
-			// igcse: "https://node.snapaper.com/api/cates/ppco/IGCSE/",
+			alevel: api("/api/cates/ppca/as-and-a-level/"),
+			igcse: api("/api/cates/ppca/igcse/"),
 		},
 		papers: {
 			xyz: {
-				alevel: "https://node.snapaper.com/api/papers/xyz/A%20Levels/",
-				igcse: "https://node.snapaper.com/api/papers/xyz/IGCSE/",
+				alevel: api("/api/papers/xyz/A%20Levels/"),
+				igcse: api("/api/papers/xyz/IGCSE/"),
 			},
 			com: {
-				alevel: "https://node.snapaper.com/api/papers/com/a-levels/",
-				igcse: "https://node.snapaper.com/api/papers/com/cambridge-IGCSE/",
+				alevel: api("/api/papers/com/a-levels/"),
+				igcse: api("/api/papers/com/cambridge-IGCSE/"),
 			},
 			ppco: {
-				alevel: "https://node.snapaper.com/api/papers/ppco/A-Level/",
-				igcse: "https://node.snapaper.com/api/papers/ppco/IGCSE/",
+				alevel: api("/api/papers/ppco/A-Level/"),
+				igcse: api("/api/papers/ppco/IGCSE/"),
 			},
 			ppca: {
-				alevel: "https://node.snapaper.com/api/papers/ppca/as-and-a-level/",
-				igcse: "https://node.snapaper.com/api/papers/ppca/igcse/",
+				alevel: api("/api/papers/ppca/as-and-a-level/"),
+				igcse: api("/api/papers/ppca/igcse/"),
 			},
 		},
 		years: {
-			alevel: "https://node.snapaper.com/api/years/ppca/as-and-a-level/",
-			igcse: "https://node.snapaper.com/api/years/ppca/igcse/",
-			// alevel: "https://node.snapaper.com/api/years/a-levels/",
-			// igcse: "https://node.snapaper.com/api/years/cambridge-IGCSE/",
-			// alevel: "https://node.snapaper.com/api/years/ppco/A-Level/",
-			// igcse: "https://node.snapaper.com/api/years/ppco/IGCSE/",
+			alevel: api("/api/years/ppca/as-and-a-level/"),
+			igcse: api("/api/years/ppca/igcse/"),
 		},
 	},
 }
