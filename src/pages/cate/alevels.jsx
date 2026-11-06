@@ -10,8 +10,6 @@ import {
 // 引入 AntD 组件
 import { notification, Skeleton, Button, Modal, Empty } from "antd"
 import isMobile from "ismobilejs"
-// 引入 Cookies 获取模块
-import Cookies from "js-cookie"
 import dynamic from "next/dynamic"
 import Image from "next/image"
 import Link from "next/link"
@@ -155,8 +153,6 @@ export default class Alevel extends React.Component {
 															<Link
 																href={
 																	"/paper/alevels/ppca/" +
-																	// "/paper/alevels/com/" +
-																	// "/paper/alevels/ppco/" +
 																	item.name +
 																	"/" +
 																	this.state.YCsubject
@@ -171,20 +167,6 @@ export default class Alevel extends React.Component {
 															</Link>
 														)
 													})}
-													{/* {response.data.years.length == 0 && (
-														<Link
-															href={
-																"/paper/alevels/com/all/" + this.state.YCsubject
-															}
-															prefetch={false}
-															legacyBehavior
-														>
-															<div>
-																<h2>All years</h2>
-																<CaretRightOutlined />
-															</div>
-														</Link>
-													)} */}
 												</div>
 											)
 										}
@@ -201,14 +183,7 @@ export default class Alevel extends React.Component {
 					</section>
 					<section>
 						<Get
-							url={
-								config.apiUrl.cates.alevel
-								// +
-								// (Cookies.get("snapaper_server") &&
-								// parseInt(Cookies.get("snapaper_server")) !== 0
-								// 	? Cookies.get("snapaper_server")
-								// 	: "1")
-							}
+							url={config.apiUrl.cates.alevel}
 							onSuccess={(response) =>
 								this.setState({
 									display: true,
@@ -245,43 +220,21 @@ export default class Alevel extends React.Component {
 										<div className="next-cate-subject">
 											{response.data.cates.map((item, index) => {
 												if (!!item.name && item.name !== "error_log") {
-													if (
-														parseInt(Cookies.get("snapaper_server")) == 1 ||
-														!Cookies.get("snapaper_server")
-													) {
-														return (
-															<div
-																onClick={() => {
-																	this.setState({
-																		YCsubject: formatSubjectNameURL(item.name),
-																		YCvisible: true,
-																	})
-																}}>
-																<h2>{item.name.replace("amp;", "")}</h2>
-																<p>
-																	Choose an Exam Year <CaretRightOutlined />
-																</p>
-															</div>
-														)
-													} else {
-														return (
-															<Link
-																href={
-																	"/paper/alevels/xyz/" +
-																	item.name.replace("amp;", "")
-																}
-																prefetch={false}
-																key={index}
-																legacyBehavior>
-																<div>
-																	<h2>{item.name.replace("amp;", "")}</h2>
-																	<p>
-																		Choose an Exam Year <CaretRightOutlined />
-																	</p>
-																</div>
-															</Link>
-														)
-													}
+													return (
+														<div
+															key={index}
+															onClick={() => {
+																this.setState({
+																	YCsubject: formatSubjectNameURL(item.name),
+																	YCvisible: true,
+																})
+															}}>
+															<h2>{item.name.replace("amp;", "")}</h2>
+															<p>
+																Choose an Exam Year <CaretRightOutlined />
+															</p>
+														</div>
+													)
 												}
 											})}
 										</div>
