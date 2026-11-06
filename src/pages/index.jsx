@@ -1,8 +1,6 @@
 import Footer from "../components/footer"
 import config from "../config"
 import imagePlacerHolder from "../utilities/image-placeholder"
-// 引入 Cookies 获取模块
-// import Cookies from "js-cookie";
 import { formatSubjectNameURL } from "../utilities/url-formatter"
 // 引入 AntD 图标
 import {
@@ -81,28 +79,17 @@ export default class Index extends React.Component {
 		targetOption.loading = true
 
 		// 请求 API 数据
-		await axios
-			.get(
-				config.apiUrl.cates[targetOption.value]
-				// +
-				// "/" +
-				// (Cookies.get("snapaper_server") &&
-				// parseInt(Cookies.get("snapaper_server")) !== 0
-				// 	? Cookies.get("snapaper_server")
-				// 	: "1")
-			)
-			// .get("http://node.snapaper.com/api/cates/ppco/" + targetOption.value)
-			.then((res) => {
-				targetOption.children = []
-				// 增加到 children 数组
-				res.data.cates.map((item) => {
-					targetOption.children[targetOption.children.length] = {
-						label: item.name,
-						value: formatSubjectNameURL(item.name),
-					}
-				})
-				targetOption.loading = false
+		await axios.get(config.apiUrl.cates[targetOption.value]).then((res) => {
+			targetOption.children = []
+			// 增加到 children 数组
+			res.data.cates.map((item) => {
+				targetOption.children[targetOption.children.length] = {
+					label: item.name,
+					value: formatSubjectNameURL(item.name),
+				}
 			})
+			targetOption.loading = false
+		})
 		// 更新选项
 		this.setState({
 			options: [...this.state.options],
@@ -113,7 +100,7 @@ export default class Index extends React.Component {
 	oneStep = () => {
 		if (
 			!!this.state.month &&
-			!!this.state.subject.length &&
+			this.state.subject.length === 2 &&
 			!!this.state.year &&
 			!!this.state.type &&
 			!!this.state.paper
@@ -137,9 +124,7 @@ export default class Index extends React.Component {
 			}
 
 			// 获取学科代码
-			let code = this.state.subject[1]
-				.split("(")[1]
-				.substr(0, this.state.subject[1].split("(")[1].length - 1)
+			const code = this.state.subject[1].split("(").pop().slice(0, -1)
 
 			// 获取网址
 			let url =
